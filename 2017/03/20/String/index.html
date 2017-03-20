@@ -105,7 +105,7 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
 
 性能比较
 在每次对String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存">
-<meta property="og:updated_time" content="2017-03-20T05:10:19.882Z">
+<meta property="og:updated_time" content="2017-03-20T06:14:32.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String StringBuilder StringBuffer">
 <meta name="twitter:description" content="基本比较
@@ -350,6 +350,7 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
 <li><p>使用 <strong>StringBuffer 类</strong>时，每次都会对 StringBuffer 对象本身进行操作，而<strong>不是</strong>生成新的对象并改变对象引用。</p>
 </li>
 </ul>
+<a id="more"></a>
 <p>###使用策略</p>
 <ul>
 <li><p><strong>基本原则</strong>：如果要操作少量的数据，用<strong>String</strong> ；单线程操作大量数据，用<strong>StringBuilder</strong> ；多线程操作大量数据，用<strong>StringBuffer</strong>。</p>

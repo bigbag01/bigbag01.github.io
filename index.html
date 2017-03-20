@@ -326,26 +326,19 @@
 
       
         
-          
-            <h3 id="继承内容"><a href="#继承内容" class="headerlink" title="继承内容"></a>继承内容</h3><ul>
+          <h3 id="继承内容"><a href="#继承内容" class="headerlink" title="继承内容"></a>继承内容</h3><ul>
 <li>子类继承父类所有<strong>属性</strong> </li>
 <li>子类继承父类除了<strong>private</strong>关键字修饰之外的所有方法</li>
 <li>子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。</li>
-<li>子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数，</li>
+<li>子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。</li>
 </ul>
-<h3 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h3><ol>
-<li>初始化父类中的静态成员变量和静态代码块</li>
-<li>初始化子类中的静态成员变量和静态代码块</li>
-<li>初始化父类的普通成员变量和代码块，再执行父类的构造方法</li>
-<li>初始化子类的普通成员变量和代码块，再执行子类的构造方法</li>
-</ol>
-<h3 id="继承中的this和super"><a href="#继承中的this和super" class="headerlink" title="继承中的this和super"></a>继承中的this和super</h3><ul>
-<li>构造函数中的<strong>this</strong>表示当前正在初始化的对象引用，方法中的this表示当前正在调用此方法的对象引用。</li>
-<li><strong>super</strong> 表示调用父类中相应的属性和方法，在方法中如果需要调用父类的构造方法时，一定要放在第一行</li>
-<li>子类实例化时调用父类构造方法有好多注意点 <a href="http://blog.csdn.net/hw20070575/article/details/50777669" target="_blank" rel="external">http://blog.csdn.net/hw20070575/article/details/50777669</a></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/20/java继承1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -463,138 +456,15 @@
 
       
         
-          
-            <h3 id="java修饰符"><a href="#java修饰符" class="headerlink" title="java修饰符"></a>java修饰符</h3><p>java修饰符主要分为<strong>访问控制修饰符</strong> 和<strong>非访问修饰符</strong>。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如</p>
+          <h3 id="java修饰符"><a href="#java修饰符" class="headerlink" title="java修饰符"></a>java修饰符</h3><p>java修饰符主要分为<strong>访问控制修饰符</strong> 和<strong>非访问修饰符</strong>。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoClass</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">boolean</span> flag;</div><div class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> length=<span class="number">3.2</span>;</div><div class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> width=<span class="number">4</span>;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]arguments)</span></span>&#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><table>
-<thead>
-<tr>
-<th>访问权限</th>
-<th>类</th>
-<th>包</th>
-<th>子类</th>
-<th>其他包</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>protected</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>N</td>
-</tr>
-<tr>
-<td>default</td>
-<td>Y</td>
-<td>Y</td>
-<td>N</td>
-<td>N</td>
-</tr>
-<tr>
-<td>private</td>
-<td>Y</td>
-<td>N</td>
-<td>N</td>
-<td>N</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>default</strong> 即为默认的，如果不指明就为default。使用default声明的变量和方法接口中的变量都隐式声明为public static final，接口里的方法默认情况下访问权限为public</li>
-<li>被声明为 <strong>private</strong> 的方法、变量和构造方法只能被所属类访问，并且类和接口不能声明为private</li>
-<li>Java 程序的 main() 方法必须设置成<strong>public</strong> ，否则，Java 解释器将不能运行该类。</li>
-<li><strong>protected</strong> 访问修饰符不能修饰类和接口，方法和成员变量能够声明为 protected，但是接口的成员变量和成员方法不能声明为 protected。</li>
-<li><strong>访问控制和继承</strong> ：<ul>
-<li>父类中声明为public的方法在子类中也必须是public</li>
-<li>父类中声明为protected的方法在子类中必须是public或者protected，不可以是private</li>
-<li>父类中声明为private的方法<strong>不可</strong>被继承</li>
-</ul>
-</li>
-</ul>
-<h3 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h3><p>java中的非访问修饰符现在有 static, final, abstract, synchronized, volatile</p>
-<table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>作用简介</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>static</td>
-<td>创建类方法和类变量</td>
-</tr>
-<tr>
-<td>final</td>
-<td>修饰类、方法、变量。final修饰的类不能被继承，修饰的方法不能被继承类重定义，修饰的变量为常量不可修改</td>
-</tr>
-<tr>
-<td>abstract</td>
-<td>创建抽象类和抽象方法</td>
-</tr>
-<tr>
-<td>synchronized,volatile</td>
-<td>用于线程的编程</td>
-</tr>
-<tr>
-<td>transient</td>
-<td>不让变量被持久化？？？</td>
-</tr>
-</tbody>
-</table>
-<h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><ul>
-<li><strong>静态变量</strong>：独立于对象存在。无论一个类实例化多少个对象，静态变量只有一份拷贝。静态变量也叫类变量。局部变量不可用static修饰</li>
-<li><strong>静态方法</strong> ：独立于对象的方法，不可使用类的非静态对象。静态方法从参数列表获得数据进行处理。</li>
-<li>类的静态方法和静态变量可直接用<code>类名.变量</code>或<code>类名.方法</code>访问,比如 用<code>Math.max(a,b)</code>可以得到变量a,b中的较大值</li>
-</ul>
-<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><ul>
-<li><strong>final变量</strong> <ul>
-<li>可以被显示初始化一次且仅一次。被声明为final的对象的引用不能变为其他对象，但是这个对象里的数据可以改变</li>
-<li>final和static常一起用来创建<strong>类常量</strong> </li>
-</ul>
-</li>
-<li><strong>final方法</strong> <ul>
-<li>可以被子类继承但不可修改。</li>
-<li>方法声明为final主要为了防止被修改</li>
-</ul>
-</li>
-<li><strong>final类</strong><ul>
-<li>不可被继承</li>
-</ul>
-</li>
-</ul>
-<h4 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h4><ul>
-<li><strong>抽象类</strong> <ul>
-<li>抽象类不能用来实例化对象</li>
-<li>一个类不可同时被abstract和final修饰。如果一个类包含抽象方法则一定要声明为抽象类，抽象类可以同时有抽象和非抽象方法。</li>
-</ul>
-</li>
-<li><strong>抽象方法</strong><ul>
-<li>抽象方法无实现，具体实现由子类提供。</li>
-<li>抽象方法不能被声明为final或static</li>
-<li>任何继承抽象类的子类必须实现父类所有抽象方法，除非子类也是抽象类</li>
-<li>抽象方法的声明以分号结尾</li>
-</ul>
-</li>
-<li><strong>抽象类</strong> 和 <strong>接口</strong> 关系 <a href="http://www.cnblogs.com/felixzh/p/5938544.html" target="_blank" rel="external">参考</a>   类比C++中的虚函数 纯虚函数 <a href="http://blog.csdn.net/trojanpizza/article/details/6556604" target="_blank" rel="external">参考</a> </li>
-</ul>
-<h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p>​    synchronized声明的方法或代码块同一时间只能被一个线程访问</p>
-<h4 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h4><ul>
-<li>只能修饰变量不能修饰方法和类，且不能修饰local variant</li>
-<li>被transient修饰的变量不能被序列化，而静态变量无论是否有transient修饰都不会被序列化。（了解下<a href="http://www.cnblogs.com/whyhappy/p/5744610.html" target="_blank" rel="external">序列化和持久化的区别与联系</a>）</li>
-<li>但如果序列化操作的是externalizable对象就不一定。<a href="http://www.cnblogs.com/liuling/archive/2013/05/05/transient.html" target="_blank" rel="external">参考</a></li>
-</ul>
-<h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>​    volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/20/字段修饰符/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -712,8 +582,7 @@
 
       
         
-          
-            <h3 id="int-long"><a href="#int-long" class="headerlink" title="int, long"></a>int, long</h3><ul>
+          <h3 id="int-long"><a href="#int-long" class="headerlink" title="int, long"></a>int, long</h3><ul>
 <li><p>java中的<strong>int</strong>和<strong>long</strong>都是有符号的，正负区别在于取反加一。</p>
 </li>
 <li><p>int总共32位，正数上限首位为0，即正数最大值为2^31-1，负数最小值为-2^31</p>
@@ -724,27 +593,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> ll=<span class="number">300000</span>;</div><div class="line"><span class="comment">//强制转换</span></div><div class="line"><span class="keyword">int</span> ii=(<span class="keyword">int</span>)ll;</div><div class="line"><span class="comment">//调用intValue()</span></div><div class="line"><span class="keyword">int</span> ii=<span class="keyword">new</span> Long(ll).intValue();</div><div class="line"><span class="comment">//先转为String</span></div><div class="line"><span class="keyword">int</span> ii=Integer.parseInt(String.valueOf(ll));</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="float-double"><a href="#float-double" class="headerlink" title="float, double"></a>float, double</h3><ul>
-<li>float 32位，double 64位</li>
-<li>在同等位数的情况下，浮点数可表示的数值范围比整数的大</li>
-<li>double 和 float 的区别是double精度高，有效数字16位，float精度7位。但double消耗内存是float的两倍，double的运算速度比float慢得多</li>
-<li>float和double只能用来做<strong>科学计算</strong>或者是<strong>工程计算</strong>，在商业计算中我们要用 java.math.BigDecimal</li>
-</ul>
-<h3 id="Infinity-NaN"><a href="#Infinity-NaN" class="headerlink" title="Infinity NaN"></a>Infinity NaN</h3><ul>
-<li><p><strong>Infinity</strong> 无穷大，满足<code>i==i+1</code> </p>
-<p>可以用被计算为无穷大的浮点算术表达式来初始化，例如：<code>double i= 1.0/0.0;</code> ,或者更好的方式是 <code>double i=Double.POSITIVE_INFINITY;</code> </p>
-</li>
-<li><p><strong>NaN</strong> 非数，满足<code>i!=i</code> </p>
-<ul>
-<li>NaN不等于任何浮点数值，包括它自身。可以用被计算位NaN的浮点算术表达式来初始化i，例如：<code>double i=0.0/0.0;</code> ,或者用 <code>double i=Double.NaN;</code></li>
-<li>任何浮点操作，只要它的一个或多个操作数为NaN,那么其结果为NaN。</li>
-<li>NaN与任何数用<code>==</code>比较均返回false</li>
-<li>用<code>compare</code>方法返回true</li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/20/Numbers/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -862,44 +717,16 @@
 
       
         
-          
-            <h2 id="struts2-action-向-jsp-传值"><a href="#struts2-action-向-jsp-传值" class="headerlink" title="struts2 action 向 jsp 传值"></a>struts2 action 向 jsp 传值</h2><ol>
+          <h2 id="struts2-action-向-jsp-传值"><a href="#struts2-action-向-jsp-传值" class="headerlink" title="struts2 action 向 jsp 传值"></a>struts2 action 向 jsp 传值</h2><ol>
 <li><p>action中定义一个成员变量，对它提供get/set方法，在jsp中通过标签或EL表达式取值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//action 示例</span></div><div class="line"><span class="meta">@Action</span>(<span class="string">"handleMessage"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HandleMessage</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> String message;</div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getMessage</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> message;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMessage</span><span class="params">(String message)</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.message=message;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//jsp页面取值</span></div><div class="line"> $&#123;message&#125; 或者 &lt;s:property value=<span class="string">"message"</span>&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在action中用HttpServletRequest,HttpSession,ServletContext对象进行值的存取</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//action 示例</span></div><div class="line"><span class="meta">@Action</span>(<span class="string">"handleMessage"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HandleMessage</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span></span>&#123;</div><div class="line">  <span class="comment">//get HttpServletRequest </span></div><div class="line">  Map&lt;String,Object&gt; request = (Map) actionContext.get(<span class="string">"request"</span>); </div><div class="line">  request.put(<span class="string">"a"</span>, <span class="string">"a is in request"</span>); </div><div class="line"></div><div class="line">  <span class="comment">//get HttpSession </span></div><div class="line">  Map&lt;String,Object&gt; session = actionContext.getSession(); </div><div class="line">  session.put(<span class="string">"b"</span>, <span class="string">"b is in session"</span>); </div><div class="line"></div><div class="line">  <span class="comment">//get ServletContext </span></div><div class="line">  Map&lt;String,Object&gt; application  = actionContext.getApplication(); </div><div class="line">  application.put(<span class="string">"c"</span>, <span class="string">"c is in application"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//jsp页面取值</span></div><div class="line">$&#123;a&#125; $&#123;b&#125; $&#123;c&#125;</div><div class="line">or</div><div class="line">$&#123;requestScope.a&#125; $&#123;sessionScopse.b&#125; $&#123;applicationScope.c&#125;</div><div class="line">or </div><div class="line">&lt;% </div><div class="line">   String a=(String)request.getAttribute(<span class="string">"a"</span>);</div><div class="line">   String b=(String)session.getAttribute(<span class="string">"b"</span>);</div><div class="line">   String c=(String)application.getAttribute(<span class="string">"c"</span>);</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>jsp显示值还可以用struts2标签 <a href="http://zwdsmileface.iteye.com/blog/2193777" target="_blank" rel="external">参考链接</a></p>
-</li>
-</ol>
-<h2 id="jsp-向-struts2-action-传值"><a href="#jsp-向-struts2-action-传值" class="headerlink" title="jsp 向 struts2 action 传值"></a>jsp 向 struts2 action 传值</h2><ol>
-<li><p>url传值</p>
-<p>jsp中直接在url中加入被传递的参数</p>
-<p>如：<code>&lt;%=basePath%&gt;handleMessage?message=aa</code></p>
-</li>
-<li><p>form表单传值</p>
-</li>
-<li><p>session,request,application传值</p>
-</li>
-<li><p>ajax传值</p>
-</li>
-<li><p><strong>后台接收</strong> </p>
-<ol>
-<li>action中设置属性<code>message</code>并写出相应的get/set方法就可以获得值</li>
-<li><code>request.getParameter(&quot;message&quot;)</code></li>
-</ol>
-</li>
-<li><p><strong>注意点</strong></p>
-<ul>
-<li><p>url传值后，转到的页面url为带参数的，如果刷新会重复提交请求。</p>
-<p><strong>解决方案</strong> ：在struts配置中将action result的type属性设为“redirect”</p>
-</li>
-</ul>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/20/struts2与jsp传值/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1017,8 +844,7 @@
 
       
         
-          
-            <h3 id="基本比较"><a href="#基本比较" class="headerlink" title="基本比较"></a>基本比较</h3><ul>
+          <h3 id="基本比较"><a href="#基本比较" class="headerlink" title="基本比较"></a>基本比较</h3><ul>
 <li><strong>String</strong> 定义后不可变，可理解为常量，线程安全  </li>
 <li><strong>StringBuffer</strong>、 <strong>StringBuilder</strong> 定义后可变 </li>
 <li><strong>StringBuffer</strong> 对方法加了同步锁线程安全，<strong>StringBuilder</strong>非线程安全</li>
@@ -1029,20 +855,13 @@
 <li><p>使用 <strong>StringBuffer 类</strong>时，每次都会对 StringBuffer 对象本身进行操作，而<strong>不是</strong>生成新的对象并改变对象引用。</p>
 </li>
 </ul>
-<p>###使用策略</p>
-<ul>
-<li><p><strong>基本原则</strong>：如果要操作少量的数据，用<strong>String</strong> ；单线程操作大量数据，用<strong>StringBuilder</strong> ；多线程操作大量数据，用<strong>StringBuffer</strong>。</p>
-</li>
-<li><p>使用StringBuffer或StringBuilder类的append方法代替String的‘+’，这在Java的优化上是一条比较重要的原则</p>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();  </div><div class="line"><span class="keyword">for</span> (String s : hugeArray) &#123;  </div><div class="line">    sb.append(s);  </div><div class="line">&#125;  </div><div class="line">String result = sb.toString();</div></pre></td></tr></table></figure>
-</li>
-<li><p>为了获得更好的性能，在构造 StringBuffer 或 StringBuilder 时应尽可能<strong>指定它们的容量</strong>。</p>
-</li>
-</ul>
-<p><em>参考</em>：<a href="http://blog.csdn.net/kingzone_2008/article/details/9220691" target="_blank" rel="external">Java：String、StringBuffer和StringBuilder的区别</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/20/String/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

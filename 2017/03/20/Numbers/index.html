@@ -109,7 +109,7 @@ long总共64位
 
 int转long是向上转换可以直接隐式转换，long转int是向下，可能出现数据溢出情况！！
 1234567long ll=300000;//强制转换int ii=(int)ll;//调用intVal">
-<meta property="og:updated_time" content="2017-03-20T05:10:38.502Z">
+<meta property="og:updated_time" content="2017-03-20T06:14:20.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java中的几个基本数值型数据类型，待完善~~~">
 <meta name="twitter:description" content="int, long
@@ -356,6 +356,7 @@ int转long是向上转换可以直接隐式转换，long转int是向下，可能
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> ll=<span class="number">300000</span>;</div><div class="line"><span class="comment">//强制转换</span></div><div class="line"><span class="keyword">int</span> ii=(<span class="keyword">int</span>)ll;</div><div class="line"><span class="comment">//调用intValue()</span></div><div class="line"><span class="keyword">int</span> ii=<span class="keyword">new</span> Long(ll).intValue();</div><div class="line"><span class="comment">//先转为String</span></div><div class="line"><span class="keyword">int</span> ii=Integer.parseInt(String.valueOf(ll));</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<a id="more"></a>
 <h3 id="float-double"><a href="#float-double" class="headerlink" title="float, double"></a>float, double</h3><ul>
 <li>float 32位，double 64位</li>
 <li>在同等位数的情况下，浮点数可表示的数值范围比整数的大</li>
