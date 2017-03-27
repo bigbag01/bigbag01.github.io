@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="String," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,34 +87,28 @@
 
 
 
-<meta name="description" content="基本比较
-String 定义后不可变，可理解为常量，线程安全  
-StringBuffer、 StringBuilder 定义后可变 
-StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
-
-性能比较
-在每次对String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存">
+<meta name="description" content="title: 从错题里学网络基础(1)
+date: 2017-03-27 13:49:22
+categories: 网络基础
+description: 没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。
+题目某网络的IP地址空间为192.168.5.0/24, 采用定长子网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String StringBuilder StringBuffer">
-<meta property="og:url" content="http://yoursite.com/2017/03/20/String/index.html">
+<meta property="og:title" content="学姐的博客">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/从错题里学网络基础1/index.html">
 <meta property="og:site_name" content="学姐的博客">
-<meta property="og:description" content="基本比较
-String 定义后不可变，可理解为常量，线程安全  
-StringBuffer、 StringBuilder 定义后可变 
-StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
-
-性能比较
-在每次对String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存">
-<meta property="og:updated_time" content="2017-03-26T15:12:24.495Z">
+<meta property="og:description" content="title: 从错题里学网络基础(1)
+date: 2017-03-27 13:49:22
+categories: 网络基础
+description: 没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。
+题目某网络的IP地址空间为192.168.5.0/24, 采用定长子网">
+<meta property="og:updated_time" content="2017-03-27T10:41:20.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String StringBuilder StringBuffer">
-<meta name="twitter:description" content="基本比较
-String 定义后不可变，可理解为常量，线程安全  
-StringBuffer、 StringBuilder 定义后可变 
-StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
-
-性能比较
-在每次对String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存">
+<meta name="twitter:title" content="学姐的博客">
+<meta name="twitter:description" content="title: 从错题里学网络基础(1)
+date: 2017-03-27 13:49:22
+categories: 网络基础
+description: 没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。
+题目某网络的IP地址空间为192.168.5.0/24, 采用定长子网">
 
 
 
@@ -142,13 +136,13 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/20/String/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/27/从错题里学网络基础1/"/>
 
 
 
 
 
-  <title> String StringBuilder StringBuffer | 学姐的博客 </title>
+  <title>  | 学姐的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +271,7 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/String/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/从错题里学网络基础1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -298,7 +292,7 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
             
             
               
-                String StringBuilder StringBuffer
+                
               
             
           </h1>
@@ -313,8 +307,8 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:53:59+08:00">
-                2017-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T14:50:03+08:00">
+                2017-03-27
               </time>
             
 
@@ -323,28 +317,6 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -376,30 +348,29 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
       
 
       
-        <h3 id="基本比较"><a href="#基本比较" class="headerlink" title="基本比较"></a>基本比较</h3><ul>
-<li><strong>String</strong> 定义后不可变，可理解为常量，线程安全  </li>
-<li><strong>StringBuffer</strong>、 <strong>StringBuilder</strong> 定义后可变 </li>
-<li><strong>StringBuffer</strong> 对方法加了同步锁线程安全，<strong>StringBuilder</strong>非线程安全</li>
+        <p>title: 从错题里学网络基础(1)</p>
+<p>date: 2017-03-27 13:49:22</p>
+<p>categories: 网络基础</p>
+<p>description: 没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>某网络的IP地址空间为192.168.5.0/24, 采用定长子网划分，子网掩码为255.255.255.248， 则该网络的最大子网个数，每个子网内的最大可分配地址个数各为多少？</p>
+<p>A. 32, 6    B. 32, 8    C. 8, 32    D. 8, 30</p>
+<p><strong>答案</strong>： A</p>
+<p><strong>解析</strong>： 一个IP的组成为 网络号+子网号+主机号。IP地址后的/24表示掩码位是24位，子网掩码 255.255.255.248，二进制为（11111111，11111111，11111111，11111000）前24位为网络号，后8位是子网号+主机号，前五位是子网号，后3位是主机号。但主机号全0表示本地主机，全1表示广播，所以子网个数为2^5=32个 ,主机个数为2^3-2=6个。</p>
+<h2 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h2><h4 id="IP地址表示"><a href="#IP地址表示" class="headerlink" title="IP地址表示"></a>IP地址表示</h4><ul>
+<li>IPV4用一个32位二进制数表示IP地址，通常是由4组3位十进制数表示，中间用”.”分隔</li>
+<li>IPV6用128位二进制数表示IP地址，通常表现为8组4位16进制数，中间用”:”分隔</li>
 </ul>
-<h3 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h3><ul>
-<li><p>在每次对<strong>String 类型</strong>进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，性能就会降低。</p>
-</li>
-<li><p>使用 <strong>StringBuffer 类</strong>时，每次都会对 StringBuffer 对象本身进行操作，而<strong>不是</strong>生成新的对象并改变对象引用。</p>
-</li>
+<h4 id="网络ID、主机ID、子网掩码、CIDR"><a href="#网络ID、主机ID、子网掩码、CIDR" class="headerlink" title="网络ID、主机ID、子网掩码、CIDR"></a>网络ID、主机ID、子网掩码、CIDR</h4><ul>
+<li>网络ID用来表示计算机属于哪个网络，网络ID相同的计算机不用通过路由器就可以直接通信，网络ID相同的计算机组成的一个网络成为本地网络（网段）。</li>
+<li>一个计算机的IP地址中哪部分表示网络ID，哪部分表示主机ID由子网掩码决定</li>
+<li>常规的<strong>子网掩码</strong> 是连续的255后面跟连续的0表示的，连续的255表示网络ID，连续的0表示主机ID，比如255.255.255.0, 255.0.0.0. 采用这种方式的子网掩码每个网络中主机的数目相差至少256倍，不灵活。</li>
+<li>采用<strong>CIDR</strong> 技术，用子网掩码中连续的1表示网络ID，连续的0表示主机ID，表示方法为IP地址/网络ID位数。</li>
 </ul>
-<a id="more"></a>
-<p>###使用策略</p>
-<ul>
-<li><p><strong>基本原则</strong>：如果要操作少量的数据，用<strong>String</strong> ；单线程操作大量数据，用<strong>StringBuilder</strong> ；多线程操作大量数据，用<strong>StringBuffer</strong>。</p>
-</li>
-<li><p>使用StringBuffer或StringBuilder类的append方法代替String的‘+’，这在Java的优化上是一条比较重要的原则</p>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();  </div><div class="line"><span class="keyword">for</span> (String s : hugeArray) &#123;  </div><div class="line">    sb.append(s);  </div><div class="line">&#125;  </div><div class="line">String result = sb.toString();</div></pre></td></tr></table></figure>
-</li>
-<li><p>为了获得更好的性能，在构造 StringBuffer 或 StringBuilder 时应尽可能<strong>指定它们的容量</strong>。</p>
-</li>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><ul>
+<li>ip地址和子网掩码做<strong>与运算</strong> 可以得到它的子网，即它所在网段的网络ID。题目中的网络ID为192.168.5.0，起始IP地址为192.168.5.1(主机ID不能全为0)</li>
+<li>主机ID不能全为0，也不能全为1，子网没有这个问题。</li>
 </ul>
-<p><em>参考</em>：<a href="http://blog.csdn.net/kingzone_2008/article/details/9220691" target="_blank" rel="external">Java：String、StringBuffer和StringBuilder的区别</a></p>
+<p><em>注</em> ：<a href="http://www.2cto.com/net/201303/192100.html" target="_blank" rel="external">参考链接</a></p>
 
       
     </div>
@@ -427,12 +398,6 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/String/" rel="tag"># String</a>
-          
-        </div>
-      
 
       
         
@@ -442,14 +407,18 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/24/java和js判等方法/" rel="next" title="一些关于"="的故事">
+                <i class="fa fa-chevron-left"></i> 一些关于"="的故事
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/20/struts2与jsp传值/" rel="prev" title="Struts2 action和jsp之间传值">
-                Struts2 action和jsp之间传值 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/27/从错题里学网络基础2/" rel="prev" title="从错题里学网络基础(2)">
+                从错题里学网络基础(2) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +548,7 @@ StringBuffer 对方法加了同步锁线程安全，StringBuilder非线程安全
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本比较"><span class="nav-number">1.</span> <span class="nav-text">基本比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能比较"><span class="nav-number">2.</span> <span class="nav-text">性能比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关知识点"><span class="nav-number">2.</span> <span class="nav-text">相关知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址表示"><span class="nav-number">2.0.1.</span> <span class="nav-text">IP地址表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络ID、主机ID、子网掩码、CIDR"><span class="nav-number">2.0.2.</span> <span class="nav-text">网络ID、主机ID、子网掩码、CIDR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算"><span class="nav-number">2.0.3.</span> <span class="nav-text">计算</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
