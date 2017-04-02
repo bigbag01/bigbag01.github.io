@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="继承," />
+  <meta name="keywords" content="继承,多态," />
 
 
 
@@ -93,7 +93,7 @@
 子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。
 子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java继承相关(1)">
+<meta property="og:title" content="java继承和多态(1)">
 <meta property="og:url" content="http://yoursite.com/2017/03/20/java继承1/index.html">
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="继承内容
@@ -101,9 +101,9 @@
 子类继承父类除了private关键字修饰之外的所有方法
 子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。
 子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。">
-<meta property="og:updated_time" content="2017-03-26T15:11:18.992Z">
+<meta property="og:updated_time" content="2017-04-02T09:27:49.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java继承相关(1)">
+<meta name="twitter:title" content="java继承和多态(1)">
 <meta name="twitter:description" content="继承内容
 子类继承父类所有属性 
 子类继承父类除了private关键字修饰之外的所有方法
@@ -142,7 +142,7 @@
 
 
 
-  <title> java继承相关(1) | 学姐的博客 </title>
+  <title> java继承和多态(1) | 学姐的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -292,7 +292,7 @@
             
             
               
-                java继承相关(1)
+                java继承和多态(1)
               
             
           </h1>
@@ -388,6 +388,24 @@
 <li><strong>super</strong> 表示调用父类中相应的属性和方法，在方法中如果需要调用父类的构造方法时，一定要放在第一行</li>
 <li>子类实例化时调用父类构造方法有好多注意点 <a href="http://blog.csdn.net/hw20070575/article/details/50777669" target="_blank" rel="external">http://blog.csdn.net/hw20070575/article/details/50777669</a></li>
 </ul>
+<h3 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h3><ul>
+<li>如果在子类中定义某方法与父类有相同的<strong>方法名</strong>和<strong>参数列表</strong>，则该方法被重写。</li>
+<li>子类函数的访问修饰权限大于等于父类被重写的函数的访问修饰权限</li>
+<li>重写方法一定不能抛出新的检查异常或者比被重写方法声明的更加宽泛的检查性异常。</li>
+</ul>
+<h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
+<li><p>java 的类继承是单继承，但可以<strong>多重继承</strong>，就是只有一个爸爸，但是爸爸也有爸爸，爷爷也可以有爸爸~</p>
+</li>
+<li><p>继承提高了类之间的耦合性（继承的<strong>缺点</strong>）</p>
+</li>
+<li><p>一个类如果没有用extends写明继承自谁，那就默认继承object（在java.lang中，不用import）</p>
+</li>
+<li><p>构造器不能被继承。</p>
+</li>
+<li><p>接口可以继承自多个接口</p>
+<p><em>注：声明为final的类不可以被继承，它的方法自动声明为final而其中的变量并不会自动声明为final</em></p>
+</li>
+</ul>
 
       
     </div>
@@ -418,6 +436,8 @@
         <div class="post-tags">
           
             <a href="/tags/继承/" rel="tag"># 继承</a>
+          
+            <a href="/tags/多态/" rel="tag"># 多态</a>
           
         </div>
       
@@ -514,7 +534,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -536,7 +556,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -571,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承内容"><span class="nav-number">1.</span> <span class="nav-text">继承内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化顺序"><span class="nav-number">2.</span> <span class="nav-text">初始化顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承中的this和super"><span class="nav-number">3.</span> <span class="nav-text">继承中的this和super</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承内容"><span class="nav-number">1.</span> <span class="nav-text">继承内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化顺序"><span class="nav-number">2.</span> <span class="nav-text">初始化顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承中的this和super"><span class="nav-number">3.</span> <span class="nav-text">继承中的this和super</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的重写"><span class="nav-number">4.</span> <span class="nav-text">方法的重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的特性"><span class="nav-number">5.</span> <span class="nav-text">继承的特性</span></a></li></ol></div>
             
 
           </div>
