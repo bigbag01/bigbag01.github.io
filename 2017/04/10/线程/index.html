@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="继承,多态," />
+  <meta name="keywords" content="线程," />
 
 
 
@@ -87,28 +87,34 @@
 
 
 
-<meta name="description" content="继承内容
-子类继承父类所有属性 
-子类继承父类除了private关键字修饰之外的所有方法
-子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。
-子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。">
+<meta name="description" content="线程
+线程是程序中一个单一的顺序控制流程。进程内一个相对独立的、可调度的执行单元，是系统独立调度和分派CPU的基本单位指运行中的程序的调度单位。在单个程序中同时运行多个线程完成不同的工作，称为多线程。一个标准的线程由线程ID，当前指令指针（PC），寄存器集合和堆栈组成。
+——《百度百科》
+
+线程状态
+新线程态 （new thread）
+产生一个Thread对象就产生一个新线程。但此刻没有分配到系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java继承和多态(1)">
-<meta property="og:url" content="http://yoursite.com/2017/03/20/java继承1/index.html">
+<meta property="og:title" content="线程">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/线程/index.html">
 <meta property="og:site_name" content="学姐的博客">
-<meta property="og:description" content="继承内容
-子类继承父类所有属性 
-子类继承父类除了private关键字修饰之外的所有方法
-子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。
-子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。">
-<meta property="og:updated_time" content="2017-04-02T09:27:49.427Z">
+<meta property="og:description" content="线程
+线程是程序中一个单一的顺序控制流程。进程内一个相对独立的、可调度的执行单元，是系统独立调度和分派CPU的基本单位指运行中的程序的调度单位。在单个程序中同时运行多个线程完成不同的工作，称为多线程。一个标准的线程由线程ID，当前指令指针（PC），寄存器集合和堆栈组成。
+——《百度百科》
+
+线程状态
+新线程态 （new thread）
+产生一个Thread对象就产生一个新线程。但此刻没有分配到系统">
+<meta property="og:updated_time" content="2017-04-10T08:15:16.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java继承和多态(1)">
-<meta name="twitter:description" content="继承内容
-子类继承父类所有属性 
-子类继承父类除了private关键字修饰之外的所有方法
-子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。
-子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。">
+<meta name="twitter:title" content="线程">
+<meta name="twitter:description" content="线程
+线程是程序中一个单一的顺序控制流程。进程内一个相对独立的、可调度的执行单元，是系统独立调度和分派CPU的基本单位指运行中的程序的调度单位。在单个程序中同时运行多个线程完成不同的工作，称为多线程。一个标准的线程由线程ID，当前指令指针（PC），寄存器集合和堆栈组成。
+——《百度百科》
+
+线程状态
+新线程态 （new thread）
+产生一个Thread对象就产生一个新线程。但此刻没有分配到系统">
 
 
 
@@ -136,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/20/java继承1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/线程/"/>
 
 
 
 
 
-  <title> java继承和多态(1) | 学姐的博客 </title>
+  <title> 线程 | 学姐的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/java继承1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -292,7 +298,7 @@
             
             
               
-                java继承和多态(1)
+                线程
               
             
           </h1>
@@ -307,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T13:01:33+08:00">
-                2017-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T15:01:22+08:00">
+                2017-04-10
               </time>
             
 
@@ -330,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础</span>
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
                   </a>
                 </span>
 
@@ -370,41 +376,41 @@
       
 
       
-        <h3 id="继承内容"><a href="#继承内容" class="headerlink" title="继承内容"></a>继承内容</h3><ul>
-<li>子类继承父类所有<strong>属性</strong> </li>
-<li>子类继承父类除了<strong>private</strong>关键字修饰之外的所有方法</li>
-<li>子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。</li>
-<li>子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。</li>
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><blockquote>
+<p>线程是程序中一个单一的顺序控制流程。进程内一个相对独立的、可调度的执行单元，是系统独立调度和分派CPU的基本单位指运行中的程序的调度单位。在单个程序中同时运行多个线程完成不同的工作，称为多线程。一个标准的线程由线程ID，当前指令指针（PC），寄存器集合和堆栈组成。</p>
+<p>——《百度百科》</p>
+</blockquote>
+<h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><ol>
+<li><p><strong>新线程态</strong> （new thread）</p>
+<p>产生一个Thread对象就产生一个新线程。但此刻没有分配到系统资源，只能启动或终止。</p>
+</li>
+<li><p><strong>可运行态</strong> （runnable）</p>
+<p>start()方法使新线程获得资源，调度线程执行，并调用run方法后线程处于runnable状态。runnable状态的线程可能在运行也可能不在运行</p>
+</li>
+<li><p><strong>阻塞/非运行态</strong> （not runnable）</p>
+<p>当以下事件发生时，线程进入非运行态</p>
+<ul>
+<li>suspend()方法被调用</li>
+<li>sleep()方法被调用</li>
+<li>线程使用wait()来等待条件变量</li>
+<li>线程处于IO请求的等待</li>
 </ul>
-<a id="more"></a>
-<h3 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h3><ol>
-<li>初始化父类中的静态成员变量和静态代码块</li>
-<li>初始化子类中的静态成员变量和静态代码块</li>
-<li>初始化父类的普通成员变量和代码块，再执行父类的构造方法</li>
-<li>初始化子类的普通成员变量和代码块，再执行子类的构造方法</li>
+</li>
+<li><p><strong>死亡态</strong> （dead）</p>
+<p>run()方法返回或其他线程调用stop()，线程进入dead状态</p>
+</li>
 </ol>
-<h3 id="继承中的this和super"><a href="#继承中的this和super" class="headerlink" title="继承中的this和super"></a>继承中的this和super</h3><ul>
-<li>构造函数中的<strong>this</strong>表示当前正在初始化的对象引用，方法中的this表示当前正在调用此方法的对象引用。</li>
-<li><strong>super</strong> 表示调用父类中相应的属性和方法，在方法中如果需要调用父类的构造方法时，一定要放在第一行</li>
-<li>子类实例化时调用父类构造方法有好多注意点 <a href="http://blog.csdn.net/hw20070575/article/details/50777669" target="_blank" rel="external">http://blog.csdn.net/hw20070575/article/details/50777669</a></li>
-</ul>
-<h3 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h3><ul>
-<li>如果在子类中定义某方法与父类有相同的<strong>方法名</strong>和<strong>参数列表</strong>，则该方法被重写。</li>
-<li>子类函数的访问修饰权限大于等于父类被重写的函数的访问修饰权限</li>
-<li>重写方法一定不能抛出新的检查异常或者比被重写方法声明的更加宽泛的检查性异常。</li>
-</ul>
-<h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
-<li><p>java 的类继承是单继承，但可以<strong>多重继承</strong>，就是只有一个爸爸，但是爸爸也有爸爸，爷爷也可以有爸爸~</p>
-</li>
-<li><p>继承提高了类之间的耦合性（继承的<strong>缺点</strong>）</p>
-</li>
-<li><p>一个类如果没有用extends写明继承自谁，那就默认继承object（在java.lang中，不用import）</p>
-</li>
-<li><p>构造器不能被继承。</p>
-</li>
-<li><p>接口可以继承自多个接口</p>
-<p><em>注：声明为final的类不可以被继承，它的方法自动声明为final而其中的变量并不会自动声明为final</em></p>
-</li>
+<h3 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h3><p>java中对于线程的同步一般需要完成以下两步：</p>
+<ol>
+<li>把竞争访问的资源标识为private</li>
+<li>使用synchronized关键字同步修改变量的方法或者代码块。</li>
+</ol>
+<h3 id="线程的实现"><a href="#线程的实现" class="headerlink" title="线程的实现"></a>线程的实现</h3><h4 id="单处理器系统"><a href="#单处理器系统" class="headerlink" title="单处理器系统"></a>单处理器系统</h4><p>​    时间片调度安排，CPU在不同线程之间快速切换。</p>
+<h4 id="多处理器系统"><a href="#多处理器系统" class="headerlink" title="多处理器系统"></a>多处理器系统</h4><p>​    多线程可以并行执行，每个处理器（核）同时执行不同的线程。</p>
+<h3 id="线程特点"><a href="#线程特点" class="headerlink" title="线程特点"></a>线程特点</h3><ul>
+<li>线程不拥有系统资源，但是可以使用独立的资源</li>
+<li>可并发执行</li>
+<li>共享进程资源</li>
 </ul>
 
       
@@ -435,9 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/继承/" rel="tag"># 继承</a>
-          
-            <a href="/tags/多态/" rel="tag"># 多态</a>
+            <a href="/tags/线程/" rel="tag"># 线程</a>
           
         </div>
       
@@ -450,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/Numbers/" rel="next" title="java中的几个基本数值型数据类型，待完善~~~">
-                <i class="fa fa-chevron-left"></i> java中的几个基本数值型数据类型，待完善~~~
+              <a href="/2017/04/10/进程/" rel="next" title="进程">
+                <i class="fa fa-chevron-left"></i> 进程
               </a>
             
           </div>
@@ -460,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/20/字段修饰符/" rel="prev" title="java字段修饰符">
-                java字段修饰符 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/17/好用的软件分享/" rel="prev" title="好用的软件分享——windows平台">
+                好用的软件分享——windows平台 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承内容"><span class="nav-number">1.</span> <span class="nav-text">继承内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化顺序"><span class="nav-number">2.</span> <span class="nav-text">初始化顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承中的this和super"><span class="nav-number">3.</span> <span class="nav-text">继承中的this和super</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的重写"><span class="nav-number">4.</span> <span class="nav-text">方法的重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的特性"><span class="nav-number">5.</span> <span class="nav-text">继承的特性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程状态"><span class="nav-number">1.1.</span> <span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的同步"><span class="nav-number">1.2.</span> <span class="nav-text">线程的同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的实现"><span class="nav-number">1.3.</span> <span class="nav-text">线程的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单处理器系统"><span class="nav-number">1.3.1.</span> <span class="nav-text">单处理器系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多处理器系统"><span class="nav-number">1.3.2.</span> <span class="nav-text">多处理器系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程特点"><span class="nav-number">1.4.</span> <span class="nav-text">线程特点</span></a></li></ol></li></ol></div>
             
 
           </div>
