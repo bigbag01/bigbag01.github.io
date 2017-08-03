@@ -27,12 +27,17 @@ a, button {
 }
 
 a {
-	color: #566473;
+	color: #ffffff;
 	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #34495e;
+	color: #fefefe;
+    text-shadow: #aad3d6 0px 0px 10px;
+}
+h1.main-title:hover{
+	color: #fefefe;
+    text-shadow: #aad3d6 0px 0px 10px;
 }
 
 section {
