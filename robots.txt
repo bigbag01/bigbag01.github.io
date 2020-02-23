@@ -1,0 +1,10 @@
+User-agent: * 
+Allow: /
+Allow: /archives/
+Disallow: /categories/
+Disallow: /img/
+
+
+
+Sitemap: https://bigbag01.github.io/blog/sitemap.xml
+Sitemap: https://bigbag01.github.io/blog/baidusitemap.xml

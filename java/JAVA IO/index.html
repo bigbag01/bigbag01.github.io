@@ -1,0 +1,777 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="java io,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="控制台IO一、控制台输出 System.out.print()    输出不换行 System.out.println()   输出换行  二、控制台输入​    控制台输入由System.in完成,创建BufferedReader对象来读">
+<meta name="keywords" content="java io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA IO">
+<meta property="og:url" content="https://bigbag01.github.io/java/JAVA IO/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="控制台IO一、控制台输出 System.out.print()    输出不换行 System.out.println()   输出换行  二、控制台输入​    控制台输入由System.in完成,创建BufferedReader对象来读">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-23T08:45:11.383Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA IO">
+<meta name="twitter:description" content="控制台IO一、控制台输出 System.out.print()    输出不换行 System.out.println()   输出换行  二、控制台输入​    控制台输入由System.in完成,创建BufferedReader对象来读">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'bigbag01.github.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/java/JAVA IO/">
+
+
+
+
+
+  <title> JAVA IO | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="bigbag01.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="bigbag01.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="bigbag01.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="bigbag01.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="bigbag01.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/java/JAVA IO/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                JAVA IO
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T11:21:33+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="bigbag01.github.io/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="控制台IO"><a href="#控制台IO" class="headerlink" title="控制台IO"></a>控制台IO</h2><h3 id="一、控制台输出"><a href="#一、控制台输出" class="headerlink" title="一、控制台输出"></a>一、控制台输出</h3><ul>
+<li>System.out.print()    输出不换行</li>
+<li>System.out.println()   输出换行</li>
+</ul>
+<h3 id="二、控制台输入"><a href="#二、控制台输入" class="headerlink" title="二、控制台输入"></a>二、控制台输入</h3><p>​    控制台输入由System.in完成,创建BufferedReader对象来读</p>
+<a id="more"></a>
+<h4 id="读取方式一："><a href="#读取方式一：" class="headerlink" title="读取方式一："></a>读取方式一：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* br.read()函数每次读取一个字符，且返回int型的值，流结束返回-1.*/</span></span><br><span class="line">System.out.println(<span class="string">"输入字符, 按下 'q' 键退出。"</span>);</span><br><span class="line">BufferedReader br=<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  c=(<span class="keyword">char</span>) br.read();</span><br><span class="line">  System.out.println(c);</span><br><span class="line">&#125;<span class="keyword">while</span>(c!=<span class="string">'q'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="读取方式二："><a href="#读取方式二：" class="headerlink" title="读取方式二："></a>读取方式二：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"Enter 'end' to quit."</span>);</span><br><span class="line">BufferedReader br=<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line">String str;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  str = br.readLine();</span><br><span class="line">  System.out.println(str);</span><br><span class="line">&#125; <span class="keyword">while</span>(!str.equals(<span class="string">"end"</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="读取方式三："><a href="#读取方式三：" class="headerlink" title="读取方式三："></a>读取方式三：</h4><p>用<strong>Scanner</strong>类，java5之后推荐使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 输入aa bb */</span></span><br><span class="line">System.out.println(<span class="string">"next方式接收："</span>);</span><br><span class="line">Scanner scan=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">if</span>(scan.hasNext())&#123;</span><br><span class="line">  String str=scan.next();</span><br><span class="line">  System.out.println(str);</span><br><span class="line">  <span class="comment">// 输出为aa</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"nextLine方式接收："</span>);</span><br><span class="line">Scanner scan1=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="keyword">if</span>(scan1.hasNextLine())&#123;</span><br><span class="line">  String str1=scan1.nextLine();</span><br><span class="line">  System.out.println(str1);</span><br><span class="line">  <span class="comment">// 输出为aa bb</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>注：</em> </p>
+<ul>
+<li>next()方法以空白作为输入的分隔，不能得到带有空格的字符串</li>
+<li>nextLine()方法讲enter作为结束符，一行行获取输入，可以获得行内空白。</li>
+</ul>
+<h2 id="文件IO"><a href="#文件IO" class="headerlink" title="文件IO"></a>文件IO</h2><h3 id="FileInputStream-FileOutputStream"><a href="#FileInputStream-FileOutputStream" class="headerlink" title="FileInputStream FileOutputStream"></a>FileInputStream FileOutputStream</h3><p>文件输入输出流，用于从文件读写数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建方式1</span></span><br><span class="line">InputStream is=<span class="keyword">new</span> FileInputStream(<span class="string">"c:/java/hh.txt"</span>);</span><br><span class="line"><span class="comment">// 创建方式2</span></span><br><span class="line">File f=<span class="keyword">new</span> File(<span class="string">"c:/java/hh.txt"</span>);</span><br><span class="line">InputStream is=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line"><span class="comment">//OutputStream创建方式相同</span></span><br></pre></td></tr></table></figure>
+<p>指定编码方式读写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(<span class="string">"text.txt"</span>);</span><br><span class="line">FileOutputStream fop=<span class="keyword">new</span> FileOutputStream(f);</span><br><span class="line">OutputStreamWriter writer=<span class="keyword">new</span> OutputStreamWriter(fop,<span class="string">"UTF-8"</span>);</span><br><span class="line">writer.append(<span class="string">"输入"</span>);</span><br><span class="line">writer.close();</span><br><span class="line">fop.close();</span><br><span class="line">FileInputStream fip=<span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">InputStreamReader reader=<span class="keyword">new</span> InputStreamReader(fip,<span class="string">"UTF-8"</span>);</span><br><span class="line">StringBuffer sb=<span class="keyword">new</span> StringBuffer();</span><br><span class="line"><span class="keyword">while</span>(reader.ready())&#123;</span><br><span class="line">  sb.append((<span class="keyword">char</span>)reader.read());</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(sb.toString());</span><br><span class="line">reader.close();</span><br><span class="line">fip.close();</span><br></pre></td></tr></table></figure>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>mkdir() 创建一个文件夹，成功返回true，失败返回false。</li>
+<li>mkdirs() 创建一个文件夹和他所有父文件夹</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File d=<span class="keyword">new</span> File(<span class="string">"/tmp/bin"</span>);</span><br><span class="line">d.mkdirs();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="bigbag01.github.io/tags/java-io/" rel="tag"># java io</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="bigbag01.github.io/tools/好用的软件分享2/" rel="next" title="好用的软件分析——chrome插件篇">
+                <i class="fa fa-chevron-left"></i> 好用的软件分析——chrome插件篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="bigbag01.github.io/front-end/jquery插件编写/" rel="prev" title="编写一个 jQuery 插件">
+                编写一个 jQuery 插件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="bigbag01.github.io/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="bigbag01.github.io/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="bigbag01.github.io/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制台IO"><span class="nav-number">1.</span> <span class="nav-text">控制台IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、控制台输出"><span class="nav-number">1.1.</span> <span class="nav-text">一、控制台输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、控制台输入"><span class="nav-number">1.2.</span> <span class="nav-text">二、控制台输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取方式一："><span class="nav-number">1.2.1.</span> <span class="nav-text">读取方式一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取方式二："><span class="nav-number">1.2.2.</span> <span class="nav-text">读取方式二：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取方式三："><span class="nav-number">1.2.3.</span> <span class="nav-text">读取方式三：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件IO"><span class="nav-number">2.</span> <span class="nav-text">文件IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FileInputStream-FileOutputStream"><span class="nav-number">2.1.</span> <span class="nav-text">FileInputStream FileOutputStream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">2.2.</span> <span class="nav-text">目录</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

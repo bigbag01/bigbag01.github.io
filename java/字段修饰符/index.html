@@ -1,0 +1,884 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="字段修饰符,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="java修饰符java修饰符主要分为访问控制修饰符 和非访问修饰符。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如 1234567public class DemoClass&amp;#123;  private boolean flag;  static final double length=3.2;  protected static final int width=4;  public">
+<meta name="keywords" content="字段修饰符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java字段修饰符">
+<meta property="og:url" content="https://bigbag01.github.io/java/字段修饰符/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="java修饰符java修饰符主要分为访问控制修饰符 和非访问修饰符。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如 1234567public class DemoClass&amp;#123;  private boolean flag;  static final double length=3.2;  protected static final int width=4;  public">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-23T07:20:26.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java字段修饰符">
+<meta name="twitter:description" content="java修饰符java修饰符主要分为访问控制修饰符 和非访问修饰符。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如 1234567public class DemoClass&amp;#123;  private boolean flag;  static final double length=3.2;  protected static final int width=4;  public">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'bigbag01.github.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/java/字段修饰符/">
+
+
+
+
+
+  <title> java字段修饰符 | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="bigbag01.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="bigbag01.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="bigbag01.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="bigbag01.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="bigbag01.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/java/字段修饰符/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                java字段修饰符
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T13:01:33+08:00">
+                2017-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="bigbag01.github.io/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="java修饰符"><a href="#java修饰符" class="headerlink" title="java修饰符"></a>java修饰符</h3><p>java修饰符主要分为<strong>访问控制修饰符</strong> 和<strong>非访问修饰符</strong>。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoClass</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">boolean</span> flag;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> length=<span class="number">3.2</span>;</span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> width=<span class="number">4</span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]arguments)</span></span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><table>
+<thead>
+<tr>
+<th>访问权限</th>
+<th>类</th>
+<th>包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>default</strong> 即为默认的，如果不指明就为default。使用default声明的变量和方法接口中的变量都隐式声明为public static final，接口里的方法默认情况下访问权限为public</li>
+<li>被声明为 <strong>private</strong> 的方法、变量和构造方法只能被所属类访问，并且类和接口不能声明为private</li>
+<li>Java 程序的 main() 方法必须设置成<strong>public</strong> ，否则，Java 解释器将不能运行该类。</li>
+<li><strong>protected</strong> 访问修饰符不能修饰类和接口，方法和成员变量能够声明为 protected，但是接口的成员变量和成员方法不能声明为 protected。</li>
+<li><strong>访问控制和继承</strong> ：<ul>
+<li>父类中声明为public的方法在子类中也必须是public</li>
+<li>父类中声明为protected的方法在子类中必须是public或者protected，不可以是private</li>
+<li>父类中声明为private的方法<strong>不可</strong>被继承</li>
+</ul>
+</li>
+</ul>
+<h3 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h3><p>java中的非访问修饰符现在有 static, final, abstract, synchronized, volatile</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>作用简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>创建类方法和类变量</td>
+</tr>
+<tr>
+<td>final</td>
+<td>修饰类、方法、变量。final修饰的类不能被继承，修饰的方法不能被继承类重定义，修饰的变量为常量不可修改</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>创建抽象类和抽象方法</td>
+</tr>
+<tr>
+<td>synchronized,volatile</td>
+<td>用于线程的编程</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>不让变量被持久化？？？</td>
+</tr>
+</tbody>
+</table>
+<h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><ul>
+<li><strong>静态变量</strong>：独立于对象存在。无论一个类实例化多少个对象，静态变量只有一份拷贝。静态变量也叫类变量。局部变量不可用static修饰</li>
+<li><strong>静态方法</strong> ：独立于对象的方法，不可使用类的非静态对象。静态方法从参数列表获得数据进行处理。</li>
+<li>类的静态方法和静态变量可直接用<code>类名.变量</code>或<code>类名.方法</code>访问,比如 用<code>Math.max(a,b)</code>可以得到变量a,b中的较大值</li>
+</ul>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><ul>
+<li><strong>final变量</strong> <ul>
+<li>可以被显示初始化一次且仅一次。被声明为final的对象的引用不能变为其他对象，但是这个对象里的数据可以改变</li>
+<li>final和static常一起用来创建<strong>类常量</strong> </li>
+</ul>
+</li>
+<li><strong>final方法</strong> <ul>
+<li>可以被子类继承但不可修改。</li>
+<li>方法声明为final主要为了防止被修改</li>
+</ul>
+</li>
+<li><strong>final类</strong><ul>
+<li>不可被继承</li>
+</ul>
+</li>
+</ul>
+<h4 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h4><ul>
+<li><strong>抽象类</strong> <ul>
+<li>抽象类不能用来实例化对象</li>
+<li>一个类不可同时被abstract和final修饰。如果一个类包含抽象方法则一定要声明为抽象类，抽象类可以同时有抽象和非抽象方法。</li>
+</ul>
+</li>
+<li><strong>抽象方法</strong><ul>
+<li>抽象方法无实现，具体实现由子类提供。</li>
+<li>抽象方法不能被声明为final或static</li>
+<li>任何继承抽象类的子类必须实现父类所有抽象方法，除非子类也是抽象类</li>
+<li>抽象方法的声明以分号结尾</li>
+</ul>
+</li>
+<li><strong>抽象类</strong> 和 <strong>接口</strong> 关系 <a href="http://www.cnblogs.com/felixzh/p/5938544.html" rel="external nofollow noopener noreferrer" target="_blank">参考</a>   类比C++中的虚函数 纯虚函数 <a href="http://blog.csdn.net/trojanpizza/article/details/6556604" rel="external nofollow noopener noreferrer" target="_blank">参考</a> </li>
+</ul>
+<h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p>​    synchronized声明的方法或代码块同一时间只能被一个线程访问</p>
+<h4 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h4><ul>
+<li>只能修饰变量不能修饰方法和类，且不能修饰local variant</li>
+<li>被transient修饰的变量不能被序列化，而静态变量无论是否有transient修饰都不会被序列化。（了解下<a href="http://www.cnblogs.com/whyhappy/p/5744610.html" rel="external nofollow noopener noreferrer" target="_blank">序列化和持久化的区别与联系</a>）</li>
+<li>但如果序列化操作的是externalizable对象就不一定。<a href="http://www.cnblogs.com/liuling/archive/2013/05/05/transient.html" rel="external nofollow noopener noreferrer" target="_blank">参考</a></li>
+</ul>
+<h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>​    volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="bigbag01.github.io/tags/字段修饰符/" rel="tag"># 字段修饰符</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="bigbag01.github.io/java/Numbers/" rel="next" title="java中的几个基本数值型数据类型，待完善~~~">
+                <i class="fa fa-chevron-left"></i> java中的几个基本数值型数据类型，待完善~~~
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="bigbag01.github.io/java/java继承1/" rel="prev" title="java继承和多态(1)">
+                java继承和多态(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="bigbag01.github.io/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="bigbag01.github.io/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="bigbag01.github.io/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java修饰符"><span class="nav-number">1.</span> <span class="nav-text">java修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制修饰符"><span class="nav-number">2.</span> <span class="nav-text">访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非访问修饰符"><span class="nav-number">3.</span> <span class="nav-text">非访问修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#static"><span class="nav-number">3.1.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final"><span class="nav-number">3.2.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#abstract"><span class="nav-number">3.3.</span> <span class="nav-text">abstract</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized"><span class="nav-number">3.4.</span> <span class="nav-text">synchronized</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transient"><span class="nav-number">3.5.</span> <span class="nav-text">transient</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile"><span class="nav-number">3.6.</span> <span class="nav-text">volatile</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
