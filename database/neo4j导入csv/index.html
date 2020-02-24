@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="neo4j,图数据库,知识图谱,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -105,7 +105,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -166,7 +166,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -261,12 +261,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/database/neo4j导入csv/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/database/neo4j导入csv/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -320,7 +320,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/knowledge-graph/" itemprop="url" rel="index">
+                  <a href="/categories/knowledge-graph/" itemprop="url" rel="index">
                     <span itemprop="name">知识图谱</span>
                   </a>
                 </span>
@@ -331,7 +331,7 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/database/" itemprop="url" rel="index">
+                  <a href="/categories/database/" itemprop="url" rel="index">
                     <span itemprop="name">数据库</span>
                   </a>
                 </span>
@@ -383,13 +383,16 @@
 <li><code>/var/lib/plugin</code>  下载的插件放到这个路径下</li>
 </ul>
 <a id="more"></a>
+
 <h2 id="neo4j-导入csv-example"><a href="#neo4j-导入csv-example" class="headerlink" title="neo4j 导入csv example"></a>neo4j 导入csv example</h2><h4 id="导入-patient-csv中数据"><a href="#导入-patient-csv中数据" class="headerlink" title="导入 patient.csv中数据"></a>导入 patient.csv中数据</h4><p>数据样式如下（实际导入时不含表头）</p>
 <blockquote>
 <p>病人序号,性别,出生日期,<br>60857,女,1948/9/2,<br>15365,女,2010/10/28,<br>42125,男,1942/11/25,<br>35550,男,1942/11/25,<br>31930,男,1952/9/9,  </p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 每100条一个transaction去提交，避免内存不够</span><br><span class="line">USING PERIODIC COMMIT 100</span><br><span class="line">LOAD CSV FROM &quot;file:///patient.csv&quot; AS line</span><br><span class="line">merge (p:Patient&#123;id:line[0]&#125;)</span><br><span class="line">merge (s:Sex&#123;val:line[1]&#125;)</span><br><span class="line">merge (p)-[:hasSex]-&gt;(s)</span><br><span class="line">merge (bd:BirthDate&#123;val:line[2]&#125;)</span><br></pre></td></tr></table></figure>
+
 <h4 id="粒度的延迟调整"><a href="#粒度的延迟调整" class="headerlink" title="粒度的延迟调整"></a>粒度的延迟调整</h4><p>将日期节点拆出来</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">match (n:BirthDate)</span><br><span class="line">with split(n,’/‘) as day,n</span><br><span class="line">merge (y:Year&#123;val:n[0]&#125;)</span><br><span class="line">merge (m:Month&#123;val:n[1]&#125;)</span><br><span class="line">merge (d:Date&#123;val:n[2]&#125;)</span><br><span class="line">merge (n)-[r:hasYear]-&gt;(y)</span><br><span class="line">merge (n)-[r1:hasMonth]-&gt;(m)</span><br><span class="line">merge (n)-[r2:hasDate]-&gt;(d)</span><br></pre></td></tr></table></figure>
+
 <h4 id="有日期的格式不统一问题"><a href="#有日期的格式不统一问题" class="headerlink" title="有日期的格式不统一问题"></a>有日期的格式不统一问题</h4><p>目前就简单清洗一下原始数据：有三条数据日期格式是‘2012-12-11 14:23:45.2221211’这种类型，其他都是’2012/12/11 14:23’，就直接把这三条也改成和其他一样的格式方便处理了。</p>
 <h2 id="Neo4j使用过程遇到的错误"><a href="#Neo4j使用过程遇到的错误" class="headerlink" title="Neo4j使用过程遇到的错误"></a>Neo4j使用过程遇到的错误</h2><h4 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h4><p>执行日期拆分的时候遇到<code>Neo.TransientError.General.OutOfMemoryError</code><br>修改neo4j.conf文件中的 <code>dbms.memory.heap.max_size=1024m</code>,这里的内存就设置成自己机器支持的一个合适的大小好了。</p>
 
@@ -421,11 +424,11 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/neo4j/" rel="tag"># neo4j</a>
+            <a href="/tags/neo4j/" rel="tag"># neo4j</a>
           
-            <a href="bigbag01.github.io/tags/图数据库/" rel="tag"># 图数据库</a>
+            <a href="/tags/图数据库/" rel="tag"># 图数据库</a>
           
-            <a href="bigbag01.github.io/tags/知识图谱/" rel="tag"># 知识图谱</a>
+            <a href="/tags/知识图谱/" rel="tag"># 知识图谱</a>
           
         </div>
       
@@ -438,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/data-structure-and-algorithms/栈和队列/" rel="next" title="栈和队列">
-                <i class="fa fa-chevron-left"></i> 栈和队列
+              <a href="/data-structure-and-algorithms/数据结构-栈和队列/" rel="next" title="数据机构-栈和队列">
+                <i class="fa fa-chevron-left"></i> 数据机构-栈和队列
               </a>
             
           </div>
@@ -448,8 +451,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/network-communication/网络通信-TCPIP模型与OSI模型/" rel="prev" title="网络通信-TCP/IP模型与OSI模型">
-                网络通信-TCP/IP模型与OSI模型 <i class="fa fa-chevron-right"></i>
+              <a href="/data-structure-and-algorithms/数据结构-链表/" rel="prev" title="数据结构-链表">
+                数据结构-链表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +512,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -519,8 +522,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -530,7 +533,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -541,8 +544,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -688,53 +691,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

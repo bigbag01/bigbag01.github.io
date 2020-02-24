@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="数组,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -105,7 +105,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -166,7 +166,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -261,12 +261,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/java/java Array和Arrays/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/java Array和Arrays/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -320,7 +320,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/java/" itemprop="url" rel="index">
+                  <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
                   </a>
                 </span>
@@ -363,6 +363,7 @@
         <h2 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h2><p>​    <strong>Arrays</strong> 继承自java.lang.Object,它属于java.util工具包，它是java中的工具类。它包含了很多直接操作数组的方法，比如数组的排序、搜索等。其中还包括一个可以将数组作为列表来查看的<strong>静态工厂</strong> 。这个类中方法全都是static的，可以直接用<code>类名.方法</code>来调用。</p>
 <p>​    <strong>Array</strong> 数组类，它是java中最基本的一个存储结构。它提供了动态创建和访问java数组的方法。一个Array中的元素类型必须相同。Array效率高，但容量固定无法动态改变。array.length只能得到array的容量，无法判断其中实际元素个数</p>
 <a id="more"></a>
+
 <h2 id="Arrays中的常用方法"><a href="#Arrays中的常用方法" class="headerlink" title="Arrays中的常用方法"></a>Arrays中的常用方法</h2><h3 id="static-void-sort-T-a-int-fromIndex-int-toIndex"><a href="#static-void-sort-T-a-int-fromIndex-int-toIndex" class="headerlink" title="static void sort(T[] a[, int fromIndex, int toIndex])"></a>static void sort(T[] a[, int fromIndex, int toIndex])</h3><ul>
 <li><p>数值属性默认是由小到大排序</p>
 </li>
@@ -423,6 +424,7 @@
 <h3 id="Array和ArrayList互相转换"><a href="#Array和ArrayList互相转换" class="headerlink" title="Array和ArrayList互相转换"></a>Array和ArrayList互相转换</h3><p>查找资料的时候发现网上给的关于Array和ArrayList的转换都是像下面的代码中的写法，然而这里的Array是转换成了List， 对应的实现类<strong>并不是ArrayList!!!!</strong> </p>
 <p>我实验了一下发现它确实是不支持add和remove方法的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;</span><br><span class="line">		ArrayList&lt;String&gt; arrlist=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		arrlist.add(<span class="string">"ele1"</span>);</span><br><span class="line">		arrlist.add(<span class="string">"ele2"</span>);</span><br><span class="line">		arrlist.add(<span class="string">"ele3"</span>);</span><br><span class="line">		<span class="keyword">int</span> size=arrlist.size();</span><br><span class="line">		String [] array=arrlist.toArray(<span class="keyword">new</span> String[size]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arrlist.size();i++)&#123;</span><br><span class="line">			System.out.println(array[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"--------"</span>);</span><br><span class="line">		List&lt;String&gt; list=Arrays.asList(array);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arrlist.size();i++)&#123;</span><br><span class="line">			System.out.println(list.get(i));</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"--------"</span>);</span><br><span class="line">		list.add(<span class="string">"ddd"</span>);list.remove(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">			System.out.println(list.get(i));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>运行该程序段的结果如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ele1</span><br><span class="line">ele2</span><br><span class="line">ele3</span><br><span class="line">--------</span><br><span class="line">ele1</span><br><span class="line">ele2</span><br><span class="line">ele3</span><br><span class="line">--------</span><br><span class="line">Exception in thread &quot;main&quot; java.lang.UnsupportedOperationException</span><br><span class="line">	at java.util.AbstractList.add(AbstractList.java:148)</span><br><span class="line">	at java.util.AbstractList.add(AbstractList.java:108)</span><br><span class="line">	at learnJavaDemo.Test.main(Test.java:29)</span><br></pre></td></tr></table></figure>
       
@@ -453,7 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/数组/" rel="tag"># 数组</a>
+            <a href="/tags/数组/" rel="tag"># 数组</a>
           
         </div>
       
@@ -466,7 +468,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/java/JAVA Object/" rel="next" title="JAVA Object">
+              <a href="/java/JAVA Object/" rel="next" title="JAVA Object">
                 <i class="fa fa-chevron-left"></i> JAVA Object
               </a>
             
@@ -476,7 +478,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/front-end/javascript数组/" rel="prev" title="JavaScript Array 对象">
+              <a href="/front-end/javascript数组/" rel="prev" title="JavaScript Array 对象">
                 JavaScript Array 对象 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -537,7 +539,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -547,8 +549,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -558,7 +560,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -569,8 +571,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -716,53 +718,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="模块加载,CommonJS,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -105,7 +105,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -166,7 +166,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -261,12 +261,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/javascript/模块化(二)/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/模块化(二)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -320,7 +320,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/javascript/" itemprop="url" rel="index">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
                     <span itemprop="name">javascript</span>
                   </a>
                 </span>
@@ -367,10 +367,13 @@
         <p>​    主流浏览器逐渐支持ES6的特性，ES6的模块化写法也从服务器端走向浏览器端。具体的各浏览器兼容性和支持性可以在<a href="https://caniuse.com/#search=import" rel="external nofollow noopener noreferrer" target="_blank">can i user</a>上查看。</p>
 <h3 id="浏览器加载"><a href="#浏览器加载" class="headerlink" title="浏览器加载"></a>浏览器加载</h3><p>​    传统的html中脚本加载是通过<code>&lt;script&gt;</code>标签引入。在不加defer或者async属性的时候，引入的多个脚本是按顺序加载执行的，所有脚本中最外层作用域中的变量在引入后都成为全局变量，不同的脚本中如果存在相同变量名，后面的就会覆盖前面的。传统的模块化方法是利用闭包和命名空间来解决的，有了ES6的模块化方案之后，可以更简单的利用import，export来解决这个问题。</p>
 <a id="more"></a>
+
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span> <span class="attr">src</span>=<span class="string">"user.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>​    这个代码通过加入属性<code>type=&quot;module&quot;</code>就在网页中插入了模块user.js，同时，作为模块插入的script，隐式的带有defer属性，会异步加载在页面渲染完之后再执行。</p>
 <p>​    ES6模块也可以内嵌在网页中，比如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">import</span> &#123;firstName&#125; <span class="keyword">from</span> <span class="string">'./user.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(firstName);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><ul>
 <li>模块脚本内部代码在模块作用域中运行，顶层的this返回undefined而不指向window</li>
 <li>模块脚本自动采用严格模式，即使没有声明“use strict”</li>
@@ -386,8 +389,7 @@
 <th>CommonJS</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>输出值</td>
 <td>引用</td>
 <td>拷贝</td>
@@ -402,19 +404,22 @@
 <td>undefined</td>
 <td>当前模块</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>​    以一个例子说明ES6和CommonJS写法上的差异</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="comment">//lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter=<span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;counter,incCounter&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;counter,incCounter&#125; <span class="keyword">from</span> <span class="string">'./lib.js'</span></span><br><span class="line"><span class="built_in">console</span>.log(counter);	<span class="comment">//3</span></span><br><span class="line">incCounter();</span><br><span class="line"><span class="built_in">console</span>.log(counter);	<span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
 <p>​    ES6模块输出的是模块中的变量的引用，因此在外部访问的值就是模块中的值，会随着变化。</p>
 <p>​    同样的例子按照CommonJS的写法如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS</span></span><br><span class="line"><span class="comment">//lib.js</span></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    counter++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">    counter:counter,</span><br><span class="line">    incCounter:incCounter,</span><br><span class="line">    getCounter:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> counter;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">var</span> lib = <span class="built_in">require</span>(<span class="string">'./lib.js'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(lib.counter); <span class="comment">//3</span></span><br><span class="line">lib.incCounter();</span><br><span class="line"><span class="built_in">console</span>.log(lib.counter): <span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(lib.getCounter())<span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
 <p>​    因为CommonJS在导入的时候lib得到的值都是复制的，在后面修改之后，模块中的变量发生了变化，而lib.counter并没有改变，所以在incCounter之后，lib.counter输出依旧为3，而用lib.getCounter()输出的模块中的变量值为4.</p>
 <h3 id="node环境加载"><a href="#node环境加载" class="headerlink" title="node环境加载"></a>node环境加载</h3><p>​    node内部是采用CommonJS模块格式的，和ES6处理方式不同，因此二者不兼容，当并存的时候，会采用各自的加载方案。</p>
 <p>​    在静态分析的时候，一个模块脚本中如果存在import或者export，就会被看作ES6模块，否则认为它是CommonJS模块。如果脚本中没有借口导出，但是希望被当做ES6模块，可以写上<code>export {};</code></p>
 <h4 id="加载路径查找"><a href="#加载路径查找" class="headerlink" title="加载路径查找"></a>加载路径查找</h4><p>​    在未指定绝对路径的加载中，无论是es6还是commonjs模块，node会按照以下顺序查找。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./foo'</span></span><br><span class="line"><span class="comment">//	./foo.js</span></span><br><span class="line"><span class="comment">// 	./foo/package.json</span></span><br><span class="line"><span class="comment">//	./foo/index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'foo'</span></span><br><span class="line"><span class="comment">//	./node_modules/baz.js</span></span><br><span class="line"><span class="comment">//	./node_modules/baz/package.json</span></span><br><span class="line"><span class="comment">//	./node_modules/baz/index.js</span></span><br><span class="line"><span class="comment">//	../node_modules/baz.js</span></span><br><span class="line"><span class="comment">//	../node_modules/baz/package.json</span></span><br><span class="line"><span class="comment">//	../node_modules/baz/index.js</span></span><br><span class="line"><span class="comment">//   逐层向上查找……</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="import加载CommonJS模块"><a href="#import加载CommonJS模块" class="headerlink" title="import加载CommonJS模块"></a>import加载CommonJS模块</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">    foo: <span class="string">'hello'</span>,</span><br><span class="line">    bar: <span class="string">'world'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//b.js</span></span><br><span class="line"><span class="keyword">import</span> baz <span class="keyword">from</span> <span class="string">'./a'</span>;	<span class="comment">//写法1</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="keyword">default</span> <span class="keyword">as</span> baz&#125; <span class="keyword">from</span> <span class="string">'./a'</span>;	<span class="comment">//写法2</span></span><br><span class="line"><span class="comment">// 写法1，2得到的baz为 &#123;foo:'hello',bar:'world'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> baz <span class="keyword">from</span> <span class="string">'./a'</span>;</span><br><span class="line"><span class="comment">// 写法3得到的baz为 </span></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//    get default() &#123;return module.exports&#125;;</span></span><br><span class="line"><span class="comment">//    get foo() &#123;return this.default.foo&#125;.bind(baz);</span></span><br><span class="line"><span class="comment">//    get bar() &#123;return this.default.bar&#125;.bind(baz);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>上面这部分代码来自于《ES6标准入门（第3版）》，我在macOS上试验的时候，import导入commonjs模块都会出错，require则可以。参考这个<a href="https://github.com/nodejs/node/issues/24778" rel="external nofollow noopener noreferrer" target="_blank">issue</a>加入package.json或者修改后缀为mjs对我都不产生作用。而用webpack编译过后，三种写法输出得到的baz都为{foo:’hello’,bar:’world’}。</p>
 <p>查找关于node对于es6的支持后发现<a href="https://nodejs.org/api/esm.html" rel="external nofollow noopener noreferrer" target="_blank">官网文档</a>上有写，暂时还处于试验阶段</p>
 <p>所以我的结论就是在node环境暂时就不要混着用了，在稳定版本没出之前，还是老老实实用commonjs规范的模块写法吧。在其他前端项目中，如果需要用模块化，webpack一类的工具是可以比较聪明的解决这两种之间的冲突的，就放心用吧。</p>
@@ -447,9 +452,9 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/模块加载/" rel="tag"># 模块加载</a>
+            <a href="/tags/模块加载/" rel="tag"># 模块加载</a>
           
-            <a href="bigbag01.github.io/tags/CommonJS/" rel="tag"># CommonJS</a>
+            <a href="/tags/CommonJS/" rel="tag"># CommonJS</a>
           
         </div>
       
@@ -462,7 +467,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/javascript/模块化(一)/" rel="next" title="ES6模块化（一）">
+              <a href="/javascript/模块化(一)/" rel="next" title="ES6模块化（一）">
                 <i class="fa fa-chevron-left"></i> ES6模块化（一）
               </a>
             
@@ -472,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/data-structure-and-algorithms/栈和队列/" rel="prev" title="栈和队列">
-                栈和队列 <i class="fa fa-chevron-right"></i>
+              <a href="/data-structure-and-algorithms/数据结构-栈和队列/" rel="prev" title="数据机构-栈和队列">
+                数据机构-栈和队列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,7 +538,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -543,8 +548,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,7 +559,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -565,8 +570,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -712,53 +717,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="网络通信,TCP,UDP,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -95,19 +95,19 @@
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="TCP和UDP的区别，三次握手，四次挥手">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://bigbag01.github.io/images/三次握手四次挥手.jpg">
-<meta property="og:updated_time" content="2020-02-23T08:44:37.992Z">
+<meta property="og:image" content="https://bigbag01.github.io/images/TCP.jpg">
+<meta property="og:updated_time" content="2020-02-24T07:57:45.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络通信-TCP与UDP">
 <meta name="twitter:description" content="TCP和UDP的区别，三次握手，四次挥手">
-<meta name="twitter:image" content="https://bigbag01.github.io/images/三次握手四次挥手.jpg">
+<meta name="twitter:image" content="https://bigbag01.github.io/images/TCP.jpg">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -168,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -206,7 +206,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -216,7 +216,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -263,12 +263,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/network-communication/网络通信-TCP与UDP/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/network-communication/网络通信-TCP与UDP/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -322,7 +322,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/network-communication/" itemprop="url" rel="index">
+                  <a href="/categories/network-communication/" itemprop="url" rel="index">
                     <span itemprop="name">网络通信</span>
                   </a>
                 </span>
@@ -376,6 +376,7 @@
 <li>TCP提供全双工通信，允许双方应用程序在任何时候发送数据。</li>
 </ul>
 <a id="more"></a>
+
 <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p><strong>UDP</strong>是用户数据报协议，它与TCP协议一样用于处理数据包，面向无连接的协议。</p>
 <ul>
 <li>UDP面向无连接，不需要像TCP三次握手建立连接，</li>
@@ -384,7 +385,7 @@
 <li>UDP不可靠，不备份数据，也不在意数据是否成功完整到达，发送数据速度恒定，网络不好可能丢包</li>
 <li>头部开销小，没有拥塞机制，实时性要求高场景下，传输效率高。</li>
 </ul>
-<h2 id="TCP的三次握手和四次挥手"><a href="#TCP的三次握手和四次挥手" class="headerlink" title="TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2><p><img src="/images/三次握手四次挥手.jpg" alt=""></p>
+<h2 id="TCP的三次握手和四次挥手"><a href="#TCP的三次握手和四次挥手" class="headerlink" title="TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2><p><img src="/images/TCP.jpg" alt=""></p>
 <h3 id="三次握手建立连接"><a href="#三次握手建立连接" class="headerlink" title="三次握手建立连接"></a>三次握手建立连接</h3><ol>
 <li><strong>一次握手：</strong> 客户端先向服务器发送SYN数据包(SYN seq=x)到服务器，等待确认，发送后的状态是<code>SYN_SENT</code></li>
 <li><strong>二次握手：</strong>服务器接收到SYN包，进行确认（ACK=x+1），并和自己的SYN包(SYN seq=y)一起发回去，发送后的状态是<code>SYN_RCVD</code></li>
@@ -429,11 +430,11 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/网络通信/" rel="tag"># 网络通信</a>
+            <a href="/tags/网络通信/" rel="tag"># 网络通信</a>
           
-            <a href="bigbag01.github.io/tags/TCP/" rel="tag"># TCP</a>
+            <a href="/tags/TCP/" rel="tag"># TCP</a>
           
-            <a href="bigbag01.github.io/tags/UDP/" rel="tag"># UDP</a>
+            <a href="/tags/UDP/" rel="tag"># UDP</a>
           
         </div>
       
@@ -446,7 +447,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/network-communication/网络通信-TCPIP模型与OSI模型/" rel="next" title="网络通信-TCP/IP模型与OSI模型">
+              <a href="/network-communication/网络通信-TCPIP模型与OSI模型/" rel="next" title="网络通信-TCP/IP模型与OSI模型">
                 <i class="fa fa-chevron-left"></i> 网络通信-TCP/IP模型与OSI模型
               </a>
             
@@ -456,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/network-communication/网络通信-URL和URI/" rel="prev" title="网络通信-URL,URI">
-                网络通信-URL,URI <i class="fa fa-chevron-right"></i>
+              <a href="/network-communication/网络通信-相关题目/" rel="prev" title="网络通信-相关题目">
+                网络通信-相关题目 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +518,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -527,8 +528,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -538,7 +539,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -549,8 +550,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -696,53 +697,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

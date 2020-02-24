@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="Object,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -105,7 +105,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -166,7 +166,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -261,12 +261,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/java/JAVA Object/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/JAVA Object/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -320,7 +320,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/java/" itemprop="url" rel="index">
+                  <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
                   </a>
                 </span>
@@ -363,6 +363,7 @@
         <h2 id="JAVA-Object"><a href="#JAVA-Object" class="headerlink" title="JAVA Object"></a>JAVA Object</h2><p>​    java中的Object 类来自<strong>java.lang.Object</strong> , java.lang包在使用的时候无需显示导入，编译时由编译器自动导入。</p>
 <p>​    Object是java中所有类的祖先，老祖宗……所有的未显式声明extends的类都默认继承自Object</p>
 <a id="more"></a>
+
 <h2 id="Object-类中的方法"><a href="#Object-类中的方法" class="headerlink" title="Object 类中的方法"></a>Object 类中的方法</h2><p>​    因为所有的类都继承自Object, 所以以下方法是任何类都具有的，并且可以被重写。</p>
 <h3 id="public-Object"><a href="#public-Object" class="headerlink" title="public Object()"></a>public Object()</h3><ul>
 <li>constructor</li>
@@ -392,6 +393,7 @@
 <li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object类中的toString()方法定义</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> getClass().getName()+<span class="string">"@"</span>+Integer.toHexString(hashCode()); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一些集合中的toString</span></span><br><span class="line">Set&lt;Integer&gt; set=<span class="keyword">new</span> HashSet();</span><br><span class="line">List&lt;Integer&gt; list=<span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="keyword">int</span>[] array;</span><br><span class="line">Map&lt;String,Integer&gt; map=<span class="keyword">new</span> HashMap();</span><br><span class="line"><span class="comment">// ......</span></span><br><span class="line"><span class="comment">// set,list,array contains 1,2,3; map contains&#123;a:1,b:2,c:3&#125;</span></span><br><span class="line">System.out.println(<span class="string">"set: "</span>+set.toString());</span><br><span class="line">System.out.println(<span class="string">"list: "</span>+list.toString());</span><br><span class="line">System.out.println(<span class="string">"array: "</span>+array.toString());</span><br><span class="line">System.out.println(<span class="string">"Arrays: "</span>+Arrays.toString(array));</span><br><span class="line">System.out.println(<span class="string">"map: "</span>+map.toString());</span><br><span class="line"><span class="comment">/* results:</span></span><br><span class="line"><span class="comment"> * set: [1, 2, 3]</span></span><br><span class="line"><span class="comment"> * list: [1, 2, 3]</span></span><br><span class="line"><span class="comment"> * array: [I@17b68215</span></span><br><span class="line"><span class="comment"> * Arrays: [1, 2, 3]</span></span><br><span class="line"><span class="comment"> * map: &#123;b=2, c=3, a=1&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="protected-void-finalize"><a href="#protected-void-finalize" class="headerlink" title="protected void finalize()"></a>protected void finalize()</h3><p>​    <strong>description</strong>: called by the garbage collector on an object when garbage collection determines that there are no more references to the object</p>
@@ -459,7 +461,7 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/Object/" rel="tag"># Object</a>
+            <a href="/tags/Object/" rel="tag"># Object</a>
           
         </div>
       
@@ -472,7 +474,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/interview/面试反思/" rel="next" title="morgan stanley 面试反思">
+              <a href="/interview/面试反思/" rel="next" title="morgan stanley 面试反思">
                 <i class="fa fa-chevron-left"></i> morgan stanley 面试反思
               </a>
             
@@ -482,7 +484,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/java/java Array和Arrays/" rel="prev" title="java Array和Arrays">
+              <a href="/java/java Array和Arrays/" rel="prev" title="java Array和Arrays">
                 java Array和Arrays <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -543,7 +545,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -553,8 +555,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -564,7 +566,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -575,8 +577,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -622,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-Object"><span class="nav-number">1.</span> <span class="nav-text">JAVA Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-类中的方法"><span class="nav-number">2.</span> <span class="nav-text">Object 类中的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public-Object"><span class="nav-number">2.1.</span> <span class="nav-text">public Object()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected-Object-clone"><span class="nav-number">2.2.</span> <span class="nav-text">protected Object clone()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boolean-equals-Object-obj"><span class="nav-number">2.3.</span> <span class="nav-text">boolean equals(Object obj)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int-hashCode"><span class="nav-number">2.4.</span> <span class="nav-text">int hashCode()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-toString"><span class="nav-number">2.5.</span> <span class="nav-text">String toString()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected-void-finalize"><span class="nav-number">2.6.</span> <span class="nav-text">protected void finalize()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-lt-gt-getClass"><span class="nav-number">2.7.</span> <span class="nav-text">Class<?> getClass()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方法"><span class="nav-number">2.8.</span> <span class="nav-text">其他方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-Object"><span class="nav-number">1.</span> <span class="nav-text">JAVA Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-类中的方法"><span class="nav-number">2.</span> <span class="nav-text">Object 类中的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public-Object"><span class="nav-number">2.1.</span> <span class="nav-text">public Object()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected-Object-clone"><span class="nav-number">2.2.</span> <span class="nav-text">protected Object clone()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boolean-equals-Object-obj"><span class="nav-number">2.3.</span> <span class="nav-text">boolean equals(Object obj)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int-hashCode"><span class="nav-number">2.4.</span> <span class="nav-text">int hashCode()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-toString"><span class="nav-number">2.5.</span> <span class="nav-text">String toString()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected-void-finalize"><span class="nav-number">2.6.</span> <span class="nav-text">protected void finalize()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-lt-gt-getClass"><span class="nav-number">2.7.</span> <span class="nav-text">Class&lt;?&gt; getClass()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方法"><span class="nav-number">2.8.</span> <span class="nav-text">其他方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -722,53 +724,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

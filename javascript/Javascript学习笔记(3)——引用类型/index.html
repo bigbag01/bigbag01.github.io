@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="引用类型,对象,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -105,7 +105,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -166,7 +166,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -224,7 +224,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -261,12 +261,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/javascript/Javascript学习笔记(3)——引用类型/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/Javascript学习笔记(3)——引用类型/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -320,7 +320,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/javascript/" itemprop="url" rel="index">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
                     <span itemprop="name">javascript</span>
                   </a>
                 </span>
@@ -374,8 +374,11 @@
 </li>
 </ul>
 <a id="more"></a>
+
 <h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><h4 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h4><h5 id="创建Object实例的方式"><a href="#创建Object实例的方式" class="headerlink" title="创建Object实例的方式"></a>创建Object实例的方式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. new操作符加构造函数</span></span><br><span class="line"><span class="keyword">var</span> obj=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">// 2. 对象字面量表示法</span></span><br><span class="line"><span class="keyword">var</span> person=&#123;</span><br><span class="line">  name:<span class="string">'John'</span>,</span><br><span class="line">  age: <span class="number">29</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.点表示法</span></span><br><span class="line"><span class="built_in">console</span>.log(person.name)</span><br><span class="line"><span class="comment">// 2.方括号表示法</span></span><br><span class="line"><span class="built_in">console</span>.log(person[<span class="string">'name'</span>])</span><br></pre></td></tr></table></figure>
+
 <p>方括号语法的优势在于可以通过变量访问属性。但除此之外，建议使用点表示法访问。</p>
 <h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h5 id="创建Array实例的方式"><a href="#创建Array实例的方式" class="headerlink" title="创建Array实例的方式"></a>创建Array实例的方式</h5><p>类似于Object，有两种。字面量表示法为 <code>var array=[]</code></p>
 <h5 id="length-属性"><a href="#length-属性" class="headerlink" title="length 属性"></a>length 属性</h5><p>非只读。</p>
@@ -386,6 +389,7 @@
 <h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><p>Date构造函数可以无参，时间为当前时间；</p>
 <p>可以有参数，日期和时间为传入的字符串表示的时间，如果传入的字符串无法表示日期，则返回 Invalid Date</p>
 <h4 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h4><h5 id="创建正则表达式的方式"><a href="#创建正则表达式的方式" class="headerlink" title="创建正则表达式的方式"></a>创建正则表达式的方式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.字面量模式</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/\.at/i</span></span><br><span class="line"><span class="comment">//2.构造函数</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\.at'</span>,<span class="string">'i'</span>)</span><br></pre></td></tr></table></figure>
+
 <p>构造函数模式中使用等价字符串，但需要对元字符进行双重转义。</p>
 <h5 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h5><ul>
 <li>global, ignoreCase, multiline  布尔值，分别表示是否设置了 g, i, m 标志</li>
@@ -397,8 +401,10 @@
 <li>test()</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">"cat, bat, sat, fat"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern=<span class="regexp">/.at/g</span></span><br><span class="line"><span class="keyword">var</span> matches=pattern.exec(text);</span><br><span class="line"><span class="keyword">var</span> flag=pattern.test(text);</span><br><span class="line"><span class="built_in">console</span>.log(matches)</span><br><span class="line"><span class="comment">// ["cat", index: 0, input: "cat, bat, sat, fat"]</span></span><br><span class="line"><span class="built_in">console</span>.log(flag)</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><p>函数名实际上是一个指向函数对象的指针，不会与某个函数绑定。</p>
 <h5 id="创建Function实例的方式"><a href="#创建Function实例的方式" class="headerlink" title="创建Function实例的方式"></a>创建Function实例的方式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.函数声明语法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;<span class="keyword">return</span> num1+num2;&#125;</span><br><span class="line"><span class="comment">// 2.函数表达式定义</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;<span class="keyword">return</span> num1+num2;&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>解析器在向执行环境中加载数据时，会先读取函数声明，并使得它在执行任何代码之前可用，而函数表达式则按上下文顺序加载。所以，通过“<strong>函数声明提升</strong>”，即使声明函数的代码在调用它的代码之后，js引擎也可以把它提升到顶部，如果写成函数表达式，则不可以。</p>
 <h5 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h5><h6 id="arguments和this"><a href="#arguments和this" class="headerlink" title="arguments和this"></a>arguments和this</h6><p>函数内部有两个属性</p>
 <ul>
@@ -422,6 +428,7 @@
 </li>
 <li><p>使用new调用基本包装类型的构造函数和直接调用同名的转型函数是不一样的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value=<span class="string">'25'</span>;</span><br><span class="line"><span class="keyword">var</span> number=<span class="built_in">Number</span>(value);</span><br><span class="line"><span class="keyword">typeof</span> number</span><br><span class="line"><span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">var</span> obj=<span class="keyword">new</span> <span class="built_in">Number</span>(value);</span><br><span class="line"><span class="keyword">typeof</span> obj</span><br><span class="line"><span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h3><h4 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h4><h5 id="global对象方法："><a href="#global对象方法：" class="headerlink" title="global对象方法："></a>global对象方法：</h5><ul>
@@ -470,9 +477,9 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/引用类型/" rel="tag"># 引用类型</a>
+            <a href="/tags/引用类型/" rel="tag"># 引用类型</a>
           
-            <a href="bigbag01.github.io/tags/对象/" rel="tag"># 对象</a>
+            <a href="/tags/对象/" rel="tag"># 对象</a>
           
         </div>
       
@@ -485,7 +492,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/javascript/javascript学习笔记2——变量,作用域,内存/" rel="next" title="Javascript学习笔记(2)——变量，作用域，内存">
+              <a href="/javascript/javascript学习笔记2——变量,作用域,内存/" rel="next" title="Javascript学习笔记(2)——变量，作用域，内存">
                 <i class="fa fa-chevron-left"></i> Javascript学习笔记(2)——变量，作用域，内存
               </a>
             
@@ -495,7 +502,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/javascript/js浮点数位数保留和计算/" rel="prev" title="javascript浮点数位数保留与计算">
+              <a href="/javascript/js浮点数位数保留和计算/" rel="prev" title="javascript浮点数位数保留与计算">
                 javascript浮点数位数保留与计算 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -556,7 +563,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -566,8 +573,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -577,7 +584,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -588,8 +595,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -735,53 +742,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 

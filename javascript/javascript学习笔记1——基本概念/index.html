@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
 
   
   
-  <link href="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="bigbag01.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="bigbag01.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="strict,typeof,数据类型,">
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="bigbag01.github.io/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -107,7 +107,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: 'bigbag01.github.io/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -168,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="bigbag01.github.io/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">学姐的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="bigbag01.github.io/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -206,7 +206,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="bigbag01.github.io/categories" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -216,7 +216,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="bigbag01.github.io/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="bigbag01.github.io/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -263,12 +263,12 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.iobigbag01.github.io/javascript/javascript学习笔记1——基本概念/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/javascript学习笔记1——基本概念/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="bigbag01.github.io/avatar.jpg">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -322,7 +322,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="bigbag01.github.io/categories/javascript/" itemprop="url" rel="index">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
                     <span itemprop="name">javascript</span>
                   </a>
                 </span>
@@ -374,6 +374,7 @@
 <li>使用<strong>async</strong>属性可以表示当前脚本不必等待其他脚本，也不阻塞文档加载。使用了<strong>async</strong>属性的脚本执行顺序无法保证</li>
 </ul>
 <a id="more"></a>
+
 <h3 id="strict模式"><a href="#strict模式" class="headerlink" title="strict模式"></a>strict模式</h3><ul>
 <li><p>在strict模式下运行的js代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误</p>
 </li>
@@ -430,16 +431,14 @@
 <th>绿色</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>===</td>
 <td>==</td>
 <td>&lt;=和&gt;=同时满足，==不满足</td>
 <td>&gt;=</td>
 <td>&lt;=</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h4 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h4><p>​    switch中的比较用的是全等操作符，不会发生类型转换</p>
 <h4 id="for-in和-for-of"><a href="#for-in和-for-of" class="headerlink" title="for-in和 for-of"></a>for-in和 for-of</h4><ul>
 <li><p>for-in</p>
@@ -449,11 +448,13 @@
 <li><p>for-of</p>
 <p>可用来循环数组的value，顺序是保证的。对于对象的值，可以配合着Object.keys()来使用，for-of是ES6的标准。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下两段都遍历输出 2\n3</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> a <span class="keyword">of</span> array) </span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">of</span> <span class="built_in">Object</span>.keys(object))</span><br><span class="line">  <span class="built_in">console</span>.log(object[k]);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
 <li><p>在js函数体内部，可以通过arguments对象来访问参数数组。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这两种写法实际是等价的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line"> 	alert(<span class="string">'hello'</span>+arg1+arg2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'hello'</span>+<span class="built_in">arguments</span>[<span class="number">0</span>]+<span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>函数定义的时候可以不写参数，直接在函数体内部通过arguments来对参数做处理。</p>
 </li>
 <li><p>ECMAScript中所有参数传递的都是值，不可能通过引用传递参数</p>
@@ -490,11 +491,11 @@
       
         <div class="post-tags">
           
-            <a href="bigbag01.github.io/tags/strict/" rel="tag"># strict</a>
+            <a href="/tags/strict/" rel="tag"># strict</a>
           
-            <a href="bigbag01.github.io/tags/typeof/" rel="tag"># typeof</a>
+            <a href="/tags/typeof/" rel="tag"># typeof</a>
           
-            <a href="bigbag01.github.io/tags/数据类型/" rel="tag"># 数据类型</a>
+            <a href="/tags/数据类型/" rel="tag"># 数据类型</a>
           
         </div>
       
@@ -507,7 +508,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="bigbag01.github.io/front-end/html中的特殊字符/" rel="next" title="HTML中常用的特殊字符">
+              <a href="/front-end/html中的特殊字符/" rel="next" title="HTML中常用的特殊字符">
                 <i class="fa fa-chevron-left"></i> HTML中常用的特殊字符
               </a>
             
@@ -517,7 +518,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="bigbag01.github.io/javascript/javascript学习笔记2——变量,作用域,内存/" rel="prev" title="Javascript学习笔记(2)——变量，作用域，内存">
+              <a href="/javascript/javascript学习笔记2——变量,作用域,内存/" rel="prev" title="Javascript学习笔记(2)——变量，作用域，内存">
                 Javascript学习笔记(2)——变量，作用域，内存 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -578,7 +579,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="bigbag01.github.io/avatar.jpg" alt="Beige Zhang">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
           <p class="site-author-name" itemprop="name">Beige Zhang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -588,8 +589,8 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="bigbag01.github.io/archives">
-                <span class="site-state-item-count">39</span>
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -599,7 +600,7 @@
             
             
             <div class="site-state-item site-state-categories">
-              <a href="bigbag01.github.io/categories/index.html">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -610,8 +611,8 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="bigbag01.github.io/tags/index.html">
-                <span class="site-state-item-count">54</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -757,53 +758,53 @@
 
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="bigbag01.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="bigbag01.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="bigbag01.github.io/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="bigbag01.github.io/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="bigbag01.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
