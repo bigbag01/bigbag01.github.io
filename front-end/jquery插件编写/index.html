@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
 
 
 
@@ -352,6 +352,7 @@
                   想在博客主页加一个打字动态效果，于是在网上查到了一段代码，决定修改一下把它包装成一个jquery插件，方便以后使用。
               </div>
           
+          
 
         </div>
       </header>
@@ -435,9 +436,9 @@ $('#example').Type();
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
-            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+            <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
           
         </div>
       
@@ -532,7 +533,7 @@ $('#example').Type();
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,7 +555,7 @@ $('#example').Type();
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -793,6 +794,21 @@ $('#example').Type();
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

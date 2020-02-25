@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
 
 
 
@@ -352,6 +352,7 @@
                   栈和队列的一些概念、考点和题目。
               </div>
           
+          
 
         </div>
       </header>
@@ -376,14 +377,14 @@
 
 <h3 id="考察题目"><a href="#考察题目" class="headerlink" title="考察题目"></a>考察题目</h3><ul>
 <li><input checked disabled type="checkbox"> <p><a href="https://blog.csdn.net/qqxx6661/article/details/77502993" rel="external nofollow noopener noreferrer" target="_blank">leetcode 20. 有效的括号</a><br><strong>思路</strong>：遍历字符串，如果是<code>{,[,(</code>就入栈，否则就看栈顶元素是否能与当前字符匹配，如果匹配，栈顶元素出栈，遇到不匹配直接判定无效。当字符串遍历完成，如果栈不为空，则判定无效，否则为有效。</p>
-<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/栈和队列/20.有效的括号.py" rel="external nofollow noopener noreferrer" target="_blank">20.有效的括号.py</a></p>
+<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.py" rel="external nofollow noopener noreferrer" target="_blank">20.有效的括号.py</a></p>
 </li>
 <li><input checked disabled type="checkbox"> <p><a href="https://leetcode-cn.com/problems/simplify-path/" rel="external nofollow noopener noreferrer" target="_blank">leetcode 71. 简化路径</a><br><strong>思路</strong>：利用split将字符串分割成各级目录，从前往后遍历目录，如果是普通目录，则入栈，如果是<code>..</code>则上一元素出栈，如果是<code>.</code>或者空就跳过。简化后的路径就是最后栈内元素按顺序用’/‘连接到一起。<br>解这道题的时候，第一遍比较奇怪的挂在case  ‘/…’上，查了发现对于这个路径，’…’会直接被当成一个普通目录名，需要对应处理一下。（也可以用正则）</p>
-<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/栈和队列/71.简化路径.py" rel="external nofollow noopener noreferrer" target="_blank">71.简化路径.py</a></p>
+<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/71.%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84.py" rel="external nofollow noopener noreferrer" target="_blank">71.简化路径.py</a></p>
 </li>
-<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">剑指offer 栈的压入、弹出序列_牛客网</a><br><strong>思路</strong>：创建一个空栈S，遍历压栈序列A，当当前元素与出栈序列B第一个元素相同，则出栈序列删除第一个元素，不同时，则将当前元素入栈。当遍历完成，如果栈S为空，则当前出栈序列是有效的弹出序列，如果S不为空，将S逐个出栈，B逐个出栈，一一比较，当对不上的时候就判定B不是有效弹出序列。直到S，B为空，则判定B是有效弹出序列。</p>
+<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&amp;tqId=11174&amp;tPage=2&amp;rp=2&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">剑指offer 栈的压入、弹出序列_牛客网</a><br><strong>思路</strong>：创建一个空栈S，遍历压栈序列A，当当前元素与出栈序列B第一个元素相同，则出栈序列删除第一个元素，不同时，则将当前元素入栈。当遍历完成，如果栈S为空，则当前出栈序列是有效的弹出序列，如果S不为空，将S逐个出栈，B逐个出栈，一一比较，当对不上的时候就判定B不是有效弹出序列。直到S，B为空，则判定B是有效弹出序列。</p>
 </li>
-<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">包含min函数的栈_牛客网</a></p>
+<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&amp;tqId=11173&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">包含min函数的栈_牛客网</a></p>
 </li>
 </ul>
 <p><strong>思路</strong>：创建一个辅助栈，随着元素进栈，将当前最小值放进辅助栈，随着元素出栈，辅助栈也出栈。查看最小值就是辅助栈查看栈顶元素大小。</p>
@@ -411,21 +412,21 @@
 </ul>
 <h3 id="考察题目-1"><a href="#考察题目-1" class="headerlink" title="考察题目"></a>考察题目</h3><ul>
 <li><input checked disabled type="checkbox"> <p><a href="https://leetcode-cn.com/submissions/detail/38081045/" rel="external nofollow noopener noreferrer" target="_blank">leetcode 860.柠檬水找零</a><br><strong>思路</strong>： 用两个计数器分别记录5和10的数量，当遇到10，5的数量减一10的数量加一，当遇到20，优先找10，再找5</p>
-<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/栈和队列/860.柠檬水找零.py" rel="external nofollow noopener noreferrer" target="_blank">860.柠檬水找零.py</a></p>
+<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/860.%E6%9F%A0%E6%AA%AC%E6%B0%B4%E6%89%BE%E9%9B%B6.py" rel="external nofollow noopener noreferrer" target="_blank">860.柠檬水找零.py</a></p>
 </li>
 <li><input checked disabled type="checkbox"> <p><a href="https://leetcode-cn.com/problems/pancake-sorting/description/" rel="external nofollow noopener noreferrer" target="_blank">leetcode 969.煎饼排序</a><br><strong>思路</strong>：没有用到队列的思路，从后往前，找当前待排序元素中最大值，把从头到它翻转一次，让它在最前面，然后将待排序部分整体翻转，使它换到当前待排序列最后。然后从开始到这个元素之前成为当前的待排序列。</p>
-<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/栈和队列/969.煎饼排序.py" rel="external nofollow noopener noreferrer" target="_blank">969.煎饼排序.py</a></p>
+<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/969.%E7%85%8E%E9%A5%BC%E6%8E%92%E5%BA%8F.py" rel="external nofollow noopener noreferrer" target="_blank">969.煎饼排序.py</a></p>
 </li>
-<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/1624bc35a45c42c0bc17d17fa0cba788?tpId=13&tqId=11217&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">剑指offer 滑动窗口的最大值_牛客网</a>    </p>
+<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/1624bc35a45c42c0bc17d17fa0cba788?tpId=13&amp;tqId=11217&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">剑指offer 滑动窗口的最大值_牛客网</a>    </p>
 <p><strong>思路</strong>：双端队列保存可能的最大值索引, 遍历元素。1 不断比较当前元素和队列尾部索引所指元素，如果当前元素大于队列尾部索引所指元素就将其出栈。2 如果此时当前元素索引与队列头部存储的索引相差大于窗口大小，则将其过期从头部删除。3 将当前索引加入队列尾部。4 如果当前是第一个窗口的最后一个元素或者已经在后面的窗口，就将队列头部索引所指元素加入最大值序列。</p>
 </li>
-<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">用两个栈实现队列_牛客网</a><br><strong>思路</strong>：就在两个栈里把元素倒来倒去。。。</p>
+<li><input checked disabled type="checkbox"> <p><a href="https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&amp;tqId=11158&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">用两个栈实现队列_牛客网</a><br><strong>思路</strong>：就在两个栈里把元素倒来倒去。。。</p>
 </li>
 <li><input checked disabled type="checkbox"> <p>用两个队列实现栈   </p>
 <p><strong>思路</strong>：插入就直接插入，弹出就借一个队列来放需要弹出元素之前的元素。比较简单，不写了。</p>
 </li>
 <li><input checked disabled type="checkbox"> <p><a href="https://leetcode-cn.com/problems/task-scheduler/solution/" rel="external nofollow noopener noreferrer" target="_blank">leetcode 621.任务调度器</a><br><strong>思路</strong>：统计各任务出现次数，由多到少排序，从最大的先排好空间，将少的往里填，能填满空就是总任务数，不能填满就是空闲位置数加上总任务数。</p>
-<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/栈和队列/621.任务调度器.py" rel="external nofollow noopener noreferrer" target="_blank">621.任务调度器.py</a></p>
+<p><strong>代码</strong>：<a href="https://github.com/bigbag01/leetcode/blob/master/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/621.%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8.py" rel="external nofollow noopener noreferrer" target="_blank">621.任务调度器.py</a></p>
 </li>
 </ul>
 
@@ -457,9 +458,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
-            <a href="/tags/栈和队列/" rel="tag"># 栈和队列</a>
+            <a href="/tags/栈和队列/" rel="tag"><i class="fa fa-tag"></i> 栈和队列</a>
           
         </div>
       
@@ -472,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/javascript/模块化(二)/" rel="next" title="ES6模块化（二）">
-                <i class="fa fa-chevron-left"></i> ES6模块化（二）
+              <a href="/data-structure-and-algorithms/栈和队列/" rel="next" title="栈和队列">
+                <i class="fa fa-chevron-left"></i> 栈和队列
               </a>
             
           </div>
@@ -554,7 +555,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +577,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -815,6 +816,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

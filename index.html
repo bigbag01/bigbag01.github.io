@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="前端, 编程, 数据">
+  <meta name="keywords" content="前端, 编程">
 
 
 
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title> 前端, 编程, 数据 - 学姐的博客hello, world! </title>
+  <title> 前端, 编程 - 学姐的博客hello, world! </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -346,6 +346,11 @@
           
 
           
+          
+              <div class="post-description">
+                  IP地址表示方式，网络ID，主机ID，子网掩码，CIDR
+              </div>
+          
 
         </div>
       </header>
@@ -359,18 +364,19 @@
 
       
         
-          IP地址表示方式，网络ID，主机ID，子网掩码，CIDR
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/network-communication/网络通信-IP地址/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          <h2 id="地址公式"><a href="#地址公式" class="headerlink" title="地址公式"></a>地址公式</h2><ul>
+<li>公式一：网络地址 = IP地址 &amp; 掩码</li>
+<li>公式二：主机地址 = IP地址 – 网络地址</li>
+<li>公式三：网络IP地址数 = 2^(32-掩码长度)  （掩码长度就是掩码中连续1的个数）</li>
+<li>公式四：网络可分配地址数 = 网络IP地址数-2 （主机位全0是网络地址，全1是主机地址，去掉这两个剩下的是可分配IP地址）</li>
+</ul>
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/network-communication/网络通信-IP地址/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -498,6 +504,7 @@
           
 
           
+          
 
         </div>
       </header>
@@ -517,7 +524,7 @@
 <li>URL只能包含ASCII字符，对于非ASCII字符，使用 “%” 其后跟随两位的十六进制数来替换。</li>
 <li>URL不能包含空格</li>
 </ul>
-          <!--noindex-->
+          <!--noindex2-->
           <div class="post-button text-center">
             <a class="btn" href="/network-communication/网络通信-URL和URI/#more" rel="contents">
               阅读全文 &raquo;
@@ -650,6 +657,7 @@
           
 
           
+          
 
         </div>
       </header>
@@ -664,13 +672,21 @@
       
         
           
-            <ol>
-<li>计算机网络按作用范围可以分为广域网、 <u>城域网</u>、 <u>局域网</u></li>
-<li>IP数据报的首部的最大长度是（    ）个字节？<br>A. 20 B. 40 C 60</li>
-</ol>
-<p><strong>答案</strong>： C<br><strong>解析</strong>：IP数据包首部固定20字节，可变40字节，因此长度在20-60之间，最大是60字节。<br>3. 应用程序ping收到的是（    ）<br>A. TCP应答  B.ICMP请求  C.ICMP应答  D.TCP差错报告<br><strong>答案</strong>：C<br><strong>解析</strong>：ping用于测试网络是否可达，ICMP就是一个“错误侦测与回报机制”，其目的就是让我们能够检测网路的连线状况﹐也能确保连线的准确性。<br>4. 完成远程登录的TCP/IP协议是 （ telnet ）<br><strong>解析</strong>： telnet是Internet远程登录服务的标准协议和主要方式<br>5. 某公司网络的地址是 202.110.128.0/17 ，下面的选项中， （） 属于这个网络。<br>A 202.110.44.0/17<br>B 202.110.162.0/20<br>C 202.110.144.0/16<br>D 202.110.24.0/20<br><strong>答案</strong>： B<br><strong>解析</strong>：给定的地址的掩码是 255.255.128.0，A的是255.255.0.0，B是255.255.160.0，C是255.255.0.0，D是255.255.16.0.<br>ACD都无法覆盖到128，所以是B。<a href="https://www.nowcoder.com/questionTerminal/7ca8131a1f264124807b07b87efee8d9?orderByHotValue=1&mutiTagIds=644&page=1&onlyReference=false" rel="external nofollow noopener noreferrer" target="_blank">牛客解答</a></p>
-
           
+计算机网络按作用范围可以分为广域网、 城域网、 局域网
+
+IP数据报的首部的最大长度是（    ）个字节？
+A. 20 B. 40 C 60答案： C解析：IP数据包首部固定20字节，可变40字节，因此长度在20-60之间，最大是60字节。
+
+应用程序ping收到的是（    ）A. TCP应答 
+          ...
+          <!--noindex3-->
+          <div class="post-button text-center">
+            <a class="btn" href="/network-communication/网络通信-相关题目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -797,6 +813,11 @@
           
 
           
+          
+              <div class="post-description">
+                  TCP和UDP的区别，三次握手，四次挥手
+              </div>
+          
 
         </div>
       </header>
@@ -810,18 +831,22 @@
 
       
         
-          TCP和UDP的区别，三次握手，四次挥手
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/network-communication/网络通信-TCP与UDP/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><strong>TCP</strong>全称是传输控制协议，它是面向连接的、可靠的、基于字节流的传输层通信协议。</p>
+<ul>
+<li>TCP面向连接，建立连接方式是三次握手，解除连接方式是四次挥手</li>
+<li>TCP只支持点对点单播传输</li>
+<li>TCP不保留报文边界，以字节流传输</li>
+<li>TCP是可靠的，通过段编号（seq）和确认号（ack）来判断是否丢包，如果在合理时延内未接收到确认，就重发。</li>
+<li>TCP有拥塞机制</li>
+<li>TCP提供全双工通信，允许双方应用程序在任何时候发送数据。</li>
+</ul>
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/network-communication/网络通信-TCP与UDP/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -949,6 +974,11 @@
           
 
           
+          
+              <div class="post-description">
+                  TCP/IP四层模型，OSI七层模型
+              </div>
+          
 
         </div>
       </header>
@@ -962,18 +992,18 @@
 
       
         
-          TCP/IP四层模型，OSI七层模型
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/network-communication/网络通信-TCPIP模型与OSI模型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          <h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h2><ul>
+<li>TCP/IP模型是互联网的基础，它是一系列网络协议的总称 ,比如：TCP，UDP，IP，FTP，HTTP，ICMP，SMTP 等都属于 TCP/IP 族内的协议</li>
+<li>传输控制协议/网际协议 (Transmission Control Protocol / Internet Protocol)是供已连接因特网的计算机进行通信的通信协议,它定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。</li>
+<li>通常使用的网络是在TCP/IP协议族的基础上运行的，HTTP是它一个子集.</li>
+</ul>
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/network-communication/网络通信-TCPIP模型与OSI模型/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1101,6 +1131,11 @@
           
 
           
+          
+              <div class="post-description">
+                  位运算相关的技巧题目；
+              </div>
+          
 
         </div>
       </header>
@@ -1114,18 +1149,14 @@
 
       
         
-          位运算相关的技巧题目；
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/算法-位运算/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/data-structure-and-algorithms/算法-位运算/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1253,6 +1284,11 @@
           
 
           
+          
+              <div class="post-description">
+                  堆的概念；堆排序；python的堆
+              </div>
+          
 
         </div>
       </header>
@@ -1266,18 +1302,14 @@
 
       
         
-          堆的概念；堆排序；python的堆
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/数据结构-堆/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/data-structure-and-algorithms/数据结构-堆/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1405,6 +1437,11 @@
           
 
           
+          
+              <div class="post-description">
+                  冒泡排序，选择排序，插入排序，快速排序，归并排序，堆排序；
+              </div>
+          
 
         </div>
       </header>
@@ -1418,18 +1455,14 @@
 
       
         
-          冒泡排序，选择排序，插入排序，快速排序，归并排序，堆排序；
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/算法-排序/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/data-structure-and-algorithms/算法-排序/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1557,6 +1590,11 @@
           
 
           
+          
+              <div class="post-description">
+                  二叉搜索树概念、平衡二叉树；相关题目
+              </div>
+          
 
         </div>
       </header>
@@ -1570,18 +1608,14 @@
 
       
         
-          二叉搜索树概念、平衡二叉树；相关题目
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/数据结构-树(2)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/data-structure-and-algorithms/数据结构-树(2)/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1709,6 +1743,11 @@
           
 
           
+          
+              <div class="post-description">
+                  满二叉树、完全二叉树、真二叉树、Huffman树的概念；二叉树的性质；二叉树的数组和链表存储；二叉树遍历；相关题目
+              </div>
+          
 
         </div>
       </header>
@@ -1722,18 +1761,14 @@
 
       
         
-          满二叉树、完全二叉树、真二叉树、Huffman树的概念；二叉树的性质；二叉树的数组和链表存储；二叉树遍历；相关题目
-          <!--noindex-->
-            <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/数据结构-树(1)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!-- <div class="post-button text-center">
+          
+          
+          <!--noindex1-->
+          <div class="post-button text-center">
             <a class="btn" href="/data-structure-and-algorithms/数据结构-树(1)/">
               阅读全文 &raquo;
             </a>
-          </div> -->
+          </div>
           <!--/noindex-->
         
       
@@ -1814,7 +1849,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1836,7 +1871,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2055,6 +2090,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

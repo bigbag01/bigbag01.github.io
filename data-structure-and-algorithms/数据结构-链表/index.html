@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
 
 
 
@@ -354,6 +354,7 @@
                   链表操作；相关题目
               </div>
           
+          
 
         </div>
       </header>
@@ -384,11 +385,11 @@
 </ul>
 <p><strong>思路</strong>：逐个复制节点，并将复制节点接到原节点之后，random也就在原节点的random之后，再提取出复制部分即可。</p>
 <ul>
-<li><input checked disabled type="checkbox"> <a href="https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=13&tqId=11208&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">链表中环的入口结点_牛客网</a></li>
+<li><input checked disabled type="checkbox"> <a href="https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=13&amp;tqId=11208&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">链表中环的入口结点_牛客网</a></li>
 </ul>
 <p><strong>思路1</strong>：两层嵌套遍历，对每个node，遍历他们之后的list，看是否能回来。<br><strong>思路2</strong>：一次遍历，对每个node，用node在内存中的地址作为hash key，node作为value,存到dict里，如果遇到已经在dict里的，那这个就是环的入口<br><strong>思路3</strong>：::快慢指针::。让s和f从头出发，s每次一步，f每次两步，当他们相遇的时候让t出发，t每次一步，当s和t相遇的时候，相遇点就是环的入口。<br>f=2s,当fs相遇时，一定在环里，f比s多走一个周长C，因此 <code>f-s=C</code>   =&gt; <code>s=C</code>. 假设入环之前的路长度为l，当s再次走到环口，路程长度应该为<code>l+C</code>,也就是当s和f相遇后要再走l就可以回到环口。因此这个时候让t从链表头出发，和s一起走，当t走过l到达环口的时候，就可以和s相遇，就找到了入环口。</p>
 <ul>
-<li><input checked disabled type="checkbox"> <a href="https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">删除链表中重复的结点_牛客网</a></li>
+<li><input checked disabled type="checkbox"> <a href="https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&amp;tqId=11209&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">删除链表中重复的结点_牛客网</a></li>
 </ul>
 <p><strong>思路</strong>：设置虚拟头指针以免开头就是重复的情况，用dict记录出现过的值，如果再次出现，就删除重复节点，并用一个set对这个重复值进行记录。再遍历一次，删除值在那个set中的节点</p>
 
@@ -420,9 +421,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
-            <a href="/tags/链表/" rel="tag"># 链表</a>
+            <a href="/tags/链表/" rel="tag"><i class="fa fa-tag"></i> 链表</a>
           
         </div>
       
@@ -517,7 +518,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -539,7 +540,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -778,6 +779,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
