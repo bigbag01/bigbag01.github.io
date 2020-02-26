@@ -96,7 +96,7 @@
 <meta property="og:description" content="链表操作；相关题目">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://bigbag01.github.io/images/linkedlist.png">
-<meta property="og:updated_time" content="2020-02-24T08:00:38.037Z">
+<meta property="og:updated_time" content="2020-02-26T08:31:35.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-链表">
 <meta name="twitter:description" content="链表操作；相关题目">
@@ -367,11 +367,25 @@
       
 
       
-        <h2 id="记忆点"><a href="#记忆点" class="headerlink" title="记忆点"></a>记忆点</h2><ol>
-<li>由于链表是动态数据结构，没有闲置内存，所以空间效率比数组高。但由于是动态的，无法保证内存的连续性，因此时间效率比数组低，是O(n)。</li>
-</ol>
-<h2 id="实现链表常用操作"><a href="#实现链表常用操作" class="headerlink" title="实现链表常用操作"></a>实现链表常用操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">		self.val = val</span><br><span class="line">		self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 向链表末尾添加一个值为val的节点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addToTail</span><span class="params">(node,val)</span>:</span></span><br><span class="line">	nxt = ListNode(val)</span><br><span class="line">	cur = node</span><br><span class="line">	<span class="keyword">while</span> cur.next:</span><br><span class="line">		cur = cur.next</span><br><span class="line">	cur.next = nxt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从链表中删除值为val的节点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeNode</span><span class="params">(node,val)</span>:</span></span><br><span class="line">	cur = node</span><br><span class="line">	<span class="keyword">while</span> cur.next:</span><br><span class="line">		<span class="keyword">if</span> cur.next.val == val:</span><br><span class="line">			tmp = cur.next</span><br><span class="line">			cur.next = cur.next.next</span><br><span class="line">			<span class="keyword">del</span> tmp</span><br><span class="line">		cur = cur.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从头打印链表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printList</span><span class="params">(head)</span>:</span></span><br><span class="line">	cur = head</span><br><span class="line">	<span class="keyword">while</span> cur:</span><br><span class="line">		print(cur.val)</span><br><span class="line">		cur = cur.next</span><br></pre></td></tr></table></figure>
+        <h2 id="实现链表常用操作"><a href="#实现链表常用操作" class="headerlink" title="实现链表常用操作"></a>实现链表常用操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">		self.val = val</span><br><span class="line">		self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 向链表末尾添加一个值为val的节点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addToTail</span><span class="params">(node,val)</span>:</span></span><br><span class="line">	nxt = ListNode(val)</span><br><span class="line">	cur = node</span><br><span class="line">	<span class="keyword">while</span> cur.next:</span><br><span class="line">		cur = cur.next</span><br><span class="line">	cur.next = nxt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从链表中删除值为val的节点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeNode</span><span class="params">(node,val)</span>:</span></span><br><span class="line">	cur = node</span><br><span class="line">	<span class="keyword">while</span> cur.next:</span><br><span class="line">		<span class="keyword">if</span> cur.next.val == val:</span><br><span class="line">			tmp = cur.next</span><br><span class="line">			cur.next = cur.next.next</span><br><span class="line">			<span class="keyword">del</span> tmp</span><br><span class="line">		cur = cur.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从头打印链表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printList</span><span class="params">(head)</span>:</span></span><br><span class="line">	cur = head</span><br><span class="line">	<span class="keyword">while</span> cur:</span><br><span class="line">		print(cur.val)</span><br><span class="line">		cur = cur.next</span><br></pre></td></tr></table></figure>
 
+<h2 id="记忆点"><a href="#记忆点" class="headerlink" title="记忆点"></a>记忆点</h2><ol>
+<li><p>由于链表是动态数据结构，没有闲置内存，所以空间效率比数组高。但由于是动态的，无法保证内存的连续性，因此时间效率比数组低，是O(n)。</p>
+</li>
+<li><p>链表相关的题目经常用到的技巧</p>
+<ol>
+<li><strong>快慢指针</strong>，链表找环，或者链表找中间节点都可以用上</li>
+<li>利用递归可以简单地翻转链表（后面有图）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(head)</span></span></span><br><span class="line">    if head.next == None:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    last = reverse(head.next)</span><br><span class="line">    head.next.next = head</span><br><span class="line">    head.next = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> last</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>递归合并两个链表</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(l1,l2)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">     <span class="keyword">if</span> l1.val &gt; l2.val:</span><br><span class="line">        l2,l1 = l1,l2</span><br><span class="line">        l1.next = merge(l1.next,l2)</span><br><span class="line">  <span class="keyword">return</span> l1 <span class="keyword">or</span> l2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
 <h2 id="考察题目"><a href="#考察题目" class="headerlink" title="考察题目"></a>考察题目</h2><ul>
 <li><input checked disabled type="checkbox"> <a href="https://leetcode-cn.com/problems/reverse-linked-list/" rel="external nofollow noopener noreferrer" target="_blank">leetcode - 206.reverse linked list</a></li>
 </ul>
@@ -392,6 +406,12 @@
 <li><input checked disabled type="checkbox"> <a href="https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&amp;tqId=11209&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" rel="external nofollow noopener noreferrer" target="_blank">删除链表中重复的结点_牛客网</a></li>
 </ul>
 <p><strong>思路</strong>：设置虚拟头指针以免开头就是重复的情况，用dict记录出现过的值，如果再次出现，就删除重复节点，并用一个set对这个重复值进行记录。再遍历一次，删除值在那个set中的节点</p>
+<ul>
+<li><input checked disabled type="checkbox"> <p><a href="https://leetcode-cn.com/problems/palindrome-linked-list/" rel="external nofollow noopener noreferrer" target="_blank">leetcode 234.判断链表是否回文</a></p>
+<p><strong>思路1</strong>：遍历列表，给每个节点加上prev指针成为双向链表，从尾到头和从头到尾两个指针一起走比较是否相等。</p>
+<p><strong>思路2</strong>： 利用快慢指针找到中间节点，将后一半做翻转，对于翻转的后一半和前一半设置两个指针一起走比较是否相等。 </p>
+</li>
+</ul>
 
       
     </div>
@@ -518,7 +538,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +560,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-count">61</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -586,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#记忆点"><span class="nav-number">1.</span> <span class="nav-text">记忆点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现链表常用操作"><span class="nav-number">2.</span> <span class="nav-text">实现链表常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考察题目"><span class="nav-number">3.</span> <span class="nav-text">考察题目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现链表常用操作"><span class="nav-number">1.</span> <span class="nav-text">实现链表常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记忆点"><span class="nav-number">2.</span> <span class="nav-text">记忆点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考察题目"><span class="nav-number">3.</span> <span class="nav-text">考察题目</span></a></li></ol></div>
             
 
           </div>
