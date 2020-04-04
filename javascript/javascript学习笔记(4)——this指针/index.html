@@ -1,0 +1,813 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="this,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="一、不同环境下的this指向【浏览器】全局环境浏览器的全局环境，this指window对象 对象环境 对象环境，this指向该对象 12345678910111213141516171819202122232425262728293031var env = ‘out’;function say1()&amp;#123;    console.log(this.env)&amp;#125;var obj = &amp;#1">
+<meta name="keywords" content="this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript学习笔记(4)——this指针">
+<meta property="og:url" content="https://bigbag01.github.io/javascript/javascript学习笔记(4)——this指针/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="一、不同环境下的this指向【浏览器】全局环境浏览器的全局环境，this指window对象 对象环境 对象环境，this指向该对象 12345678910111213141516171819202122232425262728293031var env = ‘out’;function say1()&amp;#123;    console.log(this.env)&amp;#125;var obj = &amp;#1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-02T08:58:41.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript学习笔记(4)——this指针">
+<meta name="twitter:description" content="一、不同环境下的this指向【浏览器】全局环境浏览器的全局环境，this指window对象 对象环境 对象环境，this指向该对象 12345678910111213141516171819202122232425262728293031var env = ‘out’;function say1()&amp;#123;    console.log(this.env)&amp;#125;var obj = &amp;#1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/javascript/javascript学习笔记(4)——this指针/">
+
+
+
+
+
+  <title> Javascript学习笔记(4)——this指针 | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/javascript学习笔记(4)——this指针/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript学习笔记(4)——this指针
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-05T00:00:00+08:00">
+                2020-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、不同环境下的this指向【浏览器】"><a href="#一、不同环境下的this指向【浏览器】" class="headerlink" title="一、不同环境下的this指向【浏览器】"></a>一、不同环境下的this指向【浏览器】</h2><h3 id="全局环境"><a href="#全局环境" class="headerlink" title="全局环境"></a>全局环境</h3><p>浏览器的全局环境，this指window对象</p>
+<h3 id="对象环境"><a href="#对象环境" class="headerlink" title="对象环境"></a>对象环境</h3><p> 对象环境，this指向该对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> env = ‘out’;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.env)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    env : ‘inside’,</span><br><span class="line">    say2 : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.env)</span><br><span class="line">    &#125;,</span><br><span class="line">	  say4()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.env)</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    say5:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.env)</span><br><span class="line">    &#125;,</span><br><span class="line">    say6()&#123;</span><br><span class="line">        (<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.env)</span><br><span class="line">        &#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> say3 = obj.say2;</span><br><span class="line"></span><br><span class="line">say1();		<span class="comment">//out</span></span><br><span class="line">obj.say2();	<span class="comment">//inside</span></span><br><span class="line">say3();		<span class="comment">//out</span></span><br><span class="line">obj.say4()(); <span class="comment">//out</span></span><br><span class="line">obj.say5();	<span class="comment">//out</span></span><br><span class="line">obj.say6();	<span class="comment">//inside</span></span><br></pre></td></tr></table></figure>
+
+<p>实际this指向和函数运行环境有关。</p>
+<ul>
+<li>say3虽然是obj.say2的复制，但是运行的环境是window，实际执行的是window.say3()，因此输出的env是out.</li>
+<li>obj.say4()会返回一个函数，因此需要再调用，因为返回的函数在全局环境了，因此输出的是out。</li>
+<li>obj.say5是一个箭头函数，箭头函数中的this指向父级的上下文，也就是obj的上下文，也就是window，因此输出inside</li>
+<li>obj.say6是匿名执行的箭头函数，箭头函数的上下文相当于这个匿名函数的上下文，执行它的是obj，因此输出的是inside</li>
+</ul>
+<h3 id="构造函数环境"><a href="#构造函数环境" class="headerlink" title="构造函数环境"></a>构造函数环境</h3><p><strong>构造函数</strong>环境，this指向构造出的对象实例。用new调用构造函数的时候，会产生一个空对象，然后用call将构造函数中的this指向这个对象。执行完之后，这个空对象就有了相关的属性。构造函数不需要返回值。如果有返回值且是一个对象类型，那构造出的实例的this指向构造函数返回的这个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.env = ‘person’</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p.env)	<span class="comment">//person</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.env = ‘person’</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">env</span>:’teacher’&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> Teacher();</span><br><span class="line"><span class="built_in">console</span>.log(t.env)	<span class="comment">//teacher</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM事件对象环境"><a href="#DOM事件对象环境" class="headerlink" title="DOM事件对象环境"></a>DOM事件对象环境</h3><p> <strong>DOM事件</strong>环境，哪个元素触发的，this就指向谁</p>
+<h2 id="二、用apply，call，bind修改this"><a href="#二、用apply，call，bind修改this" class="headerlink" title="二、用apply，call，bind修改this"></a>二、用apply，call，bind修改this</h2><h3 id="apply-和-call，修改函数运行时的上下文"><a href="#apply-和-call，修改函数运行时的上下文" class="headerlink" title="apply 和 call，修改函数运行时的上下文"></a>apply 和 call，修改函数运行时的上下文</h3><p>js中的call和apply都是用于修改函数运行context的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.job,name,age)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> job = ‘lawyer’</span><br><span class="line">greet.call(&#123;&#125;,’Joe’,<span class="number">15</span>)			<span class="comment">//undefined Joe 15</span></span><br><span class="line">greet.call(<span class="literal">null</span>,’Ann’,<span class="number">30</span>)			<span class="comment">//lawyer Ann 30</span></span><br><span class="line">greet.apply(&#123;<span class="attr">job</span>:’doctor’&#125;,[’John’,<span class="number">48</span>])	<span class="comment">//doctor John 48</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>call 和apply作用相同。传进第一个参数obj,使它成文执行say的上下文, 相当于 <code>obj.say=say1;obj.say()</code></li>
+<li>call和apply的区别在于函数参数的传递，call是将函数调用参数依次写在第一个参数之后，apply则是将它们放进数组，放到第一个函数后。</li>
+<li>当传入的第一个参数为null时，函数内的this指向全局环境，否则指向传入的对象。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.env=‘person’&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Patient</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.ill = <span class="literal">true</span></span><br><span class="line">  Person.call(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Patient()</span><br><span class="line"><span class="built_in">console</span>.log(p.ill,p.env)		<span class="comment">//true person</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在构造函数执行时，this指向当前构造函数构造的对象实例，因此，在执行new Patient()的时候，传递给Person.call的this是p</li>
+</ul>
+<h3 id="bind将作用域与函数绑定"><a href="#bind将作用域与函数绑定" class="headerlink" title="bind将作用域与函数绑定"></a>bind将作用域与函数绑定</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> env = ‘out’; </span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  env: ‘inside’,</span><br><span class="line">  sayObjEnv: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.env);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.sayObjEnv() 	<span class="comment">// inside</span></span><br><span class="line"><span class="keyword">var</span> getEnv = obj.sayObjEnv;</span><br><span class="line">getEnv(); 		<span class="comment">// out, ”this”指向全局对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindGetEnv = getEnv.bind(mymodule);</span><br><span class="line">bindGetEnv(); 	<span class="comment">// inside</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>bind保证了无论函数在什么上下文执行，this都指向所需指向的对象</li>
+</ul>
+<h3 id="apply-call与bind的区别"><a href="#apply-call与bind的区别" class="headerlink" title="apply,call与bind的区别"></a>apply,call与bind的区别</h3><ol>
+<li>apply和call作用相同，只是参数传递方式不同，call是一个一个传，apply是传数组</li>
+<li>apply和call是对于给定的context，立即调用函数并返回结果。</li>
+<li>bind是对于给定的context，绑定函数和这个context，并返回绑定后的函数，不执行该函数。</li>
+</ol>
+<h2 id="三、与this指针相关的题目"><a href="#三、与this指针相关的题目" class="headerlink" title="三、与this指针相关的题目"></a>三、与this指针相关的题目</h2><ol>
+<li>封装函数 f，使 f 的 this 指向指定的对象<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.bind</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindFunctionContext</span>(<span class="params">func,context</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> func.bind(context</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2. apply or call</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindFunctionContext</span>(<span class="params">func,context</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//return func.apply(context,arguments)</span></span><br><span class="line">		<span class="keyword">return</span> func.call(context,...arguments)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/this/" rel="tag"><i class="fa fa-tag"></i> this</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/data-structure-and-algorithms/算法-位运算/" rel="next" title="算法-位运算">
+                <i class="fa fa-chevron-left"></i> 算法-位运算
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/javascript/JavaScript学习笔记(5)——展开操作符/" rel="prev" title="Javascript学习笔记(5)——展开操作符">
+                Javascript学习笔记(5)——展开操作符 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、不同环境下的this指向【浏览器】"><span class="nav-number">1.</span> <span class="nav-text">一、不同环境下的this指向【浏览器】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局环境"><span class="nav-number">1.1.</span> <span class="nav-text">全局环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象环境"><span class="nav-number">1.2.</span> <span class="nav-text">对象环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数环境"><span class="nav-number">1.3.</span> <span class="nav-text">构造函数环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件对象环境"><span class="nav-number">1.4.</span> <span class="nav-text">DOM事件对象环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、用apply，call，bind修改this"><span class="nav-number">2.</span> <span class="nav-text">二、用apply，call，bind修改this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apply-和-call，修改函数运行时的上下文"><span class="nav-number">2.1.</span> <span class="nav-text">apply 和 call，修改函数运行时的上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind将作用域与函数绑定"><span class="nav-number">2.2.</span> <span class="nav-text">bind将作用域与函数绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply-call与bind的区别"><span class="nav-number">2.3.</span> <span class="nav-text">apply,call与bind的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、与this指针相关的题目"><span class="nav-number">3.</span> <span class="nav-text">三、与this指针相关的题目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

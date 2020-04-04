@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="异步,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+<meta name="keywords" content="异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript学习笔记(11)——异步编程">
+<meta property="og:url" content="https://bigbag01.github.io/javascript/JavaScript学习笔记(11)——异步编程/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-04T07:08:46.893Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript学习笔记(11)——异步编程">
+<meta name="twitter:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/javascript/JavaScript学习笔记(11)——异步编程/">
+
+
+
+
+
+  <title> Javascript学习笔记(11)——异步编程 | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/JavaScript学习笔记(11)——异步编程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript学习笔记(11)——异步编程
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-15T00:00:00+08:00">
+                2020-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。
+              </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="单线程的JS"><a href="#单线程的JS" class="headerlink" title="单线程的JS"></a>单线程的JS</h2><p>js是<strong>单线程</strong>的,(nodejs可以通过第三方库来实现多线程)<br><strong>原因</strong>：多线程同时读写DOM会造成复杂的同步问题<br><strong>结果</strong>：如果任务全都同步进行，则同一时间只能处理一件任务，如果前一项时间过长（ajax，IO…）会阻塞后面任务的进行，因此还需要异步任务。</p>
+<ul>
+<li><strong>典型的同步任务</strong>：DOM元素的渲染</li>
+<li><strong>典型的异步任务</strong>： ajax请求，setTimeout定时器, 图片、音乐的加载</li>
+</ul>
+<h2 id="异步机制"><a href="#异步机制" class="headerlink" title="异步机制"></a>异步机制</h2><p>JS的异步是通过任务队列来实现。异步任务先做自己的事，比如向服务端发请求等待响应，等它完成会向任务队列添加一个事件，表示它完成了。当异步任务开始的时候，主线程可以做其他工作，当它空下来就会去读任务队列里的完成事件，如果某个事件指定了回调函数，那主线程就会执行这个回调，也就完成了异步任务。</p>
+<h2 id="异步实现"><a href="#异步实现" class="headerlink" title="异步实现"></a>异步实现</h2><h3 id="1-回调函数"><a href="#1-回调函数" class="headerlink" title="1. 回调函数"></a>1. 回调函数</h3><p>最经典的jquery包装的ajax写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(url,()=&gt;&#123;</span><br><span class="line">	$.ajax(url,()=&gt;&#123;…&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这种写法如果遇到多个回调函数需要嵌套依赖就比较糟糕，并且不能直接返回值。</p>
+<h3 id="2-事件监听"><a href="#2-事件监听" class="headerlink" title="2. 事件监听"></a>2. 事件监听</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="keyword">new</span> Event(<span class="string">'done'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(++i);</span><br><span class="line">		<span class="built_in">window</span>.dispatchEvent(done);</span><br><span class="line">	&#125;,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="string">'got it!'</span>);&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'done'</span>,listener);</span><br><span class="line">f1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'main thread'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// main thread</span></span><br><span class="line"><span class="comment">// 【这里没输出，1s左右的空白】</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// got it!</span></span><br></pre></td></tr></table></figure>
+
+<p>在全局注册事件‘done’，当f1执行完后触发该事件，监听者就会做出对应操作。<br><strong>优点</strong>：对于一个事件可以添加多个事件监听，也就是可以有多个回调函数，相比于嵌套的回调来说，可以去耦合，有利于实现模块化。<br><strong>缺点</strong>： 程序变成事件驱动型，流程不清晰。</p>
+<h3 id="3-观察者模式"><a href="#3-观察者模式" class="headerlink" title="3. 观察者模式"></a>3. 观察者模式</h3><p>观察者模式是一个对象Subject维护一系列依赖于它的对象Observer，当自己发生状态变化的时候，就通知他们也更新。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.subs = [];</span><br><span class="line">    &#125;</span><br><span class="line">    addSub(sub)&#123;</span><br><span class="line">        <span class="keyword">this</span>.subs.push(sub);</span><br><span class="line">    &#125;</span><br><span class="line">    notify()&#123;</span><br><span class="line">        <span class="keyword">this</span>.subs.forEach(<span class="function"><span class="params">sub</span>=&gt;</span>&#123;sub.update();&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Observer</span></span>&#123;</span><br><span class="line">    update()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'update'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sub = <span class="keyword">new</span> Subject();</span><br><span class="line"><span class="keyword">let</span> ob = <span class="keyword">new</span> Observer();</span><br><span class="line">sub.addSub(ob);</span><br><span class="line">sub.notify();</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>： Subject是可以添加、删除、通知Observer更新的，二者之间的联系是直接的。<br>Vue的双向绑定用的是观察者模式</p>
+<h3 id="4-发布订阅"><a href="#4-发布订阅" class="headerlink" title="4. 发布订阅"></a>4. 发布订阅</h3><p>publisher通过发布主题事件的方式通知订阅这个主题的subscriber，subscriber对一个主题通过自定义事件来订阅。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pubsub = <span class="function">(<span class="params">(</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> topics = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">topic,fn</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!topics[topic])&#123;</span><br><span class="line">            topics[topic]=[]</span><br><span class="line">        &#125;</span><br><span class="line">        topics[topic].push(fn);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publish</span>(<span class="params">topic,…args</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!topics[topic])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> fn <span class="keyword">of</span> topics[topic])&#123;</span><br><span class="line">            fn(…args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        subscribe,publish</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">pubsub.subscribe(<span class="string">'test'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(...arguments)</span><br><span class="line">&#125;)</span><br><span class="line">pubsub.publish(<span class="string">'test'</span>,<span class="string">'1'</span>,<span class="string">'c'</span>,<span class="string">'$'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>： 发布订阅和观察者不一样的，观察者是被观测者直接维护观测对象，自己变了通知他们，发布订阅是订阅者订阅主题，发布者把消息按主题发给中间件，有消息的时候订阅者可以随之做出操作。</p>
+<h3 id="5-promise"><a href="#5-promise" class="headerlink" title="5. promise"></a>5. promise</h3><p><a href="./JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(10)%E2%80%94%E2%80%94promise">Promise</a></p>
+<h3 id="6-generator"><a href="#6-generator" class="headerlink" title="6. generator"></a>6. generator</h3><p><a href="./JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(9)%E2%80%94%E2%80%94generator">generator</a></p>
+<h3 id="7-async-await"><a href="#7-async-await" class="headerlink" title="7. async/await"></a>7. async/await</h3><p>await关键字必须出现在有async修饰的函数里,<br>有await，且返回值是一个promise就会等它返回再往下走，如果返回值不是promise会直接往下走，无法保证结果的顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log_promise</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           resolve(time)</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(time);</span><br><span class="line">        <span class="keyword">return</span> time;</span><br><span class="line">    &#125;,time)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> a = <span class="keyword">await</span> log(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    <span class="keyword">const</span> b = <span class="keyword">await</span> log_promise(<span class="number">500</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(b)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun()</span><br></pre></td></tr></table></figure>
+
+<p>输出结果是：立刻输出undefined，0.5s后输出500，紧跟着输出1，1s后输出1000</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/异步/" rel="tag"><i class="fa fa-tag"></i> 异步</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/javascript/JavaScript学习笔记(10)——promise/" rel="next" title="Javascript学习笔记(10)——promise">
+                <i class="fa fa-chevron-left"></i> Javascript学习笔记(10)——promise
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/network-communication/网络通信-TCPIP模型与OSI模型/" rel="prev" title="网络通信-TCP/IP模型与OSI模型">
+                网络通信-TCP/IP模型与OSI模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单线程的JS"><span class="nav-number">1.</span> <span class="nav-text">单线程的JS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步机制"><span class="nav-number">2.</span> <span class="nav-text">异步机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步实现"><span class="nav-number">3.</span> <span class="nav-text">异步实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-回调函数"><span class="nav-number">3.1.</span> <span class="nav-text">1. 回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-事件监听"><span class="nav-number">3.2.</span> <span class="nav-text">2. 事件监听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-观察者模式"><span class="nav-number">3.3.</span> <span class="nav-text">3. 观察者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-发布订阅"><span class="nav-number">3.4.</span> <span class="nav-text">4. 发布订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-promise"><span class="nav-number">3.5.</span> <span class="nav-text">5. promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-generator"><span class="nav-number">3.6.</span> <span class="nav-text">6. generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-async-await"><span class="nav-number">3.7.</span> <span class="nav-text">7. async/await</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
