@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="变量,作用域,内存,">
+  <meta name="keywords" content="变量,作用域,">
 
 
 
@@ -88,16 +88,16 @@
 
 
 <meta name="description" content="变量​    ECMAScript 变量有两种不同数据类型的值：基本类型值（简单的数据段）和引用类型值 （可能由多个值构成的对象）。 ​    基本数据类型是按值访问的，可以操作保存在变量里的值。 ​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作对象的引用。  ​    注意： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型">
-<meta name="keywords" content="变量,作用域,内存">
+<meta name="keywords" content="变量,作用域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript学习笔记(2)——变量，作用域，内存">
+<meta property="og:title" content="Javascript学习笔记(2)——变量，作用域">
 <meta property="og:url" content="https://bigbag01.github.io/javascript/javascript学习笔记2——变量,作用域,内存/index.html">
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="变量​    ECMAScript 变量有两种不同数据类型的值：基本类型值（简单的数据段）和引用类型值 （可能由多个值构成的对象）。 ​    基本数据类型是按值访问的，可以操作保存在变量里的值。 ​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作对象的引用。  ​    注意： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-08T08:57:00.000Z">
+<meta property="og:updated_time" content="2020-04-10T07:31:07.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript学习笔记(2)——变量，作用域，内存">
+<meta name="twitter:title" content="Javascript学习笔记(2)——变量，作用域">
 <meta name="twitter:description" content="变量​    ECMAScript 变量有两种不同数据类型的值：基本类型值（简单的数据段）和引用类型值 （可能由多个值构成的对象）。 ​    基本数据类型是按值访问的，可以操作保存在变量里的值。 ​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作对象的引用。  ​    注意： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title> Javascript学习笔记(2)——变量，作用域，内存 | 学姐的博客 </title>
+  <title> Javascript学习笔记(2)——变量，作用域 | 学姐的博客 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +282,7 @@
             
             
               
-                Javascript学习笔记(2)——变量，作用域，内存
+                Javascript学习笔记(2)——变量，作用域
               
             
           </h2>
@@ -361,21 +361,21 @@
       
 
       
-        <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>​    ECMAScript 变量有两种不同数据类型的值：<strong>基本类型值</strong>（简单的数据段）和<strong>引用类型值</strong> （可能由多个值构成的对象）。</p>
+        <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>​    ECMAScript 变量有两种不同数据类型的值：<strong>基本类型值</strong>（简单的数据段）和<strong>引用类型值</strong> （可能由多个值构成的对象）。</p>
 <p>​    基本数据类型是按值访问的，可以操作保存在变量里的值。</p>
 <p>​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作<em>对象的引用</em>。 </p>
 <p>​    <strong>注意</strong>： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型</p>
 <a id="more"></a>
 
-<h4 id="属性创建"><a href="#属性创建" class="headerlink" title="属性创建"></a>属性创建</h4><ul>
+<h3 id="属性创建"><a href="#属性创建" class="headerlink" title="属性创建"></a>属性创建</h3><ul>
 <li>引用类型可以动态添加或删除属性</li>
 <li>基本类型的值不能添加属性</li>
 </ul>
-<h4 id="变量复制"><a href="#变量复制" class="headerlink" title="变量复制"></a>变量复制</h4><ul>
+<h3 id="变量复制"><a href="#变量复制" class="headerlink" title="变量复制"></a>变量复制</h3><ul>
 <li>基本类型值的复制就是创建一个副本，创建之后二者互不干扰，占据各自内存空间</li>
 <li>引用类型变量的复制是创建一个指针的副本，二个变量指向内存中同一个位置，改变其中一个变量，另一个也被改变。</li>
 </ul>
-<h4 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h4><p>​    ECMAScript中所有参数都是<strong>按值传递</strong>的。</p>
+<h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><p>​    ECMAScript中所有参数都是<strong>按值传递</strong>的。</p>
 <ul>
 <li><p>在向函数传递引用类型的值的时候，会把这个值在内存中的地址复制给一个局部变量，因此它的变化会反映到函数外部。</p>
 </li>
@@ -387,7 +387,7 @@
 <p>第4行，对B进行了重新赋值，在内存中开辟一个新空间给一个新的变量，而它是一个局部变量，在函数执行完毕后会被销毁。这个时候B和A已经指向两个地址，因此对B的修改不会影响到A</p>
 </li>
 </ul>
-<h4 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h4><ul>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><ul>
 <li><p>用<strong>typeof</strong>操作符可检验变量的数据类型，具体可见前一篇博客。</p>
 </li>
 <li><p>检验变量是否是给定引用类型的实例可以用instanceof</p>
@@ -395,17 +395,27 @@
 
 </li>
 </ul>
-<h3 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h3><blockquote>
-<p>​    函数的每次调用都有与之紧密相关的作用域和执行环境。从根本上来说，作用域是基于函数的，而执行环境是基于对象的。<br>​    换句话说，作用域涉及到所被调用函数中的变量访问，并且不同的调用场景是不一样的。<strong>执行环境始终是this关键字的值</strong>，它是拥有当前所执行代码的对象的引用。<strong>每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中。</strong>虽然我们编写的代码无法访问这个对象，但解析器在处理数据时会在后台使用它。</p>
-</blockquote>
-<h4 id="全局执行环境"><a href="#全局执行环境" class="headerlink" title="全局执行环境"></a>全局执行环境</h4><p>全局执行环境是最外围的一个执行环境，根据宿主环境不同，表示执行环境的对象也不一样。</p>
+<h2 id="执行环境和作用域"><a href="#执行环境和作用域" class="headerlink" title="执行环境和作用域"></a>执行环境和作用域</h2><h3 id="作用域概念"><a href="#作用域概念" class="headerlink" title="作用域概念"></a>作用域概念</h3><ul>
+<li>JS中有三种作用域：全局作用域，函数作用域，块级作用域</li>
+<li><strong>块级作用域</strong>由{}包括</li>
+</ul>
+<h3 id="全局执行环境"><a href="#全局执行环境" class="headerlink" title="全局执行环境"></a>全局执行环境</h3><p>全局执行环境是最外围的一个执行环境，根据宿主环境不同，表示执行环境的对象也不一样。</p>
 <ul>
 <li>web浏览器中全局执行环境是window对象</li>
 <li>nodejs中全局对象是global，global的属性可以直接访问到</li>
 <li>全局执行环境直到应用程序退出（浏览器页面关闭）才被销毁</li>
 </ul>
-<h4 id="局部执行环境"><a href="#局部执行环境" class="headerlink" title="局部执行环境"></a>局部执行环境</h4><p>每个函数都有自己的执行环境，当其中代码执行完毕后，该环境被销毁。</p>
-<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><ul>
+<h3 id="变量声明关键字-var-let-const"><a href="#变量声明关键字-var-let-const" class="headerlink" title="变量声明关键字 var, let, const"></a>变量声明关键字 var, let, const</h3><h4 id="var"><a href="#var" class="headerlink" title="var"></a>var</h4><ul>
+<li>var定义的变量没有块的概念，如果在函数中定义，它的作用域就是函数作用域，不能跨函数访问，如果在全局定义，就是全局变量。</li>
+<li>浏览器环境中，var声明的全局变量是window对象的属性<h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4></li>
+<li>let定义的变量只能在它所在的块作用域中访问，不能跨函数访问</li>
+<li>浏览器环境中，let声明的全局变量不是window对象的属性</li>
+<li>在相同作用域或者块级作用域中，不能用let重新声明var或let声明过的变量，不能用var重新声明let声明过的变量，但是可以用var重置var声明过的变量<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4></li>
+<li>const定义常量只能在它所在块作用域中起作用，不能跨函数访问，不能修改，必须有初始化赋值。</li>
+<li>const 定义的常量是一个引用，如果定义的是一个对象，实际可变，但不可以再赋值</li>
+</ul>
+<p><em>注意</em>：const和let声明的<strong>全局变量</strong>不属于顶层对象的属性</p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><ul>
 <li><p>当代码在一个环境中执行，会创建变量对象的一个作用域链。</p>
 </li>
 <li><p><strong>作用</strong>：保证对执行环境有权访问的所有变量和函数的有序访问。</p>
@@ -417,7 +427,7 @@
 
 </li>
 </ul>
-<h5 id="延长作用域链"><a href="#延长作用域链" class="headerlink" title="延长作用域链"></a>延长作用域链</h5><ul>
+<h4 id="延长作用域链"><a href="#延长作用域链" class="headerlink" title="延长作用域链"></a>延长作用域链</h4><ul>
 <li><p>try-catch语句的catch块</p>
 <p>创建一个新的变量对象，其中包含被抛出的错误对象的声明</p>
 </li>
@@ -425,21 +435,25 @@
 <p>将指定的对象添加到作用域链中</p>
 </li>
 </ul>
-<h5 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h5><ul>
-<li>在ES6之前，js中<strong>没有</strong>块级作用域，使用var声明的变量会被添加到最接近的环境中。</li>
-<li>ES6提供了块级作用域，在strict模式下，通过let或const来体现。</li>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>JavaScript 中，var 关键字定义的变量可以在使用后声明，也就是变量可以先使用再声明</p>
+<p>变量声明会提升，变量初始化不会提升</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x,y);			<span class="comment">// 5 undefined</span></span><br><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"><span class="keyword">var</span> y=<span class="number">7</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3><ul>
+<li><p>函数声明可以被提升，但是函数表达式相当于变量初始化，不会被提升。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sayHi();			</span><br><span class="line">sayHello();		</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(‘hi’)&#125; 	</span><br><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(‘hello’)&#125;</span><br><span class="line"><span class="comment">// hi</span></span><br><span class="line"><span class="comment">// TypeError: sayHello is not a function</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js在预编译的时候，总是优先处理函数声明，然后才是函数表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 场景1</span></span><br><span class="line">f(); <span class="comment">//输出function，因为函数声明会被提升，函数表达式赋值没有被提升。</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(“<span class="keyword">var</span>”);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(“<span class="function"><span class="keyword">function</span>”);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">// 场景2</span></span><br><span class="line"><span class="function"><span class="title">var</span> <span class="title">f</span> = <span class="title">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(“<span class="keyword">var</span>”);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(“<span class="function"><span class="keyword">function</span>”);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"><span class="title">f</span>(<span class="params"></span>);  // 输出是<span class="title">var</span>，因为预编译的时候函数声明先赋值给了<span class="title">f</span>，然后函数表达式再赋值给<span class="title">f</span>覆盖了第一次赋值</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h6 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h6><p>​    js中会把定义在后面的东西（函数或者变量）提升到前面定义。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> h=<span class="string">'hhh'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(h);		<span class="comment">// undefined</span></span><br><span class="line">  alert(a);		<span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">var</span> a=<span class="string">'aaa'</span>;</span><br><span class="line">  <span class="keyword">var</span> h=<span class="string">'h'</span>;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><strong>问题</strong> a 的结果是什么？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(! “a” <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(a);</span><br></pre></td></tr></table></figure>
 
-<p>​    虽然在函数中 alert语句之前a还未被声明，但由于js中的变量提升，实际变量a在函数一开始就被声明，但未被赋值。对于变量h，局部作用域中的h被提升，和全局变量h比，它在作用域链中更靠前，因此输出的是局部作用域中的h的值，由于赋值语句在之后，此时的输出也是undefined。</p>
-<p>​    对于<strong>函数提示</strong>，函数声明方式可以提升，而函数表达式则不能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  foo();</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  bar();</span><br><span class="line">  <span class="keyword">var</span> bar=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'bar'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// foo</span></span><br><span class="line"><span class="comment">// Uncaught TypeError: bar is not a function</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><pre><code>js中有**自动垃圾收集机制**，执行环境会负责管理代码执行过程中使用的内存。</code></pre><p>​    这种垃圾收集机制的<strong>原理</strong>是：找出那些不再被使用的变量，释放其内存。垃圾收集器会按照固定的时间间隔周期性地执行这个操作。</p>
-<h4 id="垃圾收集策略"><a href="#垃圾收集策略" class="headerlink" title="垃圾收集策略"></a>垃圾收集策略</h4><p>​    离开作用域的值会自动被标记为可回收，在垃圾收集期间会被删除。<strong>标记清除</strong>为目前主流策略，另一种是<strong>引用计数</strong>。当代码中存在循环引用现象，“引用计数”算法会出问题。</p>
-<h4 id="内存管理与性能优化"><a href="#内存管理与性能优化" class="headerlink" title="内存管理与性能优化"></a>内存管理与性能优化</h4><p>​    确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式是i未执行中的代码只保存必要数据。一旦数据不再有用，就将其设为null来<strong>解除引用</strong>。主要适用于全局变量及其属性。 <strong>解除引用</strong>不等于自动回收该值所占内存，实际是让这个值脱离执行环境，以便垃圾收集器下次运行时将它回收。</p>
-
+<p><strong>答案</strong>：undefined，虽然if的意思是先判断window中是否有a这个全局变量，如果没有就声明并赋值为1，但是由于存在变量提升，所以实际执行的是下面的顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">if</span>(!’a’ <span class="keyword">in</span> <span class="built_in">window</span>)&#123; a=<span class="number">1</span>; &#125;</span><br><span class="line">alert(a)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -471,8 +485,6 @@
             <a href="/tags/变量/" rel="tag"><i class="fa fa-tag"></i> 变量</a>
           
             <a href="/tags/作用域/" rel="tag"><i class="fa fa-tag"></i> 作用域</a>
-          
-            <a href="/tags/内存/" rel="tag"><i class="fa fa-tag"></i> 内存</a>
           
         </div>
       
@@ -567,7 +579,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -589,7 +601,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -635,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性创建"><span class="nav-number">1.1.</span> <span class="nav-text">属性创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量复制"><span class="nav-number">1.2.</span> <span class="nav-text">变量复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数传递"><span class="nav-number">1.3.</span> <span class="nav-text">参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型检测"><span class="nav-number">1.4.</span> <span class="nav-text">类型检测</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境和作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局执行环境"><span class="nav-number">2.1.</span> <span class="nav-text">全局执行环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部执行环境"><span class="nav-number">2.2.</span> <span class="nav-text">局部执行环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链"><span class="nav-number">2.3.</span> <span class="nav-text">作用域链</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#延长作用域链"><span class="nav-number">2.3.1.</span> <span class="nav-text">延长作用域链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#块级作用域"><span class="nav-number">2.3.2.</span> <span class="nav-text">块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#变量提升"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">变量提升</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">3.</span> <span class="nav-text">内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#垃圾收集策略"><span class="nav-number">3.1.</span> <span class="nav-text">垃圾收集策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存管理与性能优化"><span class="nav-number">3.2.</span> <span class="nav-text">内存管理与性能优化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性创建"><span class="nav-number">1.1.</span> <span class="nav-text">属性创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量复制"><span class="nav-number">1.2.</span> <span class="nav-text">变量复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数传递"><span class="nav-number">1.3.</span> <span class="nav-text">参数传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.4.</span> <span class="nav-text">类型检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行环境和作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境和作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域概念"><span class="nav-number">2.1.</span> <span class="nav-text">作用域概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局执行环境"><span class="nav-number">2.2.</span> <span class="nav-text">全局执行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明关键字-var-let-const"><span class="nav-number">2.3.</span> <span class="nav-text">变量声明关键字 var, let, const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#var"><span class="nav-number">2.3.1.</span> <span class="nav-text">var</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">2.3.2.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">2.3.3.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链"><span class="nav-number">2.4.</span> <span class="nav-text">作用域链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#延长作用域链"><span class="nav-number">2.4.1.</span> <span class="nav-text">延长作用域链</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量提升"><span class="nav-number">2.5.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数提升"><span class="nav-number">2.6.</span> <span class="nav-text">函数提升</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题"><span class="nav-number">3.</span> <span class="nav-text">例题</span></a></li></ol></div>
             
 
           </div>

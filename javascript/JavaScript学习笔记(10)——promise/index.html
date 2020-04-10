@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="ES6新引入的promise,主要用于异步编程，有点复杂，但是好用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-04T07:00:32.827Z">
+<meta property="og:updated_time" content="2020-04-10T07:18:13.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript学习笔记(10)——promise">
 <meta name="twitter:description" content="ES6新引入的promise,主要用于异步编程，有点复杂，但是好用">
@@ -385,16 +385,21 @@
 <li>promise构造时内部的代码是立刻执行的</li>
 <li>resolve和reject传出的参数就是then执行时接收的参数，这个参数也可以是一个promise,如果这样的话，实际上当前promise的then等待的状态是依赖于被传回的promise的。</li>
 </ul>
-<h3 id="promise组合"><a href="#promise组合" class="headerlink" title="promise组合"></a>promise组合</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.all([p1,p2,p3]);</span><br><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.race([p1,p2,p3]);</span><br><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.any([p1,p2,p3]);</span><br></pre></td></tr></table></figure>
+<h3 id="promise组合"><a href="#promise组合" class="headerlink" title="promise组合"></a>promise组合</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.all([p1,p2,p3]);</span><br><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.allSettled([p1,p2,p3]);</span><br><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.race([p1,p2,p3]);</span><br><span class="line"><span class="keyword">const</span> promise = <span class="built_in">Promise</span>.any([p1,p2,p3]);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>由多个promise all组合得到一个promise，这个的状态依赖于所有参数，只有当大家都fulfilled，这个才会resolve，否则就reject</li>
+<li>由多个promise all组合得到一个promise，这个的状态依赖于所有参数，只有当大家都fulfilled，这个才会resolve，否则就reject，其中一个reject了就直接reject</li>
+<li>allSettled是等所有promise都返回结果，无论是fulfilled还是rejected，才结束。</li>
 <li>race则是返回第一个结束的promise的状态作为结果</li>
-<li>any就是只要有一个的结果是fulfilled就会resolve</li>
+<li>any就是只要有一个的结果是fulfilled就会resolve<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自己实现的Promise.all</span></span><br><span class="line"><span class="built_in">Promise</span>.All = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> result = [];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> p <span class="keyword">of</span> arr)&#123;</span><br><span class="line">            <span class="built_in">Promise</span>.resolve(p).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">                result.push(res);</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">if</span>(i==arr.length)</span><br><span class="line">                    <span class="keyword">return</span> resolve(result)</span><br><span class="line">            &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> reject(err);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 <h3 id="链式调用"><a href="#链式调用" class="headerlink" title="链式调用"></a>链式调用</h3><p>then中返回的值val会被包装成Promise.resolve(val)，从而被下一个then调用</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'My Error'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;<span class="built_in">console</span>.log(err);<span class="keyword">return</span> <span class="number">1</span>&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x)) <span class="comment">//2</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.error)</span><br></pre></td></tr></table></figure>
 
+<h4 id="resolve方法"><a href="#resolve方法" class="headerlink" title="resolve方法"></a>resolve方法</h4><p>resolve会把参数包装成一个promise对象</p>
+<h4 id="reject方法"><a href="#reject方法" class="headerlink" title="reject方法"></a>reject方法</h4><p>reject方法的参数要求是一个thenable对象，catch中获得的参数不会被包装，直接会是这个thenable对象。<br>reject方法的返回值是一个promise对象，状态为rejected</p>
 
       
     </div>
@@ -519,7 +524,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -541,7 +546,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -587,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">1.1.</span> <span class="nav-text">特点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本写法"><span class="nav-number">2.1.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise组合"><span class="nav-number">2.2.</span> <span class="nav-text">promise组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式调用"><span class="nav-number">2.3.</span> <span class="nav-text">链式调用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">1.1.</span> <span class="nav-text">特点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本写法"><span class="nav-number">2.1.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise组合"><span class="nav-number">2.2.</span> <span class="nav-text">promise组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式调用"><span class="nav-number">2.3.</span> <span class="nav-text">链式调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#resolve方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">resolve方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reject方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">reject方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

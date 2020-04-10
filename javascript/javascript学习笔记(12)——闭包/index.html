@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="js,判等,">
+  <meta name="keywords" content="闭包,">
 
 
 
@@ -87,20 +87,18 @@
 
 
 
-<meta name="description" content="JAVA中的 == 和 equals​    简单的说，java中的”==”判断的是两个变量的值是否相同，而equals方法，判断两个对象的内容是否相同。  java中的基本数据类型之间的比较应该用”==”,因为比较的是值。 (基本数据类型：byte, short, char, int, long, float, double, boolean)  复合数据类型（类）在比较时，”==”判断的是二者">
-<meta name="keywords" content="js,判等">
+<meta name="description" content="闭包真是js里经常遇到的一个东西，算是js的语言特性，也很容易考到。">
+<meta name="keywords" content="闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些关于&quot;=&quot;的故事">
-<meta property="og:url" content="https://bigbag01.github.io/java/java和js判等方法/index.html">
+<meta property="og:title" content="Javascript学习笔记(12)——闭包">
+<meta property="og:url" content="https://bigbag01.github.io/javascript/javascript学习笔记(12)——闭包/index.html">
 <meta property="og:site_name" content="学姐的博客">
-<meta property="og:description" content="JAVA中的 == 和 equals​    简单的说，java中的”==”判断的是两个变量的值是否相同，而equals方法，判断两个对象的内容是否相同。  java中的基本数据类型之间的比较应该用”==”,因为比较的是值。 (基本数据类型：byte, short, char, int, long, float, double, boolean)  复合数据类型（类）在比较时，”==”判断的是二者">
+<meta property="og:description" content="闭包真是js里经常遇到的一个东西，算是js的语言特性，也很容易考到。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/bigbag01/blogfiles/blob/master/img/js%E5%88%A4%E7%AD%89%E7%9C%9F%E5%80%BC%E8%A1%A8.jpg?raw=true">
-<meta property="og:updated_time" content="2020-02-23T07:19:46.110Z">
+<meta property="og:updated_time" content="2020-04-10T08:36:43.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些关于&quot;=&quot;的故事">
-<meta name="twitter:description" content="JAVA中的 == 和 equals​    简单的说，java中的”==”判断的是两个变量的值是否相同，而equals方法，判断两个对象的内容是否相同。  java中的基本数据类型之间的比较应该用”==”,因为比较的是值。 (基本数据类型：byte, short, char, int, long, float, double, boolean)  复合数据类型（类）在比较时，”==”判断的是二者">
-<meta name="twitter:image" content="https://github.com/bigbag01/blogfiles/blob/master/img/js%E5%88%A4%E7%AD%89%E7%9C%9F%E5%80%BC%E8%A1%A8.jpg?raw=true">
+<meta name="twitter:title" content="Javascript学习笔记(12)——闭包">
+<meta name="twitter:description" content="闭包真是js里经常遇到的一个东西，算是js的语言特性，也很容易考到。">
 
 
 
@@ -128,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://bigbag01.github.io/java/java和js判等方法/">
+  <link rel="canonical" href="https://bigbag01.github.io/javascript/javascript学习笔记(12)——闭包/">
 
 
 
 
 
-  <title> 一些关于"="的故事 | 学姐的博客 </title>
+  <title> Javascript学习笔记(12)——闭包 | 学姐的博客 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/java和js判等方法/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/javascript学习笔记(12)——闭包/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -284,7 +282,7 @@
             
             
               
-                一些关于"="的故事
+                Javascript学习笔记(12)——闭包
               
             
           </h2>
@@ -299,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T16:30:00+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-16T00:00:00+08:00">
+                2020-02-16
               </time>
             
 
@@ -322,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -350,6 +348,10 @@
           
 
           
+              <div class="post-description">
+                  闭包真是js里经常遇到的一个东西，算是js的语言特性，也很容易考到。
+              </div>
+          
           
 
         </div>
@@ -363,83 +365,14 @@
       
 
       
-        <h3 id="JAVA中的-和-equals"><a href="#JAVA中的-和-equals" class="headerlink" title="JAVA中的 == 和 equals"></a>JAVA中的 == 和 equals</h3><p>​    简单的说，java中的”==”判断的是两个变量的值是否相同，而equals方法，判断两个对象的内容是否相同。</p>
-<ol>
-<li><p>java中的基本数据类型之间的比较应该用”==”,因为比较的是值。</p>
-<p>(<strong>基本数据类型</strong>：byte, short, char, int, long, float, double, boolean)</p>
-</li>
-<li><p>复合数据类型（类）在比较时，”==”判断的是二者在内存中的地址是否相同，而”equals”方法判断的是二者的值是否相等。</p>
-<a id="more"></a>
+        <ul>
+<li>闭包是让你能访问一个隐藏起来的变量的方法</li>
+<li>JS中面向对象没有public和private的限定，闭包可以用来模拟private</li>
+</ul>
+<h2 id="在循环中使用闭包"><a href="#在循环中使用闭包" class="headerlink" title="在循环中使用闭包"></a>在循环中使用闭包</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scalers = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">        scalers.push(<span class="function">(<span class="params">x</span>)=&gt;</span>&#123;<span class="keyword">return</span> x*i&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> scalers;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(func[i](<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 6</span></span><br><span class="line"><span class="comment">// 6</span></span><br><span class="line"><span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用equals判等，以下均相同，用==判断的结果见表格</span></span><br><span class="line">String str1=<span class="string">"hello"</span>;</span><br><span class="line">String str2=<span class="string">"hello"</span>;</span><br><span class="line">String str3=<span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line">String str4=<span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>​    </p>
-<table>
-<thead>
-<tr>
-<th>真值表</th>
-<th>str1</th>
-<th>str2</th>
-<th>str3</th>
-<th>str4</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>str1</td>
-<td>true</td>
-<td>true</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>str2</td>
-<td>true</td>
-<td>true</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>str3</td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>str4</td>
-<td>false</td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-</tr>
-</tbody></table>
-<ol start="3">
-<li><p><strong>然而</strong>！！ 对一个自定义类先后创建的两个内容相同对象进行比较时，无论equals还是==，返回值都是false。<strong>原因</strong> 是java中所有的自定义类都隐性继承自Object，而Object中的equals也是用==来实现的 ⊙﹏⊙b</p>
-<p>所以如果想判断两个内容相同的对象相同，需要在这个类中重写equals方法。而如果是在一个集合中调用contains方法，判断对象是否存在，还需要覆盖类中的hashCode()方法。（曾经困扰过我许久的一个bug就是因为这！）</p>
-<p><a href="http://www.cnblogs.com/happyPawpaw/p/3744971.html" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>
-</li>
-</ol>
-<h3 id="javascript中的判等"><a href="#javascript中的判等" class="headerlink" title="javascript中的判等"></a>javascript中的判等</h3><p>​    JavaScript中的判等可以用”==”和”===”</p>
-<ul>
-<li>在基础类型（string，number等）之间进行比较时<ul>
-<li>如果两者类型不同，”==” 会将二者转化成同一类型，看值是否相等，而”===”如果类型不同，结果就是不等。</li>
-<li>如果类型相同，则”==”与”===”比较的都是值，返回结果也相同</li>
-</ul>
-</li>
-<li>在高级类型（Array，Object等）之间进行比较时<ul>
-<li>二者都是对内存中的地址进行比较，返回结果是相同的。</li>
-</ul>
-</li>
-<li>在一个基础类型和一个高级类型之间进行比较时<ul>
-<li>对于”==”,高级类型会被转化为基础类型再进行值比较</li>
-<li>对于”===”,结果就是不等的。</li>
-</ul>
-</li>
-</ul>
-<p>下面是一张令人震撼的真值表(ノ-_-)ノ~┻━┻</p>
-<p><img src="https://github.com/bigbag01/blogfiles/blob/master/img/js%E5%88%A4%E7%AD%89%E7%9C%9F%E5%80%BC%E8%A1%A8.jpg?raw=true" alt="js判等真值表"></p>
+<p>上面这个会出现是因为i的作用域是在func中的，它在闭包中被保存，所以当调用func再去读i的时候，它的值是最新的3；<br>如果要修改，可以直接把循环体中的<code>var i=0</code>改成<code>let i=0</code>,它的作用域就被限制在循环体内，这个值就会定格;</p>
+<h2 id="清除闭包"><a href="#清除闭包" class="headerlink" title="清除闭包"></a>清除闭包</h2><p>闭包的生命周期是跟随包含它的函数，如果要手动清除，就把不需要的函数名设为null</p>
 
       
     </div>
@@ -469,9 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
-            <a href="/tags/判等/" rel="tag"><i class="fa fa-tag"></i> 判等</a>
+            <a href="/tags/闭包/" rel="tag"><i class="fa fa-tag"></i> 闭包</a>
           
         </div>
       
@@ -484,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/java/hashtable和hashmap/" rel="next" title="关于HashMap和HashTable">
-                <i class="fa fa-chevron-left"></i> 关于HashMap和HashTable
+              <a href="/javascript/JavaScript学习笔记(11)——异步编程/" rel="next" title="Javascript学习笔记(11)——异步编程">
+                <i class="fa fa-chevron-left"></i> Javascript学习笔记(11)——异步编程
               </a>
             
           </div>
@@ -494,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/network-communication/网络通信-从错题里学网络基础1/" rel="prev" title="网络通信-从错题里学网络基础(1)">
-                网络通信-从错题里学网络基础(1) <i class="fa fa-chevron-right"></i>
+              <a href="/javascript/JavaScript学习笔记(13)——延时函数/" rel="prev" title="Javascript学习笔记(13)——延时函数">
+                Javascript学习笔记(13)——延时函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -566,7 +497,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -588,7 +519,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -634,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA中的-和-equals"><span class="nav-number">1.</span> <span class="nav-text">JAVA中的 == 和 equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript中的判等"><span class="nav-number">2.</span> <span class="nav-text">javascript中的判等</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在循环中使用闭包"><span class="nav-number">1.</span> <span class="nav-text">在循环中使用闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除闭包"><span class="nav-number">2.</span> <span class="nav-text">清除闭包</span></a></li></ol></div>
             
 
           </div>

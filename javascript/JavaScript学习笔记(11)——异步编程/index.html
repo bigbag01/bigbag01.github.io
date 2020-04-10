@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+<meta name="description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。‼️❗️❗️面试非常容易考到。">
 <meta name="keywords" content="异步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript学习笔记(11)——异步编程">
 <meta property="og:url" content="https://bigbag01.github.io/javascript/JavaScript学习笔记(11)——异步编程/index.html">
 <meta property="og:site_name" content="学姐的博客">
-<meta property="og:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+<meta property="og:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。‼️❗️❗️面试非常容易考到。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-04T07:08:46.893Z">
+<meta property="og:updated_time" content="2020-04-10T07:34:12.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript学习笔记(11)——异步编程">
-<meta name="twitter:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。">
+<meta name="twitter:description" content="ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。‼️❗️❗️面试非常容易考到。">
 
 
 
@@ -349,7 +349,7 @@
 
           
               <div class="post-description">
-                  ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。
+                  ES6新引入了一些特性之后，异步编程有很多种不同写法和实现，这里主要也是参考别人的博客还有文章整理的一些笔记。‼️❗️❗️面试非常容易考到。
               </div>
           
           
@@ -386,8 +386,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pubsub = <span class="function">(<span class="params">(</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> topics = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">topic,fn</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!topics[topic])&#123;</span><br><span class="line">            topics[topic]=[]</span><br><span class="line">        &#125;</span><br><span class="line">        topics[topic].push(fn);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">publish</span>(<span class="params">topic,…args</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!topics[topic])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> fn <span class="keyword">of</span> topics[topic])&#123;</span><br><span class="line">            fn(…args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        subscribe,publish</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">pubsub.subscribe(<span class="string">'test'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(...arguments)</span><br><span class="line">&#125;)</span><br><span class="line">pubsub.publish(<span class="string">'test'</span>,<span class="string">'1'</span>,<span class="string">'c'</span>,<span class="string">'$'</span>)</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意</strong>： 发布订阅和观察者不一样的，观察者是被观测者直接维护观测对象，自己变了通知他们，发布订阅是订阅者订阅主题，发布者把消息按主题发给中间件，有消息的时候订阅者可以随之做出操作。</p>
-<h3 id="5-promise"><a href="#5-promise" class="headerlink" title="5. promise"></a>5. promise</h3><p><a href="./JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(10)%E2%80%94%E2%80%94promise">Promise</a></p>
-<h3 id="6-generator"><a href="#6-generator" class="headerlink" title="6. generator"></a>6. generator</h3><p><a href="./JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(9)%E2%80%94%E2%80%94generator">generator</a></p>
+<h3 id="5-promise"><a href="#5-promise" class="headerlink" title="5. promise"></a>5. promise</h3><p><a href="/javascript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(10)%E2%80%94%E2%80%94promise">Promise</a></p>
+<h3 id="6-generator"><a href="#6-generator" class="headerlink" title="6. generator"></a>6. generator</h3><p><a href="/javascript/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(9)%E2%80%94%E2%80%94generator">generator</a></p>
 <h3 id="7-async-await"><a href="#7-async-await" class="headerlink" title="7. async/await"></a>7. async/await</h3><p>await关键字必须出现在有async修饰的函数里,<br>有await，且返回值是一个promise就会等它返回再往下走，如果返回值不是promise会直接往下走，无法保证结果的顺序。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log_promise</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           resolve(time)</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(time);</span><br><span class="line">        <span class="keyword">return</span> time;</span><br><span class="line">    &#125;,time)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> a = <span class="keyword">await</span> log(<span class="number">1000</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">    <span class="keyword">const</span> b = <span class="keyword">await</span> log_promise(<span class="number">500</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(b)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun()</span><br></pre></td></tr></table></figure>
 
@@ -444,8 +444,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/network-communication/网络通信-TCPIP模型与OSI模型/" rel="prev" title="网络通信-TCP/IP模型与OSI模型">
-                网络通信-TCP/IP模型与OSI模型 <i class="fa fa-chevron-right"></i>
+              <a href="/javascript/javascript学习笔记(12)——闭包/" rel="prev" title="Javascript学习笔记(12)——闭包">
+                Javascript学习笔记(12)——闭包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -516,7 +516,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -538,7 +538,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">77</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
