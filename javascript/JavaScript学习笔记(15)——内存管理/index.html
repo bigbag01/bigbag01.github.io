@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="js的垃圾回收机制">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-10T07:41:53.075Z">
+<meta property="og:updated_time" content="2020-07-04T13:23:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript学习笔记(15)——内存管理">
 <meta name="twitter:description" content="js的垃圾回收机制">
@@ -374,7 +374,7 @@
 <li>垃圾回收器定时检查，给所有当前环境中的变量及他们引用的变量去掉标记</li>
 <li>删除那些还有标记的变量，释放内存</li>
 </ol>
-<h3 id="内存管理与性能优化"><a href="#内存管理与性能优化" class="headerlink" title="内存管理与性能优化"></a>内存管理与性能优化</h3><p>确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式是i未执行中的代码只保存必要数据。一旦数据不再有用，就将其设为null来<strong>解除引用</strong>。主要适用于全局变量及其属性。 <strong>解除引用</strong>不等于自动回收该值所占内存，实际是让这个值脱离执行环境，以便垃圾收集器下次运行时将它回收。</p>
+<h3 id="内存管理与性能优化"><a href="#内存管理与性能优化" class="headerlink" title="内存管理与性能优化"></a>内存管理与性能优化</h3><p>确保占用最少的内存可以让页面获得更好的性能。而优化内存占用的最佳方式是对执行中的代码只保存必要数据。一旦数据不再有用，就将其设为null来<strong>解除引用</strong>。主要适用于全局变量及其属性。 <strong>解除引用</strong>不等于自动回收该值所占内存，实际是让这个值脱离执行环境，以便垃圾收集器下次运行时将它回收。</p>
 <h2 id="JS程序堆栈"><a href="#JS程序堆栈" class="headerlink" title="JS程序堆栈"></a>JS程序堆栈</h2><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>堆用于复杂数据类型分配空间，比如数组、object，运行时动态分配内存，存取速度慢<br><em>闭包中的变量保存在<strong>堆</strong>中</em></p>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>存放基本类型变量和对象的引用，存取速度快。<br>栈是后进先出</p>
 
@@ -431,8 +431,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/network-communication/网络通信-TCPIP模型与OSI模型/" rel="prev" title="网络通信-TCP/IP模型与OSI模型">
-                网络通信-TCP/IP模型与OSI模型 <i class="fa fa-chevron-right"></i>
+              <a href="/network-communication/网络通信-相关题目/" rel="prev" title="网络通信-相关题目">
+                网络通信-相关题目 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,7 +503,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +525,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

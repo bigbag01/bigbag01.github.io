@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/network-communication/网络通信-从错题里学网络基础2/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/js浮点数位数保留和计算/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -283,8 +283,8 @@
             
               
                 
-                <a class="post-title-link" href="/network-communication/网络通信-从错题里学网络基础2/" itemprop="url">
-                  网络通信-从错题里学网络基础(2)
+                <a class="post-title-link" href="/javascript/js浮点数位数保留和计算/" itemprop="url">
+                  javascript浮点数位数保留与计算
                 </a>
               
             
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T18:39:03+08:00">
-                2017-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
+                2017-12-19
               </time>
             
 
@@ -323,8 +323,168 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/network-communication/" itemprop="url" rel="index">
-                    <span itemprop="name">网络通信</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+              <div class="post-description">
+                  关于js中浮点数小数点后位数保留的方法。关于浮点数运算精度。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          <blockquote>
+<p>本篇笔记记录js中关于浮点数小数点后位数保留的方法，以及对于浮点数计算精度的讨论</p>
+</blockquote>
+<h3 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">2.57893</span>;</span><br><span class="line">num = num.toFixed(<span class="number">2</span>); <span class="comment">//2.58</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="非四舍五入"><a href="#非四舍五入" class="headerlink" title="非四舍五入"></a>非四舍五入</h3><h4 id="向下取"><a href="#向下取" class="headerlink" title="向下取"></a>向下取</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">2.57893</span>;</span><br><span class="line">num = <span class="built_in">Math</span>.floor(num*<span class="number">100</span>)/<span class="number">100</span> <span class="comment">//2.57</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="向上取"><a href="#向上取" class="headerlink" title="向上取"></a>向上取</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">2.53245</span>;</span><br><span class="line">num = <span class="built_in">Math</span>.ceil(num*<span class="number">100</span>)/<span class="number">100</span> <span class="comment">//2.54</span></span><br></pre></td></tr></table></figure>
+          <!--noindex1-->
+          <div class="post-button text-center">
+            <a class="btn" href="/javascript/js浮点数位数保留和计算/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/Javascript学习笔记(3)——引用类型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/javascript/Javascript学习笔记(3)——引用类型/" itemprop="url">
+                  Javascript学习笔记(3)——引用类型
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T13:06:02+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -360,13 +520,22 @@
 
       
         
-          <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>在因特网中，下列哪个不是IP层所需解决的问题</p>
-<p>A. 流量控制    B. 路径选择    C.寻址    D.分段和重新组装</p>
-<p><strong>答案</strong>： A</p>
-<p><strong>解析</strong>： 流量控制是数据链路层解决的问题。</p>
+          <h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>引用类型的值是引用类型的一个实例。引用类型有时也被称为对象定义。</p>
+<p>ECMAScript中提供了很多原生引用类型，</p>
+<ul>
+<li><p>内置对象：Object, Array, Date, RegExp, Function</p>
+</li>
+<li><p>基本类型的包装类型 Boolean, Number, String</p>
+</li>
+<li><p>单体内置对象：Global, Math</p>
+</li>
+<li><p>ES6新增：Promise, Map, Set, ArrayBuffer, TypedBuffer, DataView……</p>
+<p>同时ES6也对原有内置对象进行了扩展</p>
+</li>
+</ul>
           <!--noindex2-->
           <div class="post-button text-center">
-            <a class="btn" href="/network-communication/网络通信-从错题里学网络基础2/#more" rel="contents">
+            <a class="btn" href="/javascript/Javascript学习笔记(3)——引用类型/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -412,7 +581,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/network-communication/从错题里学网络基础1/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/javascript学习笔记2——变量,作用域,内存/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -434,8 +603,8 @@
             
               
                 
-                <a class="post-title-link" href="/network-communication/从错题里学网络基础1/" itemprop="url">
-                  从错题里学网络基础(1)
+                <a class="post-title-link" href="/javascript/javascript学习笔记2——变量,作用域,内存/" itemprop="url">
+                  Javascript学习笔记(2)——变量，作用域
                 </a>
               
             
@@ -451,8 +620,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T13:49:22+08:00">
-                2017-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T09:32:22+08:00">
+                2017-11-08
               </time>
             
 
@@ -474,8 +643,159 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/network-communication/" itemprop="url" rel="index">
-                    <span itemprop="name">网络通信</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>​    ECMAScript 变量有两种不同数据类型的值：<strong>基本类型值</strong>（简单的数据段）和<strong>引用类型值</strong> （可能由多个值构成的对象）。</p>
+<p>​    基本数据类型是按值访问的，可以操作保存在变量里的值。</p>
+<p>​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作<em>对象的引用</em>。 </p>
+<p>​    <strong>注意</strong>： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型</p>
+          <!--noindex2-->
+          <div class="post-button text-center">
+            <a class="btn" href="/javascript/javascript学习笔记2——变量,作用域,内存/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/javascript学习笔记1——基本概念/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/javascript/javascript学习笔记1——基本概念/" itemprop="url">
+                  Javascript学习笔记(1)——基本概念
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T22:51:22+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -499,7 +819,7 @@
           
           
               <div class="post-description">
-                  没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。
+                  写过一些前端页面，对前端知识有浅显的了解，开始学习js的更多知识。这个系列是以读《JavaScript高级程序设计》为主，查看其他相关资料的笔记。
               </div>
           
 
@@ -516,13 +836,16 @@
       
         
           
-          <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>某网络的IP地址空间为192.168.5.0/24, 采用定长子网划分，子网掩码为255.255.255.248， 则该网络的最大子网个数，每个子网内的最大可分配地址个数各为多少？</p>
-<p>A. 32, 6    B. 32, 8    C. 8, 32    D. 8, 30</p>
-<p><strong>答案</strong>： A</p>
-<p><strong>解析</strong>： 一个IP的组成为 网络号+子网号+主机号。IP地址后的/24表示掩码位是24位，子网掩码 255.255.255.248，二进制为（11111111，11111111，11111111，11111000）前24位为网络号，后8位是子网号+主机号，前五位是子网号，后3位是主机号。但主机号全0表示本地主机，全1表示广播，所以子网个数为2^5=32个 ,主机个数为2^3-2=6个。</p>
+          <h3 id="插入javascript脚本"><a href="#插入javascript脚本" class="headerlink" title="插入javascript脚本"></a>插入javascript脚本</h3><ul>
+<li>建议用<code>&lt;script src=&quot;some URL&quot;&gt;&lt;/script&gt;</code>引用外部js脚本而非将js代码嵌入html文件中，<strong>原因</strong>主要有可维护性好，且可缓存。</li>
+<li>所有script标签在没有defer和async属性时，按照它们在页面中出现的顺序依次被解析。</li>
+<li>由于浏览器会先解析script标签引用的代码，然后再解析之后的内容，因此，一般应该把script标签放最后，<code>&lt;/body&gt;</code>之前。</li>
+<li>使用<strong>defer</strong>属性可以让脚本再document加载完成之后再执行</li>
+<li>使用<strong>async</strong>属性可以表示当前脚本不必等待其他脚本，也不阻塞文档加载。使用了<strong>async</strong>属性的脚本执行顺序无法保证</li>
+</ul>
           <!--noindex1-->
           <div class="post-button text-center">
-            <a class="btn" href="/network-communication/从错题里学网络基础1/">
+            <a class="btn" href="/javascript/javascript学习笔记1——基本概念/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -568,7 +891,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/network-communication/网络通信-从错题里学网络基础1/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/front-end/html中的特殊字符/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -590,8 +913,8 @@
             
               
                 
-                <a class="post-title-link" href="/network-communication/网络通信-从错题里学网络基础1/" itemprop="url">
-                  网络通信-从错题里学网络基础(1)
+                <a class="post-title-link" href="/front-end/html中的特殊字符/" itemprop="url">
+                  HTML中常用的特殊字符
                 </a>
               
             
@@ -607,8 +930,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T13:49:22+08:00">
-                2017-03-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T11:23:40+08:00">
+                2017-09-18
               </time>
             
 
@@ -630,8 +953,457 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/network-communication/" itemprop="url" rel="index">
-                    <span itemprop="name">网络通信</span>
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="HTML字符实体"><a href="#HTML字符实体" class="headerlink" title="HTML字符实体"></a>HTML字符实体</h3><p>HTML中的预留字符必须被替换成字符实体。字符实体可以用实体名或者实体编号来表示。浏览器对实体名称的支持没有对实体数字的支持好</p>
+<p><em>注</em>：<strong>实体名称大小写敏感</strong></p>
+          <!--noindex2-->
+          <div class="post-button text-center">
+            <a class="btn" href="/front-end/html中的特殊字符/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/front-end/html meta标签/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/front-end/html meta标签/" itemprop="url">
+                  html meta标签
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-03T15:15:33+08:00">
+                2017-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="meta标签用处"><a href="#meta标签用处" class="headerlink" title="meta标签用处"></a>meta标签用处</h3><p>​    定义页面的说明，关键字，最后修改日期等元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其他服务。</p>
+<h3 id="meta标签必需的属性"><a href="#meta标签必需的属性" class="headerlink" title="meta标签必需的属性"></a>meta标签必需的属性</h3><ul>
+<li><strong>content</strong> 定义与http-equiv或name相关的元信息</li>
+</ul>
+          <!--noindex2-->
+          <div class="post-button text-center">
+            <a class="btn" href="/front-end/html meta标签/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/front-end/html的head/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/front-end/html的head/" itemprop="url">
+                  html头部元素
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-03T14:28:33+08:00">
+                2017-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="html-lt-head-gt-元素"><a href="#html-lt-head-gt-元素" class="headerlink" title="html&lt;head&gt;元素"></a>html<code>&lt;head&gt;</code>元素</h3><p>​    <code>&lt;head&gt;</code>中可以包含<code>&lt;title&gt;,&lt;base&gt;,&lt;link&gt;,&lt;meta&gt;,&lt;script&gt;,&lt;style&gt;</code></p>
+<h3 id="html-lt-title-gt"><a href="#html-lt-title-gt" class="headerlink" title="html &lt;title&gt;"></a>html <code>&lt;title&gt;</code></h3><p>​    <code>&lt;tiltle&gt;</code>定义html页面标题，在浏览器中显示为每个标签页的标题，收藏在收藏夹中网页的标题，搜索引擎结果中的页面标题。</p>
+          <!--noindex2-->
+          <div class="post-button text-center">
+            <a class="btn" href="/front-end/html的head/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/front-end/jquery插件编写/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/front-end/jquery插件编写/" itemprop="url">
+                  编写一个 jQuery 插件
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T10:08:00+08:00">
+                2017-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -655,7 +1427,7 @@
           
           
               <div class="post-description">
-                  没有系统的上过网络基础的课程，只在计算机系统相关的课中有过一点了解，于是在很多笔试中就成了一个完全没法答的题。因此专门在这里通过做过的一些题目来复习（新学）计算机网络基础知识。
+                  想在博客主页加一个打字动态效果，于是在网上查到了一段代码，决定修改一下把它包装成一个jquery插件，方便以后使用。
               </div>
           
 
@@ -672,13 +1444,21 @@
       
         
           
-          <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>某网络的IP地址空间为192.168.5.0/24, 采用定长子网划分，子网掩码为255.255.255.248， 则该网络的最大子网个数，每个子网内的最大可分配地址个数各为多少？</p>
-<p>A. 32, 6    B. 32, 8    C. 8, 32    D. 8, 30</p>
-<p><strong>答案</strong>： A</p>
-<p><strong>解析</strong>： 一个IP的组成为 网络号+子网号+主机号。IP地址后的/24表示掩码位是24位，子网掩码 255.255.255.248，二进制为（11111111，11111111，11111111，11111000）前24位为网络号，后8位是子网号+主机号，前五位是子网号，后3位是主机号。但主机号全0表示本地主机，全1表示广播，所以子网个数为2^5=32个 ,主机个数为2^3-2=6个。</p>
+          <h2 id="效果呈现"><a href="#效果呈现" class="headerlink" title="效果呈现"></a>效果呈现</h2><p id="example">Test Test Test</p>
+
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/blog/js/src/jquery-typing.js"></script>
+<script type="text/javascript">
+
+$('#example').Type();
+
+</script>
+
+<p>当前的效果还比较粗糙，暂定为1.0版本，之后再继续修改</p>
+<p>代码可见 <a href="https://github.com/bigbag01/plugins/tree/master/type" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/bigbag01/plugins/tree/master/type</a></p>
           <!--noindex1-->
           <div class="post-button text-center">
-            <a class="btn" href="/network-communication/网络通信-从错题里学网络基础1/">
+            <a class="btn" href="/front-end/jquery插件编写/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -724,7 +1504,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/hashtable和hashmap/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/JAVA IO/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -746,8 +1526,8 @@
             
               
                 
-                <a class="post-title-link" href="/java/hashtable和hashmap/" itemprop="url">
-                  关于HashMap和HashTable
+                <a class="post-title-link" href="/java/JAVA IO/" itemprop="url">
+                  JAVA IO
                 </a>
               
             
@@ -763,8 +1543,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T16:20:33+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T11:21:33+08:00">
+                2017-07-04
               </time>
             
 
@@ -823,12 +1603,14 @@
 
       
         
-          <h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><p>​    HashMap和HashTable都实现了Map接口</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><h4 id="同步性"><a href="#同步性" class="headerlink" title="同步性"></a>同步性</h4><p><strong>HashTable</strong> 是synchronized，多个线程可以共享一个HashTable，java5后可用ConcurrentHashMap替代，扩展性更好。</p>
-<p><strong>HashMap</strong> 非synchronized，如果没有正确同步，多个线程不可共享HashMap。</p>
+          <h2 id="控制台IO"><a href="#控制台IO" class="headerlink" title="控制台IO"></a>控制台IO</h2><h3 id="一、控制台输出"><a href="#一、控制台输出" class="headerlink" title="一、控制台输出"></a>一、控制台输出</h3><ul>
+<li>System.out.print()    输出不换行</li>
+<li>System.out.println()   输出换行</li>
+</ul>
+<h3 id="二、控制台输入"><a href="#二、控制台输入" class="headerlink" title="二、控制台输入"></a>二、控制台输入</h3><p>​    控制台输入由System.in完成,创建BufferedReader对象来读</p>
           <!--noindex2-->
           <div class="post-button text-center">
-            <a class="btn" href="/java/hashtable和hashmap/#more" rel="contents">
+            <a class="btn" href="/java/JAVA IO/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -874,7 +1656,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/data-structure-and-algorithms/数据结构复习之二叉树/">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/tools/好用的软件分享2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Beige Zhang">
@@ -896,8 +1678,8 @@
             
               
                 
-                <a class="post-title-link" href="/data-structure-and-algorithms/数据结构复习之二叉树/" itemprop="url">
-                  数据结构复习之二叉树
+                <a class="post-title-link" href="/tools/好用的软件分享2/" itemprop="url">
+                  好用的软件分析——chrome插件篇
                 </a>
               
             
@@ -913,8 +1695,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T21:48:01+08:00">
-                2017-03-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T00:00:00+08:00">
+                2017-04-18
               </time>
             
 
@@ -936,8 +1718,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/data-structure-and-algorithms/" itemprop="url" rel="index">
-                    <span itemprop="name">算法与数据结构</span>
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
                   </a>
                 </span>
 
@@ -961,7 +1743,7 @@
           
           
               <div class="post-description">
-                  二叉树是数据结构中很基础也很重要的一种，在今天参加的美团点评的笔试中也遇到了相关的考题。不出意外，在之后的其他测试中也还会有遇到的可能，因此决定重新复习一下，也作为记录
+                  软件分享第二篇，关于chrome插件 （2018-01–4修改）
               </div>
           
 
@@ -978,793 +1760,19 @@
       
         
           
-          <h3 id="几种特别的二叉树"><a href="#几种特别的二叉树" class="headerlink" title="几种特别的二叉树"></a>几种特别的二叉树</h3><ol>
-<li><p><strong>完全二叉树</strong> </p>
-<p>只有最下面两层结点可以只拥有一个子结点或没有子结点，且最下面一层结点都集中在该层最左边</p>
-</li>
-<li><p><strong>满二叉树</strong> </p>
-<p>除了叶子结点外每一个结点都有左右子树，且叶结点都处在最底层的二叉树。</p>
-</li>
-<li><p><strong>真二叉树</strong></p>
-<p>   不含一度结点的二叉树</p>
-</li>
-<li><p><strong>huffman 树</strong> </p>
-<p>   一定是最优编码树之一，一定是真二叉树。常用于压缩算法。</p>
-</li>
+          <h2 id="OneTab"><a href="#OneTab" class="headerlink" title="OneTab"></a>OneTab</h2><p><strong>简介</strong>： tab页收集工具</p>
+<p><strong>优点</strong>： </p>
+<ol>
+<li>点击插件图标就可以将当前chrome浏览器中打开的页面都收集起来。有的网页暂时不需要浏览又不想放入收藏夹的时候就可以用它。</li>
+<li>收集起来的网页按日期分开，可以直接删除也可以一键恢复</li>
 </ol>
-<p><img src="https://github.com/bigbag01/blogfiles/blob/master/img/specialTypesOfBinaryTree.PNG?raw=true" alt="specialTypesOfBinaryTree"></p>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>有时候只是想点开看之前收起的页面，但是当前的就都一起被收起了，重新加载会花时间</li>
+</ol>
           <!--noindex1-->
           <div class="post-button text-center">
-            <a class="btn" href="/data-structure-and-algorithms/数据结构复习之二叉树/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/java继承1/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Beige Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学姐的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/java/java继承1/" itemprop="url">
-                  java继承和多态(1)
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T13:01:33+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="继承内容"><a href="#继承内容" class="headerlink" title="继承内容"></a>继承内容</h3><ul>
-<li>子类继承父类所有<strong>属性</strong> </li>
-<li>子类继承父类除了<strong>private</strong>关键字修饰之外的所有方法</li>
-<li>子类对象拥有super引用，表示父类的引用，可以调用父类的属性或方法。</li>
-<li>子类不继承父类的构造方法，但在new一个子类对象调用子类构造函数前，会先调用父类的构造函数。</li>
-</ul>
-          <!--noindex2-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/java继承1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/字段修饰符/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Beige Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学姐的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/java/字段修饰符/" itemprop="url">
-                  java字段修饰符
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T13:01:33+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="java修饰符"><a href="#java修饰符" class="headerlink" title="java修饰符"></a>java修饰符</h3><p>java修饰符主要分为<strong>访问控制修饰符</strong> 和<strong>非访问修饰符</strong>。修饰符用来定义类、方法或者变量，通常放在语句最前端。比如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoClass</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">boolean</span> flag;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> length=<span class="number">3.2</span>;</span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> width=<span class="number">4</span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]arguments)</span></span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex2-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/字段修饰符/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/Numbers/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Beige Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学姐的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/java/Numbers/" itemprop="url">
-                  java中的几个基本数值型数据类型，待完善~~~
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:59:58+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="int-long"><a href="#int-long" class="headerlink" title="int, long"></a>int, long</h3><ul>
-<li><p>java中的<strong>int</strong>和<strong>long</strong>都是有符号的，正负区别在于取反加一。</p>
-</li>
-<li><p>int总共32位，正数上限首位为0，即正数最大值为2^31-1，负数最小值为-2^31</p>
-</li>
-<li><p>long总共64位</p>
-</li>
-<li><p>int转long是向上转换可以直接隐式转换，long转int是向下，可能出现数据溢出情况！！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> ll=<span class="number">300000</span>;</span><br><span class="line"><span class="comment">//强制转换</span></span><br><span class="line"><span class="keyword">int</span> ii=(<span class="keyword">int</span>)ll;</span><br><span class="line"><span class="comment">//调用intValue()</span></span><br><span class="line"><span class="keyword">int</span> ii=<span class="keyword">new</span> Long(ll).intValue();</span><br><span class="line"><span class="comment">//先转为String</span></span><br><span class="line"><span class="keyword">int</span> ii=Integer.parseInt(String.valueOf(ll));</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-          <!--noindex2-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/Numbers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/struts2与jsp传值/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Beige Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学姐的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/java/struts2与jsp传值/" itemprop="url">
-                  Struts2 action和jsp之间传值
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:57:50+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="struts2-action-向-jsp-传值"><a href="#struts2-action-向-jsp-传值" class="headerlink" title="struts2 action 向 jsp 传值"></a>struts2 action 向 jsp 传值</h2><ol>
-<li><p>action中定义一个成员变量，对它提供get/set方法，在jsp中通过标签或EL表达式取值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//action 示例</span></span><br><span class="line"><span class="meta">@Action</span>(<span class="string">"handleMessage"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HandleMessage</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String message;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getMessage</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> message;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.message=message;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//jsp页面取值</span></span><br><span class="line"> $&#123;message&#125; 或者 &lt;s:property value=<span class="string">"message"</span>&gt;</span><br></pre></td></tr></table></figure></li></ol>
-          <!--noindex2-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/struts2与jsp传值/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/java/String/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Beige Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学姐的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/java/String/" itemprop="url">
-                  String StringBuilder StringBuffer
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T12:53:59+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="基本比较"><a href="#基本比较" class="headerlink" title="基本比较"></a>基本比较</h3><ul>
-<li><strong>String</strong> 定义后不可变，可理解为常量，线程安全  </li>
-<li><strong>StringBuffer</strong>、 <strong>StringBuilder</strong> 定义后可变 </li>
-<li><strong>StringBuffer</strong> 对方法加了同步锁线程安全，<strong>StringBuilder</strong>非线程安全</li>
-</ul>
-<h3 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h3><ul>
-<li><p>在每次对<strong>String 类型</strong>进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象，每次生成对象都会对系统性能产生影响，当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，性能就会降低。</p>
-</li>
-<li><p>使用 <strong>StringBuffer 类</strong>时，每次都会对 StringBuffer 对象本身进行操作，而<strong>不是</strong>生成新的对象并改变对象引用。</p>
-</li>
-</ul>
-          <!--noindex2-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/String/#more" rel="contents">
+            <a class="btn" href="/tools/好用的软件分享2/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1805,7 +1813,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1848,7 +1856,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1870,7 +1878,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

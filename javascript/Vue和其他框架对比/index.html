@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="Vue2.x和3.x的区别proxy替代Object.defineProperty使用ES6的Proxy对象替代了原有的Obeject.defineProperty的方式来实现观察者机制，速度加快了且节省了一般的内存开销。 更换实现的原因 Object.defineProperty不能监听数组变化，Proxy可以。 vue2.x的做法是对需要监听的数组的那些会改变数组的方法单独进行改写，vue3.">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue和其他框架对比">
+<meta property="og:url" content="https://bigbag01.github.io/javascript/Vue和其他框架对比/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="Vue2.x和3.x的区别proxy替代Object.defineProperty使用ES6的Proxy对象替代了原有的Obeject.defineProperty的方式来实现观察者机制，速度加快了且节省了一般的内存开销。 更换实现的原因 Object.defineProperty不能监听数组变化，Proxy可以。 vue2.x的做法是对需要监听的数组的那些会改变数组的方法单独进行改写，vue3.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-05T02:13:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue和其他框架对比">
+<meta name="twitter:description" content="Vue2.x和3.x的区别proxy替代Object.defineProperty使用ES6的Proxy对象替代了原有的Obeject.defineProperty的方式来实现观察者机制，速度加快了且节省了一般的内存开销。 更换实现的原因 Object.defineProperty不能监听数组变化，Proxy可以。 vue2.x的做法是对需要监听的数组的那些会改变数组的方法单独进行改写，vue3.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/javascript/Vue和其他框架对比/">
+
+
+
+
+
+  <title> Vue和其他框架对比 | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/javascript/Vue和其他框架对比/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue和其他框架对比
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T00:00:00+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Vue2-x和3-x的区别"><a href="#Vue2-x和3-x的区别" class="headerlink" title="Vue2.x和3.x的区别"></a>Vue2.x和3.x的区别</h2><h3 id="proxy替代Object-defineProperty"><a href="#proxy替代Object-defineProperty" class="headerlink" title="proxy替代Object.defineProperty"></a>proxy替代Object.defineProperty</h3><p>使用ES6的Proxy对象替代了原有的<code>Obeject.defineProperty</code>的方式来实现观察者机制，速度加快了且节省了一般的内存开销。</p>
+<h4 id="更换实现的原因"><a href="#更换实现的原因" class="headerlink" title="更换实现的原因"></a>更换实现的原因</h4><ol>
+<li><p><code>Object.defineProperty</code>不能监听数组变化，<code>Proxy</code>可以。</p>
+<p>vue2.x的做法是对需要监听的数组的那些会改变数组的方法单独进行改写，vue3.x用proxy可以也监听到这些变化。</p>
+</li>
+<li><p><code>Object.defineProperty</code>必须遍历对象的所有属性，效率低。</p>
+<p>Vue2.x的时候需要配合类似Object.keys的方法对对象所有属性进行遍历，proxy的get/set可以拦截对象上所有属性的访问</p>
+</li>
+<li><p><code>Object.defineProperty</code>必须深层遍历嵌套的对象</p>
+<p>proxy也还是需要逐层遍历，对于对象中的对象，proxy通过在get里递归调用proxy并返回</p>
+</li>
+</ol>
+<h4 id="优劣势"><a href="#优劣势" class="headerlink" title="优劣势"></a>优劣势</h4><ol>
+<li>proxy有13中拦截方法，比Object.defineProperty丰富得多。</li>
+<li>proxy的兼容性目前比Object.defineProperty差。</li>
+</ol>
+<h3 id="默认进行懒观察"><a href="#默认进行懒观察" class="headerlink" title="默认进行懒观察"></a>默认进行懒观察</h3><p>3.x版本只对被用于渲染初始可见部分的数据创建观察者，其他的等到需要的时候再创建，降低页面载入时的压力。</p>
+<h3 id="重写虚拟DOM"><a href="#重写虚拟DOM" class="headerlink" title="重写虚拟DOM"></a>重写虚拟DOM</h3><p>用了更有效的代码来创建虚拟节点</p>
+<h3 id="静态树提升"><a href="#静态树提升" class="headerlink" title="静态树提升"></a>静态树提升</h3><p>Vue3.x的编译器可以检测到静态组件，也就是中间不会有动态数据的组件，将其进行提升，可以降低渲染成本，可以跳过之后为整个树打补丁的过程。</p>
+<h3 id="缩小vue核心库"><a href="#缩小vue核心库" class="headerlink" title="缩小vue核心库"></a>缩小vue核心库</h3><p>利用tree shaking来消除不用的库，新的核心运行时压缩后只有10kb左右</p>
+<h3 id="更好支持typescript"><a href="#更好支持typescript" class="headerlink" title="更好支持typescript"></a>更好支持typescript</h3><p>vue3.0默认支持typescript</p>
+<h2 id="vue和jquery"><a href="#vue和jquery" class="headerlink" title="vue和jquery"></a>vue和jquery</h2><ul>
+<li><strong>jQuery</strong>使用选择器选取DOM对象，对其进行操作，是在原生DOM操作上的比较好用的封装，数据和界面还是是在一起的。比如需要获取label标签的内容：$(“lable”).val()，它还是依赖DOM元素的值。</li>
+<li><strong>Vue</strong>则是通过Vue对象将数据和View完全分离开来了。对数据进行操作不再需要引用相应的DOM对象，可以说数据和View是分离的，他们通过Vue对象这个vm实现相互的绑定。</li>
+<li>在添加列表元素时，vue只需要向数组push新的value，jquery需要找到元素并添加<br><strong>结论</strong>： 和比较多数据交互，有较多后端交互，表单填写的场景vue很方便；需要比较多的DOM操作，绘制动画等，jquery方便</li>
+</ul>
+<h2 id="vue和react、angular对比"><a href="#vue和react、angular对比" class="headerlink" title="vue和react、angular对比"></a>vue和react、angular对比</h2><ul>
+<li>react，angular是大厂出的，一直有团队在维护，社区也更完善</li>
+<li>vue中文文档、社区丰富</li>
+<li>react和vue都是使用了虚拟DOM，react使用JSX渲染页面，vue使用HTML模板更快</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/javascript/Vue相关知识点整理/" rel="next" title="Vue相关知识点整理">
+                <i class="fa fa-chevron-left"></i> Vue相关知识点整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/front-end/Cookie,Session,Token和SSO/" rel="prev" title="Cookie,Session,Token和SSO">
+                Cookie,Session,Token和SSO <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">78</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue2-x和3-x的区别"><span class="nav-number">1.</span> <span class="nav-text">Vue2.x和3.x的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#proxy替代Object-defineProperty"><span class="nav-number">1.1.</span> <span class="nav-text">proxy替代Object.defineProperty</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更换实现的原因"><span class="nav-number">1.1.1.</span> <span class="nav-text">更换实现的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优劣势"><span class="nav-number">1.1.2.</span> <span class="nav-text">优劣势</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认进行懒观察"><span class="nav-number">1.2.</span> <span class="nav-text">默认进行懒观察</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写虚拟DOM"><span class="nav-number">1.3.</span> <span class="nav-text">重写虚拟DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态树提升"><span class="nav-number">1.4.</span> <span class="nav-text">静态树提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩小vue核心库"><span class="nav-number">1.5.</span> <span class="nav-text">缩小vue核心库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更好支持typescript"><span class="nav-number">1.6.</span> <span class="nav-text">更好支持typescript</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue和jquery"><span class="nav-number">2.</span> <span class="nav-text">vue和jquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue和react、angular对比"><span class="nav-number">3.</span> <span class="nav-text">vue和react、angular对比</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

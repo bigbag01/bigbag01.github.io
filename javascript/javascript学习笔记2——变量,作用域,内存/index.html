@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="变量​    ECMAScript 变量有两种不同数据类型的值：基本类型值（简单的数据段）和引用类型值 （可能由多个值构成的对象）。 ​    基本数据类型是按值访问的，可以操作保存在变量里的值。 ​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作对象的引用。  ​    注意： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-10T07:31:07.004Z">
+<meta property="og:updated_time" content="2020-07-01T15:02:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript学习笔记(2)——变量，作用域">
 <meta name="twitter:description" content="变量​    ECMAScript 变量有两种不同数据类型的值：基本类型值（简单的数据段）和引用类型值 （可能由多个值构成的对象）。 ​    基本数据类型是按值访问的，可以操作保存在变量里的值。 ​    引用类型的值是保存在内存里的对象，是按引用访问的。操作对象时，是操作对象的引用。  ​    注意： ECMAScript和其他语言不同，这里的字符串是基本类型而非引用类型">
@@ -433,6 +433,11 @@
 </li>
 <li><p>with语句</p>
 <p>将指定的对象添加到作用域链中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">with</span> (obj) &#123;</span><br><span class="line">		a = <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o1 = &#123;</span><br><span class="line">	a: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o2 = &#123;</span><br><span class="line">	b: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*o1有a这个属性，with成功给它改了值*/</span></span><br><span class="line">foo(o1);</span><br><span class="line"><span class="built_in">console</span>.log(o1.a);	<span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*o2没有a这个属性，解释器就向上查找，在非严格模式下创建了全局变量a并赋值*/</span></span><br><span class="line">foo(o2);</span><br><span class="line"><span class="built_in">console</span>.log(o2.a);	<span class="comment">//underfined</span></span><br><span class="line"><span class="built_in">console</span>.log(a);		<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 </li>
 </ul>
 <h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>JavaScript 中，var 关键字定义的变量可以在使用后声明，也就是变量可以先使用再声明</p>
@@ -579,7 +584,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -601,7 +606,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="学姐的博客">
 <meta property="og:description" content="ES6中引入了展开操作符，`...` 可以将可迭代对象转为`,`分隔的参数序列">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-02T09:01:02.782Z">
+<meta property="og:updated_time" content="2020-07-02T14:52:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript学习笔记(5)——展开操作符">
 <meta name="twitter:description" content="ES6中引入了展开操作符，`...` 可以将可迭代对象转为`,`分隔的参数序列">
@@ -373,12 +373,17 @@
 <h4 id="具有iterator接口的对象"><a href="#具有iterator接口的对象" class="headerlink" title="具有iterator接口的对象"></a>具有iterator接口的对象</h4><p>Set, Map</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">s.add(<span class="number">1</span>);s.add(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">var</span> arrs = […s]; 	<span class="comment">//[1,2]</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">m.set(<span class="number">1</span>,<span class="number">1</span>);m.set(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">var</span> arrm = […m] <span class="comment">// [[1,1],[2,2]]</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="generator用"><a href="#generator用" class="headerlink" title="generator用"></a>generator用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> go = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">[...go()] <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="用于对象"><a href="#用于对象" class="headerlink" title="用于对象"></a>用于对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:’Joe’,<span class="attr">age</span>:<span class="number">21</span>,<span class="attr">likes</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</span><br><span class="line"><span class="keyword">var</span> newObj = &#123;…obj&#125;</span><br><span class="line">obj.likes[<span class="number">0</span>]=<span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(newObj)</span><br><span class="line"><span class="comment">// &#123;name:’Joe’,age:21,likes:[-1,2,3]&#125;</span></span><br><span class="line"></span><br><span class="line">obj[‘age’]=<span class="number">10</span></span><br><span class="line">newObj[‘gender’]=‘male’</span><br><span class="line"><span class="built_in">console</span>.log(&#123;…obj,…newObj&#125;)</span><br><span class="line"><span class="comment">// &#123;name:’Joe’,age:21,likes:[-1,2,3],gender:’male’&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;<span class="attr">job</span>:’Teacher’,…newObj&#125;)</span><br><span class="line"><span class="comment">// &#123;job:Teacher,name:’Joe’,age:21,likes:[-1,2,3],gender:’male’&#125;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>…可以复制对象中的属性，但只会做浅拷贝，不会递归深度拷贝所有属性</li>
 <li>…可以做对象合并,相当于<code>Object.assign({},obj,newObj)</code></li>
 </ul>
+<h2 id="函数的rest参数"><a href="#函数的rest参数" class="headerlink" title="函数的rest参数"></a>函数的rest参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array,...items</span>)</span>&#123;</span><br><span class="line">  items.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    array.push(item);</span><br><span class="line">    <span class="built_in">console</span>.log(item);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以用…rest的数组替代arguments的方式来获取剩下未知的参数。</p>
 
       
     </div>
@@ -503,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +530,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -571,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用于数组"><span class="nav-number">1.</span> <span class="nav-text">用于数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用于类似数组的对象"><span class="nav-number">2.</span> <span class="nav-text">用于类似数组的对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可迭代对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">可迭代对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类对象数组"><span class="nav-number">2.0.2.</span> <span class="nav-text">类对象数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">2.0.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具有iterator接口的对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">具有iterator接口的对象</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#用于对象"><span class="nav-number">3.</span> <span class="nav-text">用于对象</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用于数组"><span class="nav-number">1.</span> <span class="nav-text">用于数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用于类似数组的对象"><span class="nav-number">2.</span> <span class="nav-text">用于类似数组的对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可迭代对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">可迭代对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类对象数组"><span class="nav-number">2.0.2.</span> <span class="nav-text">类对象数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">2.0.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具有iterator接口的对象"><span class="nav-number">2.0.4.</span> <span class="nav-text">具有iterator接口的对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generator用"><span class="nav-number">2.1.</span> <span class="nav-text">generator用</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#用于对象"><span class="nav-number">3.</span> <span class="nav-text">用于对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的rest参数"><span class="nav-number">4.</span> <span class="nav-text">函数的rest参数</span></a></li></div>
             
 
           </div>
