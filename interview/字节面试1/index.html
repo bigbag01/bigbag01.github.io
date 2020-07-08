@@ -1,0 +1,806 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="参加字节的暑假实习面试一面题目记录">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节面试1">
+<meta property="og:url" content="https://bigbag01.github.io/interview/字节面试1/index.html">
+<meta property="og:site_name" content="学姐的博客">
+<meta property="og:description" content="参加字节的暑假实习面试一面题目记录">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-06T15:24:00.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字节面试1">
+<meta name="twitter:description" content="参加字节的暑假实习面试一面题目记录">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bigbag01.github.io/interview/字节面试1/">
+
+
+
+
+
+  <title> 字节面试1 | 学姐的博客 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学姐的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bigbag01.github.io/interview/字节面试1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Beige Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学姐的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                字节面试1
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T00:00:00+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/interview/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  参加字节的暑假实习面试一面题目记录
+              </div>
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="写一个抢红包算法"><a href="#写一个抢红包算法" class="headerlink" title="写一个抢红包算法"></a>写一个抢红包算法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用generator</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">getLucky</span>(<span class="params">total,n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> split = (total-n*<span class="number">0.01</span>)/n;</span><br><span class="line">        <span class="keyword">let</span> cur = split*<span class="built_in">Math</span>.random()*n/<span class="number">2</span>+<span class="number">0.01</span>;</span><br><span class="line">        total -= cur;</span><br><span class="line">        n--;</span><br><span class="line">        <span class="keyword">yield</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">yield</span> total;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="写一个shuffle函数"><a href="#写一个shuffle函数" class="headerlink" title="写一个shuffle函数"></a>写一个shuffle函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.shuffle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="keyword">this</span>.length),</span><br><span class="line">            y = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="keyword">this</span>.length);</span><br><span class="line">        [<span class="keyword">this</span>[x],<span class="keyword">this</span>[y]] = [<span class="keyword">this</span>[y],<span class="keyword">this</span>[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="http-options作用，什么时候会发"><a href="#http-options作用，什么时候会发" class="headerlink" title="http options作用，什么时候会发"></a>http options作用，什么时候会发</h3><ul>
+<li><p>当发put、delete或者post的mimetype不是标准的时候会发；</p>
+</li>
+<li><p>会带上access-control-request-method和access-control-request-headers</p>
+</li>
+<li><p>一旦达到触发条件，就总是会发送options请求，为了优化，可以在响应头中设置access-control-max-age对预检请求结果进行缓存.</p>
+</li>
+</ul>
+<h3 id="get和post有什么区别"><a href="#get和post有什么区别" class="headerlink" title="get和post有什么区别"></a>get和post有什么区别</h3><p>get在url中带参数，post在request body中带参数；</p>
+<p>get请求可以被cache，post不会被cache；</p>
+<p>get请求一般用于获取资源，post请求一般用于提交数据、表单等；</p>
+<p>get的参数都是要能转换成字符串的，且有长度限制，post可以带二进制数据，没有长度大小限制；</p>
+<p>get不适合传递敏感数据，post可以。</p>
+<h3 id="你说了get和post的请求长度不同，get请求为什么参数长度限制"><a href="#你说了get和post的请求长度不同，get请求为什么参数长度限制" class="headerlink" title="你说了get和post的请求长度不同，get请求为什么参数长度限制"></a>你说了get和post的请求长度不同，get请求为什么参数长度限制</h3><p>实际上从http协议层面，get和post没有不同，都可以在url带参数，都可以用request body，差异是浏览器和服务器指定的。get的参数长度限制实际上是url长度限制，浏览器的url栏是有输入长度限制的。</p>
+<h3 id="cookie怎么设置是否随http请求发"><a href="#cookie怎么设置是否随http请求发" class="headerlink" title="cookie怎么设置是否随http请求发"></a>cookie怎么设置是否随http请求发</h3><p>服务器响应头了set-cookies之后浏览器的header里会带cookie</p>
+<h3 id="localStrorage怎么设置定时删除"><a href="#localStrorage怎么设置定时删除" class="headerlink" title="localStrorage怎么设置定时删除"></a>localStrorage怎么设置定时删除</h3><ol>
+<li>每次请求的时候去检查是否过时，过时了则删除</li>
+<li>封装localStorage对象，在创建的时候设置expire，</li>
+</ol>
+<h3 id="js为什么是单线程的"><a href="#js为什么是单线程的" class="headerlink" title="js为什么是单线程的"></a>js为什么是单线程的</h3><p>因为如果多个线程同时操作DOM会造成很大的复杂度，难以保持一致性</p>
+<h3 id="有ABC三个事件，C要等ab都结束才会做，怎么做"><a href="#有ABC三个事件，C要等ab都结束才会做，怎么做" class="headerlink" title="有ABC三个事件，C要等ab都结束才会做，怎么做"></a>有ABC三个事件，C要等ab都结束才会做，怎么做</h3><p>promise.all（然后发现它如果有的reject了就会提前结束）</p>
+<p>async await</p>
+<h3 id="怎么实现一个不同的promise-all等所有事件无论结果如何返回之后再执行"><a href="#怎么实现一个不同的promise-all等所有事件无论结果如何返回之后再执行" class="headerlink" title="怎么实现一个不同的promise.all等所有事件无论结果如何返回之后再执行"></a>怎么实现一个不同的promise.all等所有事件无论结果如何返回之后再执行</h3><ul>
+<li>promise.allSettled</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.allSettled = <span class="function"><span class="keyword">function</span>(<span class="params">proms</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(proms.length);</span><br><span class="line">        <span class="keyword">let</span> cnt = <span class="number">0</span>;</span><br><span class="line">        proms.forEach(<span class="function">(<span class="params">element,i</span>) =&gt;</span> &#123;</span><br><span class="line">            element.then(<span class="function"><span class="params">val</span>=&gt;</span>&#123;</span><br><span class="line">                arr[i] = &#123;</span><br><span class="line">                    <span class="string">'status'</span>:<span class="string">'resolved'</span>,</span><br><span class="line">                    <span class="string">'value'</span>:val</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">                arr[i] = &#123;</span><br><span class="line">                    <span class="string">'status'</span>:<span class="string">'rejected'</span>,</span><br><span class="line">                    <span class="string">'reason'</span>:err</span><br><span class="line">                &#125;;            </span><br><span class="line">            &#125;).finally(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                cnt++;</span><br><span class="line">                <span class="keyword">if</span>(cnt == proms.length)</span><br><span class="line">                    <span class="keyword">return</span> resolve(arr);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。"><a href="#有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。" class="headerlink" title="有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。"></a>有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。</h3><p>利用<strong>service worker</strong>，它运行在浏览器后台，是一个独立的工作线程，网页崩溃的时候它一般没有崩，可以监控网页状态。网页可以通过postMessage向它发消息，进行心跳检测。<br>网页如果不崩溃，在离开时会有<strong>beforeunload</strong>事件，可以在这时候去告诉service worker自己已经关闭了，service worker就可以不管他。<br>如果崩溃了，service worker中网页的状态还是running，但是发现心跳响应时间超出一个范围，就可以判断它挂了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/front-end/HTTP状态码/" rel="next" title="http状态码">
+                <i class="fa fa-chevron-left"></i> http状态码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/javascript/Vue虚拟DOM/" rel="prev" title="Vue虚拟DOM">
+                Vue虚拟DOM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="Beige Zhang">
+          <p class="site-author-name" itemprop="name">Beige Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/bigbag01" target="_blank" title="Github" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个抢红包算法"><span class="nav-number">1.</span> <span class="nav-text">写一个抢红包算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个shuffle函数"><span class="nav-number">2.</span> <span class="nav-text">写一个shuffle函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-options作用，什么时候会发"><span class="nav-number">3.</span> <span class="nav-text">http options作用，什么时候会发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get和post有什么区别"><span class="nav-number">4.</span> <span class="nav-text">get和post有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你说了get和post的请求长度不同，get请求为什么参数长度限制"><span class="nav-number">5.</span> <span class="nav-text">你说了get和post的请求长度不同，get请求为什么参数长度限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie怎么设置是否随http请求发"><span class="nav-number">6.</span> <span class="nav-text">cookie怎么设置是否随http请求发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStrorage怎么设置定时删除"><span class="nav-number">7.</span> <span class="nav-text">localStrorage怎么设置定时删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js为什么是单线程的"><span class="nav-number">8.</span> <span class="nav-text">js为什么是单线程的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有ABC三个事件，C要等ab都结束才会做，怎么做"><span class="nav-number">9.</span> <span class="nav-text">有ABC三个事件，C要等ab都结束才会做，怎么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么实现一个不同的promise-all等所有事件无论结果如何返回之后再执行"><span class="nav-number">10.</span> <span class="nav-text">怎么实现一个不同的promise.all等所有事件无论结果如何返回之后再执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。"><span class="nav-number">11.</span> <span class="nav-text">有一个页面，在不同用户那里情况不一样，有的人会崩溃，怎么统计崩溃率。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Beige Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
